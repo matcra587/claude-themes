@@ -12,26 +12,42 @@ Install from this marketplace with:
 
 ## Included Themes
 
-| Theme                  | Base    | Notes                                 |
-| ---------------------- | ------- | ------------------------------------- |
-| `catppuccin-latte`     | `light` | Official Catppuccin Latte palette     |
-| `catppuccin-frappe`    | `dark`  | Official Catppuccin Frappé palette    |
-| `catppuccin-macchiato` | `dark`  | Official Catppuccin Macchiato palette |
-| `catppuccin-mocha`     | `dark`  | Official Catppuccin Mocha palette     |
-| `dracula`              | `dark`  | Official Dracula palette              |
-| `monokai`              | `dark`  | Classic Monokai-inspired mapping      |
-| `monokai-pro`          | `dark`  | Based on `monokai-pro.nvim`           |
-| `nord`                 | `dark`  | Shared Nord palette port              |
-| `solarized`            | `dark`  | Canonical Solarized dark palette      |
-| `solarized-light`      | `light` | Canonical Solarized light palette     |
-| `tokyo-night`          | `dark`  | Shared Tokyo Night palette port       |
+Each theme below ships in two variants: a regular version that uses palette RGB values, and an `-ansi` version that delegates all colors to your terminal's ANSI palette (see [ANSI variants](#ansi-variants) for why).
 
-## Palette Sources
+| Theme                  | Base    | Source                                          |
+| ---------------------- | ------- | ----------------------------------------------- |
+| `catppuccin-latte`     | `light` | Official Catppuccin Latte                       |
+| `catppuccin-frappe`    | `dark`  | Official Catppuccin Frappé                      |
+| `catppuccin-macchiato` | `dark`  | Official Catppuccin Macchiato                   |
+| `catppuccin-mocha`     | `dark`  | Official Catppuccin Mocha                       |
+| `dracula`              | `dark`  | Official Dracula spec                           |
+| `monokai`              | `dark`  | Classic Sublime Text Monokai                    |
+| `monokai-pro`          | `dark`  | `monokai-pro.nvim` `pro` filter                 |
+| `nord`                 | `dark`  | Official Nord palette (nord0..nord15)           |
+| `solarized`            | `dark`  | Ethan Schoonover's canonical Solarized palette  |
+| `solarized-light`      | `light` | Solarized light variant                         |
+| `tokyo-night`          | `dark`  | `tokyonight.nvim` `night` style                 |
 
-- The existing Catppuccin, Dracula, Nord, Solarized, and Tokyo Night themes were synced from the shared `claude-themes` source.
-- Solarized variants follow the canonical Solarized palette by Ethan Schoonover.
-- Monokai Pro follows the `monokai-pro.nvim` palette.
-- New theme imports only override colors that map cleanly to Claude's semantic theme keys.
+Each theme also has a matching `-ansi` variant (e.g. `catppuccin-mocha-ansi`, `dracula-ansi`).
+
+## ANSI variants
+
+Claude Code lets custom themes override UI chrome (message backgrounds, borders, status indicators, rainbow highlights, etc.) but **syntax highlighting in code blocks is not overridable**. Claude Code chooses one of three hardcoded syntax palettes by substring-matching the theme name:
+
+- name contains `"ansi"` → syntax highlighting uses the terminal's ANSI colors
+- otherwise name contains `"dark"` → a hardcoded Monokai-style palette
+- otherwise → a hardcoded GitHub-light palette
+
+That last branch is the catch: a theme like `catppuccin-mocha` matches neither `"ansi"` nor `"dark"` in its name, so code blocks fall through to the GitHub-light syntax palette even though the theme's `base` is `dark`. Readable, but visually jarring on a dark background.
+
+The `-ansi` variants exist specifically to trigger the first branch. They use `ansi:*` values throughout their overrides, which means both the Claude UI chrome **and** the syntax highlighting in code blocks render from your terminal's ANSI palette.
+
+### When to use which
+
+- **Regular variants** — when you want themed Claude UI and you don't mind Claude's default code-block colors.
+- **`-ansi` variants** — when your terminal's ANSI palette is already set to match the theme family (e.g. terminal configured with Catppuccin Mocha ANSI colors + Claude set to `catppuccin-mocha-ansi`). Everything then renders from one unified palette.
+
+Content-wise, all `-ansi` variants share the same ANSI mapping — they differ only in name. The name matters because it's what Claude Code uses to pick the syntax palette. Having per-family names (rather than just `dark-ansi` / `light-ansi`) keeps your theme choice visible in the picker.
 
 ## Usage
 
@@ -48,7 +64,7 @@ Select a theme in Claude after installation using the theme name from the table 
   "base": "dark",
   "overrides": {
     "text": "rgb(255,255,255)",
-    "bashBorder": "rgb(231,130,132)",
+    "bashBorder": "rgb(231,130,132)"
   }
 }
 ```
