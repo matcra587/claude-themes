@@ -1,6 +1,6 @@
 {
-  "name": "catppuccin-frappe-ansi",
-  "base": "dark",
+  "name": "Catppuccin Frappé (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

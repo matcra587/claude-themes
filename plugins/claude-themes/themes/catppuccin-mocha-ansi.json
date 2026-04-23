@@ -1,6 +1,6 @@
 {
-  "name": "catppuccin-mocha-ansi",
-  "base": "dark",
+  "name": "Catppuccin Mocha (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

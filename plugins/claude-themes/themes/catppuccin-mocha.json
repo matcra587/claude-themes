@@ -1,5 +1,5 @@
 {
-  "name": "catppuccin-mocha",
+  "name": "Catppuccin Mocha",
   "base": "dark",
   "overrides": {
     "text": "rgb(205,214,244)",

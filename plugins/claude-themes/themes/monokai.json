@@ -1,5 +1,5 @@
 {
-  "name": "monokai",
+  "name": "Monokai",
   "base": "dark",
   "overrides": {
     "text": "rgb(248,248,242)",

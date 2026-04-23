@@ -1,5 +1,5 @@
 {
-  "name": "catppuccin-latte",
+  "name": "Catppuccin Latte",
   "base": "light",
   "overrides": {
     "text": "rgb(76,79,105)",

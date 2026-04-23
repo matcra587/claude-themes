@@ -1,6 +1,6 @@
 {
-  "name": "tokyo-night-ansi",
-  "base": "dark",
+  "name": "Tokyo Night (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

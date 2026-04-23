@@ -1,5 +1,5 @@
 {
-  "name": "tokyo-night",
+  "name": "Tokyo Night",
   "base": "dark",
   "overrides": {
     "text": "rgb(192,202,245)",

@@ -1,5 +1,5 @@
 {
-  "name": "nord",
+  "name": "Nord",
   "base": "dark",
   "overrides": {
     "text": "rgb(216,222,233)",

@@ -1,6 +1,6 @@
 {
-  "name": "catppuccin-macchiato-ansi",
-  "base": "dark",
+  "name": "Catppuccin Macchiato (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

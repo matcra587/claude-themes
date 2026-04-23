@@ -1,5 +1,5 @@
 {
-  "name": "catppuccin-frappe",
+  "name": "Catppuccin Frappé",
   "base": "dark",
   "overrides": {
     "text": "rgb(198,208,245)",

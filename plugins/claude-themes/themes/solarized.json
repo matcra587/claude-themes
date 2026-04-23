@@ -1,5 +1,5 @@
 {
-  "name": "solarized",
+  "name": "Solarized Dark",
   "base": "dark",
   "overrides": {
     "text": "rgb(131,148,150)",

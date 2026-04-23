@@ -1,5 +1,5 @@
 {
-  "name": "catppuccin-macchiato",
+  "name": "Catppuccin Macchiato",
   "base": "dark",
   "overrides": {
     "text": "rgb(202,211,245)",

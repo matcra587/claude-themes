@@ -1,6 +1,6 @@
 {
-  "name": "nord-ansi",
-  "base": "dark",
+  "name": "Nord (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

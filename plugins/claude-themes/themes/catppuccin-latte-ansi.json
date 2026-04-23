@@ -1,6 +1,6 @@
 {
-  "name": "catppuccin-latte-ansi",
-  "base": "light",
+  "name": "Catppuccin Latte (ANSI)",
+  "base": "light-ansi",
   "overrides": {
     "text": "ansi:black",
     "inverseText": "ansi:white",

@@ -1,6 +1,6 @@
 {
-  "name": "monokai-ansi",
-  "base": "dark",
+  "name": "Monokai (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",

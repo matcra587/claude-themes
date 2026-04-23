@@ -1,6 +1,6 @@
 {
-  "name": "dracula-ansi",
-  "base": "dark",
+  "name": "Dracula (ANSI)",
+  "base": "dark-ansi",
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi:black",
