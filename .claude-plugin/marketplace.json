@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "omnikit",
+  "description": "Collection of plugins for Claude Code including theme management and other tools",
+  "owner": {
+    "name": "matcra587"
+  },
+  "plugins": [
+    {
+      "name": "claude-themes",
+      "description": "Custom themes for Claude",
+      "category": "productivity",
+      "source": "./plugins/claude-themes",
+      "homepage": "https://github.com/matcra587/omnikit/tree/main/plugins/claude-themes"
+    }
+  ]
+}

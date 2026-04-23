@@ -1,0 +1,28 @@
+{
+  "name": "monokai",
+  "base": "dark",
+  "overrides": {
+    "text": "rgb(248,248,242)",
+    "inverseText": "rgb(39,40,34)",
+    "background": "rgb(39,40,34)",
+    "bashBorder": "rgb(249,38,114)",
+    "promptBorder": "rgb(102,217,239)",
+    "promptBorderShimmer": "rgb(174,129,255)",
+    "success": "rgb(166,226,46)",
+    "error": "rgb(249,38,114)",
+    "warning": "rgb(244,191,117)",
+    "merged": "rgb(174,129,255)",
+    "suggestion": "rgb(161,239,228)",
+    "diffAdded": "rgb(166,226,46)",
+    "diffRemoved": "rgb(249,38,114)",
+    "diffAddedWord": "rgb(166,226,46)",
+    "diffRemovedWord": "rgb(249,38,114)",
+    "autoAccept": "rgb(174,129,255)",
+    "claude": "rgb(102,217,239)",
+    "claudeShimmer": "rgb(174,129,255)",
+    "permission": "rgb(249,38,114)",
+    "permissionShimmer": "rgb(174,129,255)",
+    "planMode": "rgb(244,191,117)",
+    "ide": "rgb(102,217,239)"
+  }
+}
