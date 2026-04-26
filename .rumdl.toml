@@ -1,0 +1,15 @@
+# rumdl configuration
+
+[global]
+flavor = "gfm"
+respect_gitignore = true
+
+# GFM renders prose paragraphs without hard wrapping; source line length
+# is cosmetic. Disable the line-length rule.
+disable = ["MD013"]
+
+exclude = [
+    ".git",
+    ".github",
+    "node_modules",
+]
