@@ -27,6 +27,7 @@ Or install a family directly:
 | [`monokai`](./plugins/monokai)                   | Classic Monokai (+ ANSI)                       |
 | [`monokai-pro`](./plugins/monokai-pro)           | Monokai Pro (+ ANSI)                           |
 | [`nord`](./plugins/nord)                         | Nord (+ ANSI)                                  |
+| [`one-dark`](./plugins/one-dark)                 | One Dark, OneHalf Dark, OneHalf Light (+ ANSI) |
 | [`rose-pine`](./plugins/rose-pine)               | Rosé Pine, Moon, Dawn (+ ANSI each)            |
 | [`solarized`](./plugins/solarized)               | Solarized Dark, Solarized Light (+ ANSI each) |
 | [`tokyo-night`](./plugins/tokyo-night)           | Tokyo Night (+ ANSI)                           |

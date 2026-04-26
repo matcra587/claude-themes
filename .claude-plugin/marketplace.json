@@ -56,6 +56,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/nord"
     },
     {
+      "name": "one-dark",
+      "description": "One Dark and OneHalf themes for Claude — One Dark, OneHalf Dark, OneHalf Light (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/one-dark",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/one-dark"
+    },
+    {
       "name": "rose-pine",
       "description": "Rosé Pine themes for Claude — Main, Moon, and Dawn (with ANSI variants)",
       "category": "themes",
