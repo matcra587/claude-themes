@@ -1,17 +1,59 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "omnikit",
-  "description": "Collection of plugins for Claude Code including theme management and other tools",
+  "name": "claude-themes",
+  "description": "A marketplace of UI themes for Claude — install only the families you want.",
   "owner": {
     "name": "matcra587"
   },
   "plugins": [
     {
-      "name": "claude-themes",
-      "description": "Custom themes for Claude",
-      "category": "productivity",
-      "source": "./plugins/claude-themes",
-      "homepage": "https://github.com/matcra587/omnikit/tree/main/plugins/claude-themes"
+      "name": "catppuccin",
+      "description": "Catppuccin themes for Claude — Latte, Frappé, Macchiato, and Mocha (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/catppuccin",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/catppuccin"
+    },
+    {
+      "name": "dracula",
+      "description": "Dracula theme for Claude (with ANSI variant)",
+      "category": "themes",
+      "source": "./plugins/dracula",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/dracula"
+    },
+    {
+      "name": "monokai",
+      "description": "Classic Monokai theme for Claude (with ANSI variant)",
+      "category": "themes",
+      "source": "./plugins/monokai",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/monokai"
+    },
+    {
+      "name": "monokai-pro",
+      "description": "Monokai Pro theme for Claude (with ANSI variant)",
+      "category": "themes",
+      "source": "./plugins/monokai-pro",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/monokai-pro"
+    },
+    {
+      "name": "nord",
+      "description": "Nord theme for Claude (with ANSI variant)",
+      "category": "themes",
+      "source": "./plugins/nord",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/nord"
+    },
+    {
+      "name": "solarized",
+      "description": "Solarized Dark and Light themes for Claude (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/solarized",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/solarized"
+    },
+    {
+      "name": "tokyo-night",
+      "description": "Tokyo Night theme for Claude (with ANSI variant)",
+      "category": "themes",
+      "source": "./plugins/tokyo-night",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/tokyo-night"
     }
   ]
 }

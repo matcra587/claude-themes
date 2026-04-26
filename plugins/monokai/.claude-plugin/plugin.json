@@ -1,0 +1,8 @@
+{
+  "name": "monokai",
+  "version": "0.1.0",
+  "description": "Classic Monokai theme for Claude (with ANSI variant)",
+  "author": {
+    "name": "matcra587"
+  }
+}
