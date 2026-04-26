@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/matcra587/claude-themes/main/schemas/theme.schema.json",
   "name": "Catppuccin Mocha",
   "base": "dark",
   "overrides": {

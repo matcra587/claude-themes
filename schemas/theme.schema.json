@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/matcra587/claude-themes/main/schemas/theme.schema.json",
+  "title": "Claude theme",
+  "description": "Schema for Claude Code custom theme files.",
+  "markdownDescription": "Schema for Claude Code custom theme files. See the [official reference](https://code.claude.com/docs/en/terminal-config#create-a-custom-theme) for the full token list and behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "examples": [
+    {
+      "name": "Midnight",
+      "base": "dark",
+      "overrides": {
+        "claude": "#a78bfa",
+        "planMode": "#38bdf8",
+        "userMessageBackground": "#1e1b4b"
+      }
+    }
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Optional reference to the JSON Schema this file conforms to."
+    },
+    "name": {
+      "type": "string",
+      "description": "Display label shown in /theme. Defaults to the filename slug.",
+      "markdownDescription": "Display label shown in `/theme`. Defaults to the filename slug.",
+      "examples": [
+        "Catppuccin Mocha",
+        "Solarized Dark",
+        "Tokyo Night"
+      ]
+    },
+    "base": {
+      "type": "string",
+      "description": "Built-in preset the theme starts from. Defaults to 'dark'.",
+      "markdownDescription": "Built-in preset to start from. Tokens not listed in `overrides` fall through to this preset. Defaults to `dark`.",
+      "enum": [
+        "dark",
+        "light",
+        "dark-daltonized",
+        "light-daltonized",
+        "dark-ansi",
+        "light-ansi"
+      ]
+    },
+    "overrides": {
+      "type": "object",
+      "description": "Map of color token names to color values. Tokens not listed fall through to the base preset. Unknown tokens are ignored at runtime.",
+      "markdownDescription": "Map of color token names to color values. Tokens not listed fall through to the `base` preset. Unknown tokens and invalid values are ignored at runtime.",
+      "examples": [
+        {
+          "claude": "#a78bfa",
+          "error": "#ff5555",
+          "success": "#50fa7b"
+        }
+      ],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(red|blue|green|yellow|purple|orange|pink|cyan)_FOR_SUBAGENTS_ONLY$": {
+          "description": "Color used to draw subagents whose definition specifies the matching color (red, blue, green, yellow, purple, orange, pink, or cyan).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "^rainbow_(red|orange|yellow|green|blue|indigo|violet)(_shimmer)?$": {
+          "description": "Rainbow palette color used by special UI effects.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        }
+      },
+      "properties": {
+        "claude": {
+          "description": "Primary brand accent — spinner and assistant label.",
+          "markdownDescription": "Primary brand accent. Used for the spinner and assistant label. Pairs with `claudeShimmer` for the animated gradient.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "text": {
+          "description": "Default foreground text.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "inverseText": {
+          "description": "Text drawn on top of a colored background, such as status badges.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "inactive": {
+          "description": "Secondary text such as hints, timestamps, and disabled items.",
+          "markdownDescription": "Secondary text such as hints, timestamps, and disabled items. Pairs with `inactiveShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "subtle": {
+          "description": "Faint borders and de-emphasized secondary text.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "permission": {
+          "description": "Dialog borders, including permission prompts and pickers.",
+          "markdownDescription": "Dialog borders, including permission prompts and pickers. Pairs with `permissionShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "remember": {
+          "description": "Memory and CLAUDE.md indicators.",
+          "markdownDescription": "Memory and `CLAUDE.md` indicators.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "success": {
+          "description": "Success messages and passing checks.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "error": {
+          "description": "Error messages and failures.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "warning": {
+          "description": "Warnings, caution messages, and the auto mode border.",
+          "markdownDescription": "Warnings, caution messages, and the auto mode border. Pairs with `warningShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "merged": {
+          "description": "Merged pull request status.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "promptBorder": {
+          "description": "Input box border in the default permission mode.",
+          "markdownDescription": "Input box border in the default permission mode. Pairs with `promptBorderShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "planMode": {
+          "description": "Plan mode accent and border.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "autoAccept": {
+          "description": "Accept-edits mode accent and border.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "bashBorder": {
+          "description": "Input box border when entering a ! shell command.",
+          "markdownDescription": "Input box border when entering a `!` shell command.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "ide": {
+          "description": "IDE connection indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "fastMode": {
+          "description": "Fast mode indicator.",
+          "markdownDescription": "Fast mode indicator. Pairs with `fastModeShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffAdded": {
+          "description": "Background of added lines.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffRemoved": {
+          "description": "Background of removed lines.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffAddedDimmed": {
+          "description": "Background of unchanged context near added lines.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffRemovedDimmed": {
+          "description": "Background of unchanged context near removed lines.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffAddedWord": {
+          "description": "Word-level highlight within an added line.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffRemovedWord": {
+          "description": "Word-level highlight within a removed line.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "userMessageBackground": {
+          "description": "Background behind your messages in the transcript (fullscreen mode).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "selectionBg": {
+          "description": "Background of text selected with the mouse (fullscreen mode).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "claudeShimmer": {
+          "description": "Lighter color in the spinner's animated gradient.",
+          "markdownDescription": "Lighter color in the spinner's animated gradient. Pairs with `claude`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "permissionShimmer": {
+          "description": "Lighter color in the permission border's animated gradient.",
+          "markdownDescription": "Lighter color in the permission border's animated gradient. Pairs with `permission`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "warningShimmer": {
+          "description": "Lighter color in the auto mode border's animated gradient.",
+          "markdownDescription": "Lighter color in the auto mode border's animated gradient. Pairs with `warning`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "promptBorderShimmer": {
+          "description": "Lighter color in the input box border's animated gradient.",
+          "markdownDescription": "Lighter color in the input box border's animated gradient. Pairs with `promptBorder`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "fastModeShimmer": {
+          "description": "Lighter color in the fast mode indicator's animated gradient.",
+          "markdownDescription": "Lighter color in the fast mode indicator's animated gradient. Pairs with `fastMode`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "inactiveShimmer": {
+          "description": "Lighter color in an inactive item's animated gradient.",
+          "markdownDescription": "Lighter color in an inactive item's animated gradient. Pairs with `inactive`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "background": {
+          "description": "General background accent.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "suggestion": {
+          "description": "Interactive suggestion accent.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "userMessageBackgroundHover": {
+          "description": "Background behind your messages on hover (fullscreen mode).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "messageActionsBackground": {
+          "description": "Background behind message action buttons (fullscreen mode).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "bashMessageBackgroundColor": {
+          "description": "Background of bash command messages.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "memoryBackgroundColor": {
+          "description": "Background of memory-related UI.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "rate_limit_fill": {
+          "description": "Fill color of the rate-limit progress indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "rate_limit_empty": {
+          "description": "Empty (background) color of the rate-limit progress indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "briefLabelClaude": {
+          "description": "Brief label color for Claude messages.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "briefLabelYou": {
+          "description": "Brief label color for user messages.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "chromeYellow": {
+          "description": "Chrome accent color (used by the Chrome extension).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "professionalBlue": {
+          "description": "Professional blue accent (used by the Grove style).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "claudeBlue_FOR_SYSTEM_SPINNER": {
+          "description": "Blue color used by the system spinner.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "claudeBlueShimmer_FOR_SYSTEM_SPINNER": {
+          "description": "Lighter color in the system spinner's animated gradient.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "color": {
+      "type": "string",
+      "examples": [
+        "#a78bfa",
+        "#fff",
+        "rgb(167, 139, 250)",
+        "ansi256(213)",
+        "ansi:redBright"
+      ],
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{3}([0-9a-fA-F]{3})?$"
+        },
+        {
+          "pattern": "^rgb\\(\\s*(?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})\\s*,\\s*(?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})\\s*,\\s*(?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})\\s*\\)$"
+        },
+        {
+          "pattern": "^ansi:(black|red|green|yellow|blue|magenta|cyan|white)(Bright)?$"
+        },
+        {
+          "pattern": "^ansi256\\((?:25[0-5]|2[0-4][0-9]|1?[0-9]{1,2})\\)$"
+        }
+      ]
+    }
+  }
+}
