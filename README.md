@@ -22,6 +22,7 @@ Or install a family directly:
 | ------------------------------------------------ | ---------------------------------------------- |
 | [`catppuccin`](./plugins/catppuccin)             | Latte, Frappé, Macchiato, Mocha (+ ANSI each) |
 | [`dracula`](./plugins/dracula)                   | Dracula (+ ANSI)                               |
+| [`everforest`](./plugins/everforest)             | Everforest Dark, Everforest Light (+ ANSI each)|
 | [`gruvbox`](./plugins/gruvbox)                   | Gruvbox Dark, Gruvbox Light (+ ANSI each)      |
 | [`monokai`](./plugins/monokai)                   | Classic Monokai (+ ANSI)                       |
 | [`monokai-pro`](./plugins/monokai-pro)           | Monokai Pro (+ ANSI)                           |

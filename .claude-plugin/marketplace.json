@@ -21,6 +21,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/dracula"
     },
     {
+      "name": "everforest",
+      "description": "Everforest Dark and Light themes for Claude (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/everforest",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/everforest"
+    },
+    {
       "name": "gruvbox",
       "description": "Gruvbox Dark and Light themes for Claude (with ANSI variants)",
       "category": "themes",
