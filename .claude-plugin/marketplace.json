@@ -49,6 +49,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/nord"
     },
     {
+      "name": "rose-pine",
+      "description": "Rosé Pine themes for Claude — Main, Moon, and Dawn (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/rose-pine",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/rose-pine"
+    },
+    {
       "name": "solarized",
       "description": "Solarized Dark and Light themes for Claude (with ANSI variants)",
       "category": "themes",
