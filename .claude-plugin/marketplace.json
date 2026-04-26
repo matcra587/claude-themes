@@ -21,6 +21,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/dracula"
     },
     {
+      "name": "gruvbox",
+      "description": "Gruvbox Dark and Light themes for Claude (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/gruvbox",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/gruvbox"
+    },
+    {
       "name": "monokai",
       "description": "Classic Monokai theme for Claude (with ANSI variant)",
       "category": "themes",
