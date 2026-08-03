@@ -57,18 +57,11 @@ Content-wise, all (ANSI) variants share the same ANSI mapping and differ only in
 
 ## Theme schema
 
-Each theme is a JSON file in its plugin's `themes/` directory and follows the standard Claude theme schema:
-
-```json
-{
-  "name": "Catppuccin Mocha",
-  "base": "dark",
-  "overrides": {
-    "text": "rgb(205,214,244)",
-    "bashBorder": "rgb(243,139,168)"
-  }
-}
-```
+Each theme is a JSON file in its plugin's `themes/` directory, validated against [`schemas/theme.schema.json`](./schemas/theme.schema.json).
 
 > [!NOTE]
-> Some themes intentionally use sparse semantic overrides. If a Claude theme slot does not map cleanly to a source palette color, it is left to Claude's fallback behavior instead of guessing.
+> Some themes intentionally use sparse overrides. A slot with no clean match in the source palette is left to Claude's fallback rather than guessed.
+
+## Contributing
+
+New families, ANSI variants, and semantic-mapping fixes are welcome — light themes especially. See [the contributing guide](./.github/CONTRIBUTING.md) for palette sourcing, token mapping, the audit checklist, and local validation.

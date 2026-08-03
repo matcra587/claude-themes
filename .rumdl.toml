@@ -8,8 +8,10 @@ respect_gitignore = true
 # is cosmetic. Disable the line-length rule.
 disable = ["MD013"]
 
-exclude = [
-    ".git",
-    ".github",
-    "node_modules",
-]
+# .claude holds Claude-facing instructions, not project docs.
+exclude = [".claude"]
+
+# Collapsible sections in the contributing guide use GFM's supported
+# HTML subset; nothing else is allowed through.
+[MD033]
+allowed-elements = ["details", "summary", "strong"]
