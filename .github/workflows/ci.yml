@@ -1,30 +1,40 @@
 ---
 name: ci
 
-on:
+"on":
   pull_request:
   push:
     branches: [main]
 
+# Pull requests cancel superseded runs per ref; pushes to main get one group
+# per commit so a rapid series of pushes never cancels an in-flight run.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event_name == 'push' && github.sha || github.ref }}
   cancel-in-progress: true
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
-  rumdl:
-    name: Markdown lint
+  schema-validation:
+    name: Theme schema validation
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write  # changed-file listing + result comment upsert on PRs
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        # clover: provider=auto constraint=minor tags=checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
         with:
           fetch-depth: 1
           persist-credentials: false
 
-      - name: Run rumdl
-        uses: rvben/rumdl@7d7ee63f313c6ea18101f6ada17c486945d444f2
-        with:
-          report-type: annotations
+      - name: Validate theme files
+        uses: ./.github/actions/schema-validation
+
+  md-lint:
+    name: Markdown lint
+    # clover: provider=auto tags=actions
+    uses: matcra587/github-actions/.github/workflows/md-lint.yml@67f0de0d0ceebe69895e868207c04e5c66b3bde8
+    permissions:
+      contents: read

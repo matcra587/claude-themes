@@ -1,0 +1,106 @@
+---
+name: Theme schema validation
+description: >-
+  Validate theme JSON files against schemas/theme.schema.json. On pull
+  requests only the files changed in the PR are validated; a change to the
+  schema or the validator itself re-validates everything. Other events
+  validate all theme files. Requires pull-requests read permission on
+  pull_request events.
+
+runs:
+  using: composite
+  steps:
+    - name: Install uv
+      # clover: provider=auto constraint=minor tags=setup-uv
+      uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990  # v8.3.2
+
+    - name: Determine changed theme files
+      id: changed
+      if: github.event_name == 'pull_request'
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
+      with:
+        script: |
+          const files = await github.paginate(github.rest.pulls.listFiles, {
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number,
+            per_page: 100,
+          });
+          const full = files.some(
+            (f) =>
+              f.filename === 'schemas/theme.schema.json' ||
+              f.filename === 'scripts/schema-validation.py',
+          );
+          // Which changed paths are theme files is the script's call; only
+          // API-level knowledge (removed status) is applied here.
+          const changed = files
+            .filter((f) => f.status !== 'removed')
+            .map((f) => f.filename);
+          core.setOutput('full', full);
+          core.setOutput('changed', changed.join('\n'));
+
+    # The validate step never fails directly: it records the exit code so the
+    # comment upsert always runs, and the final step re-raises the failure.
+    - name: Validate theme files
+      id: validate
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        EVENT_NAME: ${{ github.event_name }}
+        FULL_RUN: ${{ steps.changed.outputs.full }}
+        CHANGED: ${{ steps.changed.outputs.changed }}
+        SUMMARY_PATH: ${{ runner.temp }}/schema-validation-summary.md
+      run: |
+        rc=0
+        if [ "$EVENT_NAME" != "pull_request" ] || [ "$FULL_RUN" = "true" ]; then
+          uv run scripts/schema-validation.py --all || rc=$?
+        else
+          files=()
+          if [ -n "$CHANGED" ]; then
+            mapfile -t files <<<"$CHANGED"
+          fi
+          uv run scripts/schema-validation.py --changed "${files[@]}" || rc=$?
+        fi
+        {
+          echo "exit-code=$rc"
+          echo "summary-path=$SUMMARY_PATH"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Comment results on PR
+      if: github.event_name == 'pull_request'
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
+      env:
+        SUMMARY_PATH: ${{ steps.validate.outputs.summary-path }}
+      with:
+        script: |
+          const fs = require('fs');
+          const marker = '<!-- schema-validation -->';
+          const { owner, repo } = context.repo;
+          const issue_number = context.issue.number;
+          const summary = fs.existsSync(process.env.SUMMARY_PATH)
+            ? fs.readFileSync(process.env.SUMMARY_PATH, 'utf8')
+            : 'Validation aborted before producing a summary — see the job log.';
+          const body = `${marker}\n### Theme schema validation\n\n` + summary;
+
+          // Upsert: edit the previous comment (found by marker) or create one.
+          const { data: comments } = await github.rest.issues.listComments({
+            owner, repo, issue_number,
+          });
+          const existing = comments.find((c) => c.body.includes(marker));
+          if (existing) {
+            await github.rest.issues.updateComment({
+              owner, repo, comment_id: existing.id, body,
+            });
+          } else {
+            await github.rest.issues.createComment({
+              owner, repo, issue_number, body,
+            });
+          }
+
+    - name: Fail on validation errors
+      if: steps.validate.outputs.exit-code != '0'
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        EXIT_CODE: ${{ steps.validate.outputs.exit-code }}
+      run: exit "$EXIT_CODE"
