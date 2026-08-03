@@ -85,6 +85,31 @@
             }
           ]
         },
+        "claudeShimmer": {
+          "description": "Lighter color in the spinner's animated gradient.",
+          "markdownDescription": "Lighter color in the spinner's animated gradient. Pairs with `claude`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "claudeBlue_FOR_SYSTEM_SPINNER": {
+          "description": "Blue color used by the system spinner.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "claudeBlueShimmer_FOR_SYSTEM_SPINNER": {
+          "description": "Lighter color in the system spinner's animated gradient.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
         "text": {
           "description": "Default foreground text.",
           "allOf": [
@@ -110,26 +135,17 @@
             }
           ]
         },
+        "inactiveShimmer": {
+          "description": "Lighter color in an inactive item's animated gradient.",
+          "markdownDescription": "Lighter color in an inactive item's animated gradient. Pairs with `inactive`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
         "subtle": {
           "description": "Faint borders and de-emphasized secondary text.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "permission": {
-          "description": "Dialog borders, including permission prompts and pickers.",
-          "markdownDescription": "Dialog borders, including permission prompts and pickers. Pairs with `permissionShimmer`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "remember": {
-          "description": "Memory and CLAUDE.md indicators.",
-          "markdownDescription": "Memory and `CLAUDE.md` indicators.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -161,8 +177,26 @@
             }
           ]
         },
+        "warningShimmer": {
+          "description": "Lighter color in the auto mode border's animated gradient.",
+          "markdownDescription": "Lighter color in the auto mode border's animated gradient. Pairs with `warning`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
         "merged": {
           "description": "Merged pull request status.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "remember": {
+          "description": "Memory and CLAUDE.md indicators.",
+          "markdownDescription": "Memory and `CLAUDE.md` indicators.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -172,6 +206,42 @@
         "promptBorder": {
           "description": "Input box border in the default permission mode.",
           "markdownDescription": "Input box border in the default permission mode. Pairs with `promptBorderShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "promptBorderShimmer": {
+          "description": "Lighter color in the input box border's animated gradient.",
+          "markdownDescription": "Lighter color in the input box border's animated gradient. Pairs with `promptBorder`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "bashBorder": {
+          "description": "Input box border when entering a ! shell command.",
+          "markdownDescription": "Input box border when entering a `!` shell command.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "permission": {
+          "description": "Dialog borders, including permission prompts and pickers.",
+          "markdownDescription": "Dialog borders, including permission prompts and pickers. Pairs with `permissionShimmer`.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "permissionShimmer": {
+          "description": "Lighter color in the permission border's animated gradient.",
+          "markdownDescription": "Lighter color in the permission border's animated gradient. Pairs with `permission`.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -188,23 +258,16 @@
         },
         "autoAccept": {
           "description": "Accept-edits mode accent and border.",
+          "markdownDescription": "Accept-edits mode accent and border. Pairs with `autoAcceptShimmer`.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
             }
           ]
         },
-        "bashBorder": {
-          "description": "Input box border when entering a ! shell command.",
-          "markdownDescription": "Input box border when entering a `!` shell command.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "ide": {
-          "description": "IDE connection indicator.",
+        "autoAcceptShimmer": {
+          "description": "Lighter color in the accept-edits mode border's animated gradient.",
+          "markdownDescription": "Lighter color in the accept-edits mode border's animated gradient. Pairs with `autoAccept`.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -220,16 +283,41 @@
             }
           ]
         },
-        "diffAdded": {
-          "description": "Background of added lines.",
+        "fastModeShimmer": {
+          "description": "Lighter color in the fast mode indicator's animated gradient.",
+          "markdownDescription": "Lighter color in the fast mode indicator's animated gradient. Pairs with `fastMode`.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
             }
           ]
         },
-        "diffRemoved": {
-          "description": "Background of removed lines.",
+        "effortUltra": {
+          "description": "Ultra reasoning-effort indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "skill": {
+          "description": "Skill invocation indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "ide": {
+          "description": "IDE connection indicator.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffAdded": {
+          "description": "Background of added lines.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -244,16 +332,24 @@
             }
           ]
         },
-        "diffRemovedDimmed": {
-          "description": "Background of unchanged context near removed lines.",
+        "diffAddedWord": {
+          "description": "Word-level highlight within an added line.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
             }
           ]
         },
-        "diffAddedWord": {
-          "description": "Word-level highlight within an added line.",
+        "diffRemoved": {
+          "description": "Background of removed lines.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "diffRemovedDimmed": {
+          "description": "Background of unchanged context near removed lines.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -268,76 +364,6 @@
             }
           ]
         },
-        "userMessageBackground": {
-          "description": "Background behind your messages in the transcript (fullscreen mode).",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "selectionBg": {
-          "description": "Background of text selected with the mouse (fullscreen mode).",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "claudeShimmer": {
-          "description": "Lighter color in the spinner's animated gradient.",
-          "markdownDescription": "Lighter color in the spinner's animated gradient. Pairs with `claude`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "permissionShimmer": {
-          "description": "Lighter color in the permission border's animated gradient.",
-          "markdownDescription": "Lighter color in the permission border's animated gradient. Pairs with `permission`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "warningShimmer": {
-          "description": "Lighter color in the auto mode border's animated gradient.",
-          "markdownDescription": "Lighter color in the auto mode border's animated gradient. Pairs with `warning`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "promptBorderShimmer": {
-          "description": "Lighter color in the input box border's animated gradient.",
-          "markdownDescription": "Lighter color in the input box border's animated gradient. Pairs with `promptBorder`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "fastModeShimmer": {
-          "description": "Lighter color in the fast mode indicator's animated gradient.",
-          "markdownDescription": "Lighter color in the fast mode indicator's animated gradient. Pairs with `fastMode`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
-        "inactiveShimmer": {
-          "description": "Lighter color in an inactive item's animated gradient.",
-          "markdownDescription": "Lighter color in an inactive item's animated gradient. Pairs with `inactive`.",
-          "allOf": [
-            {
-              "$ref": "#/$defs/color"
-            }
-          ]
-        },
         "background": {
           "description": "General background accent.",
           "allOf": [
@@ -346,8 +372,8 @@
             }
           ]
         },
-        "suggestion": {
-          "description": "Interactive suggestion accent.",
+        "userMessageBackground": {
+          "description": "Background behind your messages in the transcript (fullscreen mode).",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -363,7 +389,24 @@
           ]
         },
         "messageActionsBackground": {
-          "description": "Background behind message action buttons (fullscreen mode).",
+          "deprecated": true,
+          "description": "Background behind message action buttons (fullscreen mode). Removed from recent Claude Code versions; ignored at runtime.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "composerSidebarBackground": {
+          "description": "Background of the composer sidebar (fullscreen mode).",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "selectionBg": {
+          "description": "Background of text selected with the mouse (fullscreen mode).",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -380,6 +423,14 @@
         },
         "memoryBackgroundColor": {
           "description": "Background of memory-related UI.",
+          "allOf": [
+            {
+              "$ref": "#/$defs/color"
+            }
+          ]
+        },
+        "suggestion": {
+          "description": "Interactive suggestion accent.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
@@ -434,16 +485,16 @@
             }
           ]
         },
-        "claudeBlue_FOR_SYSTEM_SPINNER": {
-          "description": "Blue color used by the system spinner.",
+        "clawd_body": {
+          "description": "Body color of the Clawd mascot.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
             }
           ]
         },
-        "claudeBlueShimmer_FOR_SYSTEM_SPINNER": {
-          "description": "Lighter color in the system spinner's animated gradient.",
+        "clawd_background": {
+          "description": "Background behind the Clawd mascot.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
