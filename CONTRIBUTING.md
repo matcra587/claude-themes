@@ -2,7 +2,7 @@
 
 Notes for working on the marketplace itself: adding a theme family, validating it the way CI will, and the expectations on commits.
 
-End users don't need anything here. To install a theme, see the [README](../README.md).
+End users don't need anything here. To install a theme, see the [README](README.md).
 
 ## Where to start
 
@@ -50,7 +50,7 @@ The file format — `name`, `base`, `overrides`, and the accepted color value fo
 }
 ```
 
-Tokens absent from `overrides` fall through to the `base` preset at runtime. [`schemas/theme.schema.json`](../schemas/theme.schema.json) is the authority on token names: currently 72, covering the full set Claude Code accepts, including a few the official docs haven't caught up with. Every theme file carries a `$schema` key pointing at the canonical raw URL so editors validate as you type.
+Tokens absent from `overrides` fall through to the `base` preset at runtime. [`schemas/theme.schema.json`](schemas/theme.schema.json) is the authority on token names: currently 72, covering the full set Claude Code accepts, including a few the official docs haven't caught up with. Every theme file carries a `$schema` key pointing at the canonical raw URL so editors validate as you type.
 
 > [!WARNING]
 > Unknown tokens and invalid values are **silently ignored at runtime**. A typo'd token renders fine and does nothing; schema validation is the only thing that catches it.
@@ -141,7 +141,7 @@ Local equivalents:
 
 ## The cc-theme-dev skill (optional)
 
-Working on themes with Claude Code in this repo? The project ships a skill at [`.claude/skills/cc-theme-dev/`](../.claude/skills/cc-theme-dev/SKILL.md) that walks the full loop — scaffold a family from a canonical palette, validate, and symlink-install for live testing — and points back at this guide for the mapping rules. Trigger it with "create a theme", "validate my theme", "install my theme locally", and similar.
+Working on themes with Claude Code in this repo? The project ships a skill at [`.claude/skills/cc-theme-dev/`](.claude/skills/cc-theme-dev/SKILL.md) that walks the full loop — scaffold a family from a canonical palette, validate, and symlink-install for live testing — and points back at this guide for the mapping rules. Trigger it with "create a theme", "validate my theme", "install my theme locally", and similar.
 
 The skill uses [dynamic context injection](https://code.claude.com/docs/en/skills#inject-dynamic-context): `` !`command` `` placeholders in its SKILL.md execute automatically when the skill triggers, before Claude sees the content.
 

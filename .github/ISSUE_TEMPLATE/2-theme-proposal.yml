@@ -7,9 +7,9 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Worth two minutes first: the *What's welcome* section of
-        [CONTRIBUTING](https://github.com/matcra587/claude-themes/blob/main/.github/CONTRIBUTING.md)
-        — it names what gets declined and why proposals come before PRs.
+        Worth two minutes first: the *What's welcome* section of the
+        contributing guide — it names what gets declined and why proposals
+        come before PRs.
   - type: input
     id: family
     attributes:

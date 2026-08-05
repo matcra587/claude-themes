@@ -37,7 +37,7 @@ fallback under Validating.
    (plus a `-ansi.json` sibling), `.claude-plugin/plugin.json`, and a README.
    Register the family in `.claude-plugin/marketplace.json` and the root
    README table.
-3. **Map tokens** per `.github/CONTRIBUTING.md` (*Semantic mapping*, *Shimmer
+3. **Map tokens** per `CONTRIBUTING.md` (*Semantic mapping*, *Shimmer
    derivation*) covering the full token set. For `*-ansi.json` files, follow
    `.claude/rules/ansi-variants.md`. When the palette documents no role for a
    token family (no orange for `claude`, no violet for `autoAccept`...), put

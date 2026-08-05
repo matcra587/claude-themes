@@ -64,4 +64,4 @@ Each theme is a JSON file in its plugin's `themes/` directory, validated against
 
 ## Contributing
 
-New families, ANSI variants, and semantic-mapping fixes are welcome — light themes especially. See [the contributing guide](./.github/CONTRIBUTING.md) for palette sourcing, token mapping, the audit checklist, and local validation.
+New families, ANSI variants, and semantic-mapping fixes are welcome — light themes especially. See [the contributing guide](CONTRIBUTING.md) for palette sourcing, token mapping, the audit checklist, and local validation.
