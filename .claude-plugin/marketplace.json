@@ -1,5 +1,5 @@
 {
-  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "claude-themes",
   "description": "A marketplace of UI themes for Claude — install only the families you want.",
   "owner": {
