@@ -1,0 +1,52 @@
+---
+name: Broken rendering
+description: A theme renders wrong or is unreadable
+title: "[bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Rendering problems are usually palette-specific — the terminal and palette details below are half the diagnosis.
+  - type: input
+    id: theme
+    attributes:
+      label: Theme
+      description: Which theme file, e.g. `catppuccin-mocha-ansi`
+    validations:
+      required: true
+  - type: input
+    id: terminal
+    attributes:
+      label: Terminal
+      description: App and version, e.g. ghostty 1.2.0, Windows Terminal 1.22
+    validations:
+      required: true
+  - type: input
+    id: palette
+    attributes:
+      label: Terminal color scheme
+      description: The palette your terminal runs, e.g. catppuccin mocha port, stock Campbell. For ANSI variants this decides everything.
+    validations:
+      required: true
+  - type: input
+    id: cc-version
+    attributes:
+      label: Claude Code version
+      description: Output of `claude --version`
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What looks wrong?
+      description: What you see vs what you expected.
+    validations:
+      required: true
+  - type: upload
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: A picture beats any description here.
+    validations:
+      required: true

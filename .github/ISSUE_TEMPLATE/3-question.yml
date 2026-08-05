@@ -1,0 +1,11 @@
+---
+name: Question
+description: Not sure whether a palette qualifies, or whether a collision is a bug?
+labels: ["question"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What's the question?
+    validations:
+      required: true

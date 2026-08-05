@@ -1,0 +1,41 @@
+---
+name: Theme proposal
+description: Propose a new theme family before building it
+title: "[proposal]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        Worth two minutes first: the *What's welcome* section of
+        [CONTRIBUTING](https://github.com/matcra587/claude-themes/blob/main/.github/CONTRIBUTING.md)
+        — it names what gets declined and why proposals come before PRs.
+  - type: input
+    id: family
+    attributes:
+      label: Palette family
+      description: e.g. Kanagawa, Ayu
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Canonical upstream
+      description: GitHub repo, official spec, or original colorscheme file the palette values come from.
+      placeholder: https://github.com/...
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Planned variants
+      description: Dark/light flavours, ANSI siblings, anything unusual about the palette (no orange, no violet, ...).
+    validations:
+      required: false
+  - type: checkboxes
+    id: welcome
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I read *What's welcome* and this palette has a clear canonical upstream (not ad-hoc, not Base16)
+          required: true
