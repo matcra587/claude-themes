@@ -17,4 +17,6 @@ The Dracula theme ported to Claude.
 
 ## Variants
 
-Ships in regular and **(ANSI)** forms. The ANSI variant delegates code-block syntax highlighting to your terminal's ANSI palette. See the [marketplace README](https://github.com/matcra587/claude-themes#ansi-variants) for details.
+Ships in regular and **(ANSI)** forms. The ANSI variant resolves its colours through your terminal's Dracula palette; see the [marketplace README](https://github.com/matcra587/claude-themes#ansi-variants) for details.
+
+See [theme previews](PREVIEWS.md) for side-by-side regular and ANSI renders.
