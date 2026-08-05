@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "catppuccin",
-      "description": "Catppuccin themes for Claude — Latte, Frappé, Macchiato, and Mocha (with ANSI variants)",
+      "description": "Catppuccin themes for Claude: Latte, Frappé, Macchiato, and Mocha (with ANSI variants)",
       "category": "themes",
       "source": "./plugins/catppuccin",
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/catppuccin"
