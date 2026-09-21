@@ -1,0 +1,28 @@
+---
+name: Validate theme licences
+description: Verify changed theme families against pinned upstream licence and palette evidence.
+
+runs:
+  using: composite
+  steps:
+    - name: Verify upstream licence evidence
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        ACTION_PATH: ${{ github.action_path }}
+      with:
+        script: |
+          const { pathToFileURL } = require('node:url');
+          const { join } = require('node:path');
+          const { validateLicenses } = await import(pathToFileURL(join(process.env.ACTION_PATH, 'validate.mjs')));
+          const base = context.eventName === 'pull_request'
+            ? context.payload.pull_request.base.sha
+            : context.payload.before;
+          if (!/^[0-9a-f]{40}$/.test(base || '') || /^0+$/.test(base)) {
+            core.setFailed('Licence verification requires an existing comparison commit.');
+            return;
+          }
+          const { stdout } = await exec.getExecOutput('git', [
+            'diff', '--name-only', '--no-renames', '-z', base, 'HEAD', '--',
+          ], { silent: true });
+          await validateLicenses({ github, core, files: stdout.split('\0').filter(Boolean) });

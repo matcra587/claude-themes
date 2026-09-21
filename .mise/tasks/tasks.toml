@@ -1,0 +1,7 @@
+["test:licenses"]
+description = "Test licence policy and packaged notices"
+run = "node --test .github/actions/validate-licenses/tests/licenses.test.mjs"
+
+["test:sources"]
+description = "Test upstream source integrity and selection"
+run = "node --test .github/actions/validate-licenses/tests/sources.test.mjs"
