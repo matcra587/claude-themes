@@ -7,9 +7,9 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Worth two minutes first: the *What's welcome* section of the
-        contributing guide — it names what gets declined and why proposals
-        come before PRs.
+        Read [What's welcome](https://github.com/matcra587/claude-themes/blob/main/CONTRIBUTING.md#whats-welcome)
+        in the contributing guide before proposing a theme. It explains what gets
+        declined and why proposals come before pull requests.
   - type: input
     id: family
     attributes:
@@ -21,10 +21,25 @@ body:
     id: upstream
     attributes:
       label: Canonical upstream
-      description: GitHub repo, official spec, or original colorscheme file the palette values come from.
-      placeholder: https://github.com/...
+      description: Link the official palette definition at a specific commit or versioned release.
+      placeholder: https://github.com/OWNER/REPOSITORY/blob/COMMIT/path/to/palette
     validations:
       required: true
+  - type: input
+    id: license
+    attributes:
+      label: Upstream licence
+      description: Link the official upstream licence at the same revision as the palette. If none is published, say so.
+      placeholder: https://github.com/OWNER/REPOSITORY/blob/COMMIT/LICENSE
+    validations:
+      required: true
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Unclear terms
+      description: Mention any extra restrictions or anything you are unsure about. Leave blank if none.
+    validations:
+      required: false
   - type: textarea
     id: plan
     attributes:
