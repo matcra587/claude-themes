@@ -3,7 +3,7 @@ name: cc-theme-dev
 description: Author, validate, and locally install Claude Code themes in the claude-themes marketplace — scaffold a new family from a canonical palette, catch tokens that render silently wrong, and symlink themes into the Claude Code themes directory for live testing.
 when_to_use: When the user asks to "create a theme", "add a theme family", "validate a theme", "check a theme against the schema", "install a theme locally", "test my theme", or is authoring or debugging a Claude Code theme JSON file in this repository.
 argument-hint: "[family|theme-file]"
-allowed-tools: Bash(command -v uv), Bash(uv run scripts/schema-validation.py:*), Bash(uv run scripts/themes.py:*), Bash(git status:*)
+allowed-tools: Bash(command -v uv), Bash(uv run scripts/schema-validation.py:*), Bash(git status:*)
 ---
 
 # Theme Development
@@ -82,26 +82,4 @@ jq -r '.overrides | keys[]' theme.json        # tokens, eyeball against schema
 
 ## Installing to Test Locally
 
-`scripts/themes.py` symlinks marketplace themes into the Claude Code themes
-directory (`~/.claude/themes`, or `$CLAUDE_CONFIG_DIR/themes`), creating it if
-needed. Symlinks keep the installed theme in sync with the file being edited,
-so a `/theme` switch shows edits immediately.
-
-```bash
-uv run scripts/themes.py install <family>           # symlink a family's themes
-uv run scripts/themes.py install <family> --dry-run # preview
-uv run scripts/themes.py list                       # show installed themes
-uv run scripts/themes.py uninstall <family>         # remove them
-```
-
-Uninstall only removes symlinks resolving back into this repo — a hand-written
-theme or a link pointing elsewhere is never touched, and install guards those
-behind `--force`. After installing, tell the user to run `/theme` and pick the
-family to see it live.
-
-## Resolving Effective Colors
-
-Resolving a theme to its effective palette (base preset merged with overrides)
-needs the built-in preset values, which live in the private `cc-theme-presets`
-skill. Use that skill's resolver when override coverage or fall-through
-inspection is needed.
+Follow [Test a theme locally](../../../CONTRIBUTING.md#test-a-theme-locally) to symlink the file being edited into `~/.claude/themes` (or `$CLAUDE_CONFIG_DIR/themes`). Tell the user to run `/theme` and choose it. Remove only the link created for testing when finished.

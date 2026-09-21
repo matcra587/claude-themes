@@ -27,7 +27,8 @@ Two things hold for every change:
 
 Strictly, none: a theme is a JSON file, the `$schema` key gives you editor validation as you type, and CI validates every PR. The tools below are for the local loop — running the same validation CI runs, and testing themes live.
 
-* **[uv](https://docs.astral.sh/uv/)** runs `scripts/schema-validation.py` (CI-identical validation) and `scripts/themes.py` (symlink-install for live testing). Both are PEP 723 scripts, so uv provisions Python and dependencies on first run; the cc-theme-dev skill also assumes it. `themes.py` is stdlib-only and runs under plain `python3` too.
+* **[uv](https://docs.astral.sh/uv/)** runs schema validation. The script declares Python 3.14 and its dependencies inline, so uv provisions them on first run; the cc-theme-dev skill also assumes it.
+* **[mise](https://mise.jdx.dev/)** installs the pinned tools with `mise install --locked`. Run `mise tasks --local` to discover available tasks.
 * **[gh](https://cli.github.com/)** fetches canonical palettes from upstream repos on the command line. Downloading the palette file in a browser works just as well.
 * **`jq`** is optional: degraded fallback checks for when uv is unavailable.
 
@@ -138,6 +139,17 @@ Local equivalents:
 | `uv run scripts/schema-validation.py --changed <files>` | validate specific theme files (what CI does on PRs) |
 | `uv run scripts/schema-validation.py --all` | validate every theme in the repo |
 | `uvx rumdl check .` | markdown lint |
+
+## Test a theme locally
+
+From the repository root, symlink the file you are editing into `~/.claude/themes` (or `$CLAUDE_CONFIG_DIR/themes`). For example:
+
+```bash
+mkdir -p "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/themes"
+ln -s "$PWD/plugins/dracula/themes/dracula.json" "${CLAUDE_CONFIG_DIR:-$HOME/.claude}/themes/dracula.json"
+```
+
+Choose the theme with `/theme` in Claude Code. The symlink keeps it connected to your working copy; remove the link when you finish testing.
 
 ## The cc-theme-dev skill (optional)
 

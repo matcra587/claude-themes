@@ -5,9 +5,9 @@ validated against `schemas/theme.schema.json`.
 
 ## Commands
 
+- List tasks: `mise tasks --local`
 - Validate: `uv run scripts/schema-validation.py --changed <file>` (or `--all`)
-- Install locally: `uv run scripts/themes.py install <family>` (symlinks into
-  `~/.claude/themes`; `list` / `uninstall` too)
+- Test locally: see [CONTRIBUTING.md](CONTRIBUTING.md#test-a-theme-locally).
 
 ## Key facts
 
