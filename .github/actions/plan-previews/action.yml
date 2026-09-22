@@ -1,0 +1,74 @@
+---
+name: Plan theme previews
+description: >-
+  Plan changed previews before downloading capture tools. Requires checkout
+  history for the comparison base and mise with the repository tools installed.
+
+inputs:
+  base-sha:
+    description: Pull request base commit or previous main revision from the push event.
+    required: true
+
+outputs:
+  base-sha:
+    description: Comparison revision, including unpublished changes on pushes to main.
+    value: ${{ steps.source.outputs.base-sha }}
+  source-sha:
+    description: Checked-out source commit.
+    value: ${{ steps.source.outputs.source-sha }}
+  capture-needed:
+    description: Whether any selected preview needs a new screenshot.
+    value: ${{ steps.plan.outputs.capture-needed }}
+
+runs:
+  using: composite
+  steps:
+    - name: Determine comparison base
+      id: source
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        BASE_SHA: ${{ inputs.base-sha }}
+        EVENT_NAME: ${{ github.event_name }}
+        SOURCE_REF: ${{ github.ref }}
+      run: |
+        trap '
+          echo "::error::Could not determine the preview comparison base. See the log above."
+          printf "## Preview plan\n\nCould not determine the comparison base. See the job log.\n" >> "$GITHUB_STEP_SUMMARY"
+        ' ERR
+        SOURCE_SHA=$(git rev-parse --verify HEAD)
+        BASE_SHA=$(git rev-parse --verify --end-of-options "$BASE_SHA^{commit}")
+        if [ "$EVENT_NAME" = push ] && [ "$SOURCE_REF" = refs/heads/main ]; then
+          # Only recover checkpoints already on main, excluding incoming branch checkpoints.
+          CHECKPOINT_SHA=$(git log -1 --format=%H "$BASE_SHA" -- previews/source-commit.txt)
+          BASE_SHA=${CHECKPOINT_SHA:-$BASE_SHA}
+        fi
+        printf 'base-sha=%s\n' "$BASE_SHA" >> "$GITHUB_OUTPUT"
+        printf 'source-sha=%s\n' "$SOURCE_SHA" >> "$GITHUB_OUTPUT"
+        echo "::debug::Comparison base: $BASE_SHA"
+
+    - name: Plan captures
+      id: plan
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        BASE_SHA: ${{ steps.source.outputs.base-sha }}
+      with:
+        script: |
+          let summary;
+          try {
+            const { stdout, stderr, exitCode } = await exec.getExecOutput('mise', [
+              'run', '--quiet', '--output', 'interleave', 'previews:render',
+              '--changed', '--base', process.env.BASE_SHA, '--plan',
+            ], { silent: true, ignoreReturnCode: true });
+            if (stderr.trim()) core.info(stderr.trim());
+            if (exitCode !== 0) throw new Error('Preview planning failed. See the renderer diagnostics above.');
+            const plan = JSON.parse(stdout);
+            core.debug(`Themes needing capture: ${plan.capture.join(', ')}`);
+            summary = `${plan.capture.length} previews need capture; ${plan.reuse.length} can be reused.`;
+            core.setOutput('capture-needed', plan.capture.length > 0);
+          } catch (error) {
+            core.setFailed(error);
+            summary = 'Preview planning failed. See the annotations and job log for details.';
+          }
+          core.info(summary);
+          await core.summary.addHeading('Preview plan', 2).addRaw(`${summary}\n`).write();

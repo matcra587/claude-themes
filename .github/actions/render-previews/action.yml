@@ -1,0 +1,46 @@
+---
+name: Render theme previews
+description: >-
+  Generate a preview bundle from a planned comparison revision. Requires mise
+  with the repository tools installed and setup-previews when capture is needed.
+
+inputs:
+  base-sha:
+    description: Comparison revision from the preview plan.
+    required: true
+
+outputs:
+  output-directory:
+    description: Directory containing the generated preview bundle.
+    value: ${{ steps.render.outputs.output-directory }}
+
+runs:
+  using: composite
+  steps:
+    - name: Render changed previews
+      id: render
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        BASE_SHA: ${{ inputs.base-sha }}
+      with:
+        script: |
+          const { mkdtemp, readFile } = require('node:fs/promises');
+          const { join } = require('node:path');
+          let summary;
+          try {
+            const root = await mkdtemp(join(process.env.RUNNER_TEMP, 'theme-previews-'));
+            const directory = join(root, 'bundle');
+            await exec.exec('mise', [
+              'run', '--quiet', '--output', 'interleave', 'previews:render',
+              '--changed', '--base', process.env.BASE_SHA, '--output', directory,
+            ]);
+            const manifest = JSON.parse(await readFile(join(directory, 'manifest.json'), 'utf8'));
+            summary = `Preview bundle ready: ${manifest.themes.length} previews, including reused images.`;
+            core.setOutput('output-directory', directory);
+          } catch (error) {
+            core.setFailed(error);
+            summary = 'Preview generation failed. See the annotations and job log for details.';
+          }
+          core.info(summary);
+          await core.summary.addHeading('Preview generation', 2).addRaw(`${summary}\n`).write();

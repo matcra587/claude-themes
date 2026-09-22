@@ -5,3 +5,7 @@ run = "node --test .github/actions/validate-licenses/tests/licenses.test.mjs"
 ["test:sources"]
 description = "Test upstream source integrity and selection"
 run = "node --test .github/actions/validate-licenses/tests/sources.test.mjs"
+
+["test:preview-actions"]
+description = "Test preview planning, generation and GitHub summaries"
+run = "node --test .github/actions/plan-previews/tests/*.test.mjs .github/actions/render-previews/tests/*.test.mjs"
