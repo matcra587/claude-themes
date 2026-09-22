@@ -1,0 +1,21 @@
+---
+- provider: github
+  repository: anthropics/claude-code
+  source: releases
+  asset: claude-linux-x64.tar.gz
+  constraint: minor
+  id: claude
+  jq: .claude_version
+  tags: [claude]
+- from: claude
+  value: sha256
+  sha256-source: verify
+  sha256-url: https://github.com/anthropics/claude-code/releases/download/v<version>/SHASUMS256.txt
+  pattern: claude-linux-x64.tar.gz
+  jq: .claude_archive_sha256
+  tags: [claude]
+- provider: docker
+  repository: ghcr.io/charmbracelet/vhs
+  constraint: minor
+  jq: .vhs_image
+  tags: [vhs]

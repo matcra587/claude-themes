@@ -1,0 +1,5 @@
+{
+  "claude_version": "2.1.278",
+  "claude_archive_sha256": "1d1f9950b96acb5a50bf342a3d3bd51cdf40b1714b2ca3ce2319ba8e8e7f3633",
+  "vhs_image": "ghcr.io/charmbracelet/vhs:v0.11.0@sha256:9d5fc3dc0c160b0fb1d2212baff07e6bdf3fa9438c504a3237484567302fcf93"
+}

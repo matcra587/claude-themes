@@ -1,0 +1,51 @@
+---
+name: Set up preview capture
+description: Download the pinned Claude Code binary and VHS capture image.
+
+runs:
+  using: composite
+  steps:
+    - name: Read capture versions
+      id: runtime
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      with:
+        script: |
+          const fs = require('node:fs');
+          const runtime = JSON.parse(fs.readFileSync('previews/runtime.json', 'utf8'));
+          core.setOutput('claude-version', runtime.claude_version);
+          core.setOutput('claude-archive-sha256', runtime.claude_archive_sha256);
+          core.setOutput('vhs-image', runtime.vhs_image);
+
+    - name: Download and verify Claude Code
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        GH_TOKEN: ${{ github.token }}
+        CLAUDE_VERSION: ${{ steps.runtime.outputs.claude-version }}
+        CLAUDE_ARCHIVE_SHA256: ${{ steps.runtime.outputs.claude-archive-sha256 }}
+      run: |
+        trap 'echo "::error::Claude Code setup failed. See the log above."' ERR
+        binary_dir="${XDG_CACHE_HOME:-$HOME/.cache}/claude-themes/$CLAUDE_VERSION"
+        mkdir -p "$binary_dir"
+        archive="$binary_dir/claude-linux-x64.tar.gz"
+        temp_dir=$(mktemp -d "$binary_dir/.claude.XXXXXX")
+        trap 'rm -rf -- "$temp_dir"' EXIT
+        if [ ! -f "$archive" ] || ! printf '%s  %s\n' "$CLAUDE_ARCHIVE_SHA256" "$archive" | sha256sum --check --status; then
+          gh release download "v$CLAUDE_VERSION" \
+            --repo anthropics/claude-code --pattern claude-linux-x64.tar.gz \
+            --output "$temp_dir/archive.tar.gz"
+          printf '%s  %s\n' "$CLAUDE_ARCHIVE_SHA256" "$temp_dir/archive.tar.gz" | sha256sum --check
+          mv -- "$temp_dir/archive.tar.gz" "$archive"
+        fi
+        # Re-extract the verified archive to repair a damaged cached executable.
+        tar --extract --gzip --file "$archive" --to-stdout claude > "$temp_dir/claude"
+        chmod +x "$temp_dir/claude"
+        mv -- "$temp_dir/claude" "$binary_dir/claude"
+
+    - name: Pull VHS capture image
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        VHS_IMAGE: ${{ steps.runtime.outputs.vhs-image }}
+      run: |
+        trap 'echo "::error::VHS image setup failed. See the log above."' ERR
+        docker pull --platform linux/amd64 "$VHS_IMAGE"
