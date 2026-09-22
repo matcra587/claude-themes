@@ -8,6 +8,8 @@ validated against `schemas/theme.schema.json`.
 - List tasks: `mise tasks --local`
 - Validate: `uv run scripts/schema-validation.py --changed <file>` (or `--all`)
 - Test locally: see [CONTRIBUTING.md](CONTRIBUTING.md#test-a-theme-locally).
+- Plan previews: `mise run previews:render --changed --base origin/main --plan`
+- Test preview tooling: `mise run test:previews`
 
 ## Key facts
 
