@@ -1,0 +1,73 @@
+---
+name: Theme previews
+
+"on":
+  pull_request:
+    branches: [main]
+    paths:
+      - plugins/*/themes/*.json
+      - plugins/*/palettes/*.json
+      - plugins/*/renders/*.png
+      - plugins/*/PREVIEWS.md
+      - previews/*.json
+      - schemas/theme.schema.json
+      - assets/fonts/GeistMono-Regular.otf
+      - .mise/tasks/previews/**
+      - .github/actions/*-previews/**
+      - .github/workflows/previews.yml
+      - mise.*
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  previews:
+    name: Generate previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    env:
+      UV_PYTHON: '3.14'
+    steps:
+      - name: Checkout source
+        # clover: provider=auto constraint=minor tags=checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up mise tools
+        # clover: provider=auto constraint=minor tags=mise-action
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
+        with:
+          version: '2026.9.11'
+
+      - name: Plan preview captures
+        id: plan
+        uses: ./.github/actions/plan-previews
+        with:
+          base-sha: ${{ github.event.pull_request.base.sha }}
+
+      - name: Set up preview capture
+        if: steps.plan.outputs.capture-needed == 'true'
+        uses: ./.github/actions/setup-previews
+
+      - name: Generate preview bundle
+        id: render
+        uses: ./.github/actions/render-previews
+        with:
+          base-sha: ${{ steps.plan.outputs.base-sha }}
+
+      - name: Upload preview bundle
+        # clover: provider=auto constraint=minor tags=upload-artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: theme-previews-${{ steps.plan.outputs.source-sha }}-${{ github.run_attempt }}
+          path: ${{ steps.render.outputs.output-directory }}
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
