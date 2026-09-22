@@ -1,0 +1,42 @@
+---
+name: Tests
+
+"on":
+  push:
+    branches: [main]
+    paths:
+      - .github/actions/validate-licenses/action.yml
+      - .github/actions/validate-licenses/validate.mjs
+      - .github/actions/validate-licenses/tests/**
+      - .github/workflows/tests.yml
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  license-action:
+    name: Licence action tests
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # clover: provider=auto constraint=minor tags=checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Test licence validation
+        # clover: provider=auto constraint=minor tags=github-script
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3  # v9.0.0
+        with:
+          script: |
+            await exec.exec(process.execPath, [
+              '--test',
+              '.github/actions/validate-licenses/tests/licenses.test.mjs',
+              '.github/actions/validate-licenses/tests/sources.test.mjs',
+            ]);

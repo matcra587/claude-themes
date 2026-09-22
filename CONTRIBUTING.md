@@ -18,6 +18,9 @@ New families, ANSI variants for existing ones, and fixes to semantic mappings. L
 
 **What gets declined:** palettes without a clear canonical upstream (a GitHub repo, official spec, or original colorscheme file), ad-hoc personal palettes, and meta-frameworks like Base16.
 
+> [!IMPORTANT]
+> Use palettes with a valid licence that permits redistribution, and check that it covers the source files you use. Follow its terms, preserve required notices and credit, and document your changes. Include the [source and licence records](#source-and-licence-records) with your contribution.
+
 Two things hold for every change:
 
 * **Schema validation must pass** (CI runs it on every PR).
@@ -65,14 +68,16 @@ Two ways to do this: by hand, or by letting Claude Code drive the same loop via 
 
 1. **Pick.** A palette with a clear canonical upstream. See *What's welcome* for what qualifies.
 
-2. **Fetch the palette.** `gh api -H "Accept: application/vnd.github.raw"` against the upstream repo; treat it as the source of truth.
+2. **Fetch the palette and its licence.** `gh api -H "Accept: application/vnd.github.raw"` against the upstream repo; treat it as the source of truth. Pin both files to a specific commit for the [source and licence records](#source-and-licence-records).
 
 3. **Scaffold:**
 
    ```text
    plugins/<family>/
    ├── .claude-plugin/plugin.json
-   ├── themes/<family>-<variant>.json     # plus -ansi.json sibling
+   ├── LICENSES/upstream.txt             # copy of the upstream licence
+   ├── palettes/<family>-<variant>.json  # terminal palette and pinned source
+   ├── themes/<family>-<variant>.json    # plus -ansi.json sibling
    └── README.md
    ```
 
@@ -80,7 +85,7 @@ Two ways to do this: by hand, or by letting Claude Code drive the same loop via 
 
 5. **Register.** Add an alphabetical entry to `.claude-plugin/marketplace.json` and a row to the root `README.md` plugin table.
 
-6. **Validate.** Same script CI runs:
+6. **Validate.** Run the schema check below. CI also checks the family's [source and licence records](#source-and-licence-records).
 
    ```sh
    uv run scripts/schema-validation.py --changed plugins/<family>/themes/*.json
@@ -98,6 +103,14 @@ Two ways to do this: by hand, or by letting Claude Code drive the same loop via 
 Say "create a theme for <family>" in a Claude Code session in this repo; the skill walks the same pick → fetch → scaffold → validate → install loop and enforces the same audit rules. Details, including the one read-only shell command it runs on trigger, are in [the skill section](#the-cc-theme-dev-skill-optional).
 
 </details>
+
+## Source and licence records
+
+New families and existing families you change need source and licence records. See the [licence action's record example and accepted licences](.github/actions/validate-licenses/README.md#record-a-themes-sources) for the full format.
+
+* In `plugins/<family>/.claude-plugin/plugin.json`, set the top-level `license` for the plugin and add a `metadata.upstream` entry for each upstream source file you use, including separate terminal palette sources. Record the upstream repository, full commit SHA, source and licence paths, and their SHA-256 checksums.
+* Copy each upstream licence into the plugin, for example at `LICENSES/upstream.txt`, and set the corresponding entry's `notice` to that relative path. Preserve the upstream licence text and any other required notices or credit.
+* Add a matching file in the family's `palettes/` directory for every theme. RGB and ANSI variants can share a palette. Set its `source.url` to the upstream file at the recorded commit and its `source.sha256` to the matching `metadata.upstream` checksum; see the [palette matching rules](.github/actions/validate-licenses/README.md#link-terminal-palettes-to-their-sources).
 
 ## Semantic mapping
 
@@ -130,7 +143,11 @@ Flavours sharing one terminal mapping (catppuccin frappé/macchiato/mocha) natur
 
 ## Validation and CI
 
-Every PR runs the schema-validation workflow: changed theme files are validated against the schema (a change to the schema or the validator re-validates everything), failures annotate the diff inline, and a results comment is upserted on the PR. Markdown is linted with rumdl, and a security workflow (actionlint, zizmor, CodeQL, dependency review) covers the rest.
+Every PR runs CI: changed theme files are validated against the schema (a change to the schema or the validator re-validates everything), failures annotate the diff inline, and a results comment is upserted on the PR. Markdown is linted with rumdl, and a security workflow (actionlint, zizmor, CodeQL, dependency review) covers the rest.
+
+CI also verifies source and licence records for changed families on PRs and pushes to `main`. Any change inside `plugins/<family>/` selects that family, except generated `PREVIEWS.md` files and PNG files directly inside `renders/`. Existing families you change must have the required records; unchanged families are not checked, and deleted families are skipped. Missing records or failed upstream verification fail CI. Passing checks does not replace reviewing the licence terms.
+
+The separate Tests workflow runs the licence action's unit tests when changes to its implementation, tests or test workflow reach `main`. These tests use fixtures and simulated GitHub responses; they do not verify the source and licence records in your contribution.
 
 Local equivalents:
 
