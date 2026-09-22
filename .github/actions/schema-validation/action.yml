@@ -13,6 +13,8 @@ runs:
     - name: Install uv
       # clover: provider=auto constraint=minor tags=setup-uv
       uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990  # v8.3.2
+      with:
+        cache-dependency-glob: scripts/schema-validation.py
 
     - name: Determine changed theme files
       id: changed
