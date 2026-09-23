@@ -51,6 +51,6 @@ jobs:
   md-lint:
     name: Markdown lint
     # clover: provider=auto tags=actions
-    uses: matcra587/github-actions/.github/workflows/md-lint.yml@67f0de0d0ceebe69895e868207c04e5c66b3bde8
+    uses: matcra587/github-actions/.github/workflows/md-lint.yml@298f23ea9730fdeb69e2a40c4240119be2964464
     permissions:
       contents: read
