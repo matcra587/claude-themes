@@ -16,27 +16,46 @@ name: Theme previews
       - .github/actions/*-previews/**
       - .github/workflows/previews.yml
       - mise.*
+  push:
+    branches: [main]
+    paths:
+      - plugins/*/themes/*.json
+      - plugins/*/palettes/*.json
+      - plugins/*/renders/*.png
+      - plugins/*/PREVIEWS.md
+      - previews/*.json
+      - schemas/theme.schema.json
+      - assets/fonts/GeistMono-Regular.otf
+      - .mise/tasks/previews/**
+      - .github/actions/*-previews/**
+      - .github/workflows/previews.yml
+      - mise.*
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions: {}
 
 jobs:
   previews:
-    name: Generate previews
+    name: ${{ github.event_name == 'pull_request' && 'Validate preview inputs' || 'Generate preview updates' }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
       contents: read
     env:
       UV_PYTHON: '3.14'
+    outputs:
+      source-sha: ${{ steps.plan.outputs.source-sha }}
+      changed: ${{ steps.changes.outputs.changed }}
+      artifact-id: ${{ steps.bundle.outputs.artifact-id }}
     steps:
       - name: Checkout source
         # clover: provider=auto constraint=minor tags=checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
+          ref: ${{ github.sha }}
           fetch-depth: 0
           persist-credentials: false
 
@@ -50,19 +69,30 @@ jobs:
         id: plan
         uses: ./.github/actions/plan-previews
         with:
-          base-sha: ${{ github.event.pull_request.base.sha }}
+          base-sha: ${{ github.event.pull_request.base.sha || github.event.before }}
 
       - name: Set up preview capture
-        if: steps.plan.outputs.capture-needed == 'true'
+        if: github.event_name == 'push' && steps.plan.outputs.capture-needed == 'true'
         uses: ./.github/actions/setup-previews
 
       - name: Generate preview bundle
+        if: github.event_name == 'push'
         id: render
         uses: ./.github/actions/render-previews
         with:
           base-sha: ${{ steps.plan.outputs.base-sha }}
 
+      - name: Check preview changes
+        if: github.event_name == 'push'
+        id: changes
+        uses: ./.github/actions/update-previews
+        with:
+          directory: ${{ steps.render.outputs.output-directory }}
+          check-only: 'true'
+
       - name: Upload preview bundle
+        if: steps.changes.outputs.changed == 'true'
+        id: bundle
         # clover: provider=auto constraint=minor tags=upload-artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -71,3 +101,52 @@ jobs:
           if-no-files-found: error
           retention-days: 1
           compression-level: 0
+
+  publish:
+    name: Publish preview updates
+    needs: previews
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.previews.outputs.changed == 'true'
+    environment: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout preview source
+        # clover: provider=auto constraint=minor tags=checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ needs.previews.outputs.source-sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Download preview bundle
+        # clover: provider=auto constraint=minor tags=download-artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          artifact-ids: ${{ needs.previews.outputs.artifact-id }}
+          path: ${{ runner.temp }}/theme-previews
+
+      - name: Update plugin previews
+        id: update
+        uses: ./.github/actions/update-previews
+        with:
+          directory: ${{ runner.temp }}/theme-previews
+
+      - name: Create preview publishing token
+        if: steps.update.outputs.changed == 'true'
+        id: app-token
+        # clover: provider=auto constraint=minor tags=create-github-app-token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        with:
+          client-id: ${{ vars.APP_CLIENT_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          repositories: ${{ github.event.repository.name }}
+          permission-contents: write
+
+      - name: Commit plugin previews
+        if: steps.update.outputs.changed == 'true'
+        uses: ./.github/actions/commit-previews
+        with:
+          source-sha: ${{ needs.previews.outputs.source-sha }}
+          token: ${{ steps.app-token.outputs.token }}

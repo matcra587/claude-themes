@@ -1,0 +1,134 @@
+---
+name: Commit theme previews
+description: Commit generated previews to main while their source commit is still current.
+
+inputs:
+  source-sha:
+    description: Checked-out commit used to generate the previews.
+    required: true
+  token:
+    description: App token with Contents write permission and access to bypass main protection.
+    required: true
+
+outputs:
+  status:
+    description: Whether previews were published, unchanged, or stale because main advanced.
+    value: ${{ steps.push.outputs.status || steps.source.outputs.status || 'unchanged' }}
+
+runs:
+  using: composite
+  steps:
+    - name: Check preview source
+      id: source
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        SOURCE_SHA: ${{ inputs.source-sha }}
+        GH_TOKEN: ${{ inputs.token }}
+      run: |
+        if [ "$(git rev-parse HEAD)" != "$SOURCE_SHA" ]; then
+          echo '::error::The checkout does not match the preview source commit.'
+          exit 1
+        fi
+        if ! git diff --cached --quiet; then
+          echo '::error::The index already contains staged changes.'
+          exit 1
+        fi
+        git -c credential.helper= -c 'credential.helper=!gh auth git-credential' fetch origin main
+        if [ "$(git rev-parse FETCH_HEAD)" != "$SOURCE_SHA" ]; then
+          echo '::notice::Main changed while previews were being generated. No preview update was pushed.'
+          printf '## Preview publication\n\nSkipped: main changed while previews were being generated.\n' >> "$GITHUB_STEP_SUMMARY"
+          echo 'status=stale' >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        echo 'current=true' >> "$GITHUB_OUTPUT"
+
+    - name: Stage preview files
+      id: stage
+      if: steps.source.outputs.current == 'true'
+      shell: bash --noprofile --norc -euo pipefail {0}
+      run: |
+        git ls-files --modified --deleted --others --exclude-standard -z -- \
+          previews/manifest.json ':(glob)plugins/*/PREVIEWS.md' \
+          ':(glob)plugins/*/renders/*.png' \
+          | git add --pathspec-from-file=- --pathspec-file-nul
+        if git diff --cached --quiet; then
+          echo 'Plugin previews already match the selected inputs.'
+          printf '## Preview publication\n\nPlugin previews are already up to date.\n' >> "$GITHUB_STEP_SUMMARY"
+        else
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+        fi
+
+    - name: Prepare commit message
+      id: message
+      if: steps.stage.outputs.changed == 'true'
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      with:
+        script: |
+          const { stdout } = await exec.getExecOutput('git', [
+            'diff', '--cached', '--name-status', '--no-renames', '-z',
+          ], { silent: true });
+          const fields = stdout.split('\0').slice(0, -1);
+          const families = new Set();
+          const statuses = new Set();
+          for (let i = 0; i < fields.length; i += 2) {
+            const match = fields[i + 1].match(
+              /^plugins\/([a-z0-9][a-z0-9-]*)\/(PREVIEWS\.md|renders\/[^/]+\.png)$/,
+            );
+            if (!match) continue;
+            families.add(match[1]);
+            if (match[2].startsWith('renders/')) statuses.add(fields[i]);
+          }
+          let action = 'update';
+          if (statuses.size === 1 && statuses.has('A')) action = 'generate';
+          if (statuses.size === 1 && statuses.has('D')) action = 'remove';
+          let message = 'chore: update theme preview gallery';
+          if (families.size) {
+            message = `chore: ${action} ${[...families].sort().join(', ')} theme previews`;
+            if (message.length > 72) {
+              message = `chore: ${action} previews for ${families.size} theme families`;
+            }
+          }
+          core.setOutput('message', message);
+
+    - name: Commit and push previews
+      id: push
+      if: steps.stage.outputs.changed == 'true'
+      shell: bash --noprofile --norc -euo pipefail {0}
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        SOURCE_SHA: ${{ inputs.source-sha }}
+        COMMIT_MESSAGE: ${{ steps.message.outputs.message }}
+        GIT_AUTHOR_NAME: github-actions[bot]
+        GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        GIT_COMMITTER_NAME: github-actions[bot]
+        GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+      run: |
+        if [ -L previews ] || [ -L previews/source-commit.txt ]; then
+          echo '::error::The preview checkpoint must not be a symlink.'
+          exit 1
+        fi
+        mkdir -p previews
+        printf '%s\n' "$SOURCE_SHA" > previews/source-commit.txt
+        git add -- previews/source-commit.txt
+        git commit -m "$COMMIT_MESSAGE" -m '[skip ci]'
+        if ! git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin HEAD:refs/heads/main; then
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' fetch origin main
+          remote_sha=$(git rev-parse FETCH_HEAD)
+          if [ "$remote_sha" != "$(git rev-parse HEAD)" ] && [ "$remote_sha" != "$SOURCE_SHA" ]; then
+            echo '::notice::Main changed before previews could be published. No preview update was pushed.'
+            printf '## Preview publication\n\nSkipped: main changed before previews could be published.\n' >> "$GITHUB_STEP_SUMMARY"
+            echo 'status=stale' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$remote_sha" = "$SOURCE_SHA" ]; then
+            echo '::error::Could not push the preview update. See the Git error above.'
+            exit 1
+          fi
+        fi
+        echo 'status=published' >> "$GITHUB_OUTPUT"
+        {
+          printf '## Updated plugin previews\n\n```text\n'
+          git show --format= --name-only HEAD
+          printf '```\n'
+        } >> "$GITHUB_STEP_SUMMARY"
