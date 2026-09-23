@@ -1,0 +1,58 @@
+---
+name: Update theme previews
+description: Verify a preview bundle against current inputs and update plugin images and galleries.
+
+inputs:
+  directory:
+    description: Directory containing the generated preview bundle.
+    required: true
+  check-only:
+    description: Validate the bundle and detect updates without writing repository files.
+    default: 'false'
+
+outputs:
+  changed:
+    description: Whether repository files changed, or would change in check-only mode.
+    value: ${{ steps.update.outputs.changed }}
+
+runs:
+  using: composite
+  steps:
+    - name: Update plugin previews
+      id: update
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        ACTION_PATH: ${{ github.action_path }}
+        PREVIEW_DIRECTORY: ${{ inputs.directory }}
+        CHECK_ONLY: ${{ inputs.check-only }}
+      with:
+        script: |
+          const { join } = require('node:path');
+          const { pathToFileURL } = require('node:url');
+          let summary;
+          try {
+            const { updatePreviews } = await import(pathToFileURL(join(process.env.ACTION_PATH, 'update.mjs')));
+            if (!['true', 'false'].includes(process.env.CHECK_ONLY)) {
+              throw new Error('check-only must be true or false.');
+            }
+            const checkOnly = process.env.CHECK_ONLY === 'true';
+            const changed = updatePreviews({
+              root: process.env.GITHUB_WORKSPACE,
+              directory: process.env.PREVIEW_DIRECTORY,
+              checkOnly,
+            });
+            core.setOutput('changed', changed);
+            if (!changed) {
+              summary = 'Preview bundle verified; plugin previews are up to date.';
+            } else if (checkOnly) {
+              summary = 'Preview bundle verified; plugin previews need updating.';
+            } else {
+              summary = 'Updated plugin previews.';
+            }
+          } catch (error) {
+            core.setFailed(error);
+            summary = 'Preview update failed. See the annotations and job log for details.';
+          }
+          core.info(summary);
+          await core.summary.addHeading('Preview update', 2).addRaw(`${summary}\n`).write();

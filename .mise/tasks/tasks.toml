@@ -9,3 +9,7 @@ run = "node --test .github/actions/validate-licenses/tests/sources.test.mjs"
 ["test:preview-actions"]
 description = "Test preview planning, generation and GitHub summaries"
 run = "node --test .github/actions/plan-previews/tests/*.test.mjs .github/actions/render-previews/tests/*.test.mjs"
+
+["test:update-previews"]
+description = "Test preview bundle validation and scoped gallery updates"
+run = "node --test .github/actions/update-previews/tests/*.test.mjs"
