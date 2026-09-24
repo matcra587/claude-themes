@@ -1,0 +1,29 @@
+{
+  "vhs": {
+    "background": "#2e3440",
+    "foreground": "#d8dee9",
+    "black": "#3b4252",
+    "red": "#bf616a",
+    "green": "#a3be8c",
+    "yellow": "#ebcb8b",
+    "blue": "#81a1c1",
+    "magenta": "#b48ead",
+    "cyan": "#88c0d0",
+    "white": "#e5e9f0",
+    "brightBlack": "#4c566a",
+    "brightRed": "#bf616a",
+    "brightGreen": "#a3be8c",
+    "brightYellow": "#ebcb8b",
+    "brightBlue": "#81a1c1",
+    "brightMagenta": "#b48ead",
+    "brightCyan": "#8fbcbb",
+    "brightWhite": "#eceff4",
+    "cursor": "#d8dee9",
+    "selection": "#4c566a"
+  },
+  "source": {
+    "url": "https://github.com/nordtheme/alacritty/blob/9949642f3903e8fcb62bfc03f09410e3d78440c2/src/nord.yaml",
+    "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
+    "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9"
+  }
+}

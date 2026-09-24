@@ -4,5 +4,40 @@
   "description": "Nord theme for Claude (with ANSI variant)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "nordtheme/nord",
+        "revision": "1cef71605416a222e57225b544540ce0fcec18d4",
+        "path": "src/nord.scss",
+        "sha256": "03d9dd98ff983308d10a9a4820c870e9eed7183a2d8aa689e3041e6d7cf1511b",
+        "license": "MIT",
+        "licensePath": "license",
+        "licenseSha256": "25ac8188d670bd2ad2ce2f4f55ab88573010ee9f7a4502543cb1eea1e2274f8a",
+        "notice": "LICENSES/nord.txt"
+      },
+      {
+        "repository": "nordtheme/alacritty",
+        "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
+        "path": "src/nord.yaml",
+        "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9",
+        "license": "MIT",
+        "licensePath": "license",
+        "licenseSha256": "25ac8188d670bd2ad2ce2f4f55ab88573010ee9f7a4502543cb1eea1e2274f8a",
+        "notice": "LICENSES/nord-alacritty.txt"
+      },
+      {
+        "repository": "nordtheme/vim",
+        "revision": "f13f5dfbb784deddbc1d8195f34dfd9ec73e2295",
+        "path": "colors/nord.vim",
+        "sha256": "288b095fb1ba03f43da4c89f4d9923e992dbdb2f8639f83984f71453a3707645",
+        "license": "MIT",
+        "licensePath": "license",
+        "licenseSha256": "25ac8188d670bd2ad2ce2f4f55ab88573010ee9f7a4502543cb1eea1e2274f8a",
+        "notice": "LICENSES/nord.txt"
+      }
+    ]
   }
 }
