@@ -2,6 +2,158 @@
   "format": 1,
   "themes": [
     {
+      "theme": "plugins/catppuccin/themes/catppuccin-frappe-ansi.json",
+      "name": "Catppuccin Frapp\u00e9 (ANSI)",
+      "image": "plugins/catppuccin/renders/catppuccin-frappe-ansi.png",
+      "theme_sha256": "7d82f7aa29aeef134cfa121425a59a4c35fd0deb1b82ba93431ce0252b4d2479",
+      "input_sha256": "89343e078f68a04be364aebb2b9dc88ea94cf18e8679ec47579d4cc673434d92",
+      "image_sha256": "26c98d2a26ac2d7f9735588300b498d31d98a499273cceb5562e3c53004dea93",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-frappe.json",
+      "name": "Catppuccin Frapp\u00e9",
+      "image": "plugins/catppuccin/renders/catppuccin-frappe.png",
+      "theme_sha256": "85de754bfcffe6c5d6cd7cbc72c129309e38f5f1a74794338561a0652c3b57cf",
+      "input_sha256": "a724235b664606f26bd19ab7194610228c34bcc322b7978fd9a1a9ec118e9a53",
+      "image_sha256": "333c1c2390d1a1af7b2bb1ada3d6f572ad6b09a902d80d6e763f7e63f6694310",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-latte-ansi.json",
+      "name": "Catppuccin Latte (ANSI)",
+      "image": "plugins/catppuccin/renders/catppuccin-latte-ansi.png",
+      "theme_sha256": "8a117d99bb1db2c05b0fd892e259214cd6b7a8aa0ca12a87a9abc01372d2508e",
+      "input_sha256": "38dd1a9877c1a5401504ab91558b5c28d39f06057d426120509ac0430f821baa",
+      "image_sha256": "f153486544878fb4989330623b55b84a0d9ee69f2f2f040927251ec60fd5ed4f",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-latte.json",
+      "name": "Catppuccin Latte",
+      "image": "plugins/catppuccin/renders/catppuccin-latte.png",
+      "theme_sha256": "e109aed5d6b8b0d8686125810d7df03306595d719397276d3aebcb0a81df90bf",
+      "input_sha256": "a2751fadc20ecb7a8011e20744bb90f085f1371107d4fa57d1d85189e5730658",
+      "image_sha256": "d1f55c1c7d39acb201addd72804417f7dcef506dafbc8cf6748921b08328daa0",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-macchiato-ansi.json",
+      "name": "Catppuccin Macchiato (ANSI)",
+      "image": "plugins/catppuccin/renders/catppuccin-macchiato-ansi.png",
+      "theme_sha256": "98ad611c8f4448277a59bbaf39a3b8a6dd7137d75544c6735e04970d0e62cc9a",
+      "input_sha256": "f3f2ce0fa4095196d5da3cba450f5a8203890f120b023ba113e1fc2756ffbcb4",
+      "image_sha256": "eefee35d0eb3f9eab7162ce0266ddbca3d3eaf3bedbaa9d2f052bbaaaa7ebbbf",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-macchiato.json",
+      "name": "Catppuccin Macchiato",
+      "image": "plugins/catppuccin/renders/catppuccin-macchiato.png",
+      "theme_sha256": "98e6a5e6dd7b8917cd01959b93e763a50cf0c02b97f5ee375f28a537fbebec6a",
+      "input_sha256": "2b7ef31bf98ca49d119a74c539c3508b8275b891baf1ae5f390e348f22e362bd",
+      "image_sha256": "0b4ed9e9e5f397667b1565e19c405336ebad73585af3578765f7f6d620853fbe",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-mocha-ansi.json",
+      "name": "Catppuccin Mocha (ANSI)",
+      "image": "plugins/catppuccin/renders/catppuccin-mocha-ansi.png",
+      "theme_sha256": "0694209e0f4928153e978ce87a9390374a134e1ac70a865ca324e270b37465d8",
+      "input_sha256": "70c149cd7daa4947d2697b943119405a357da5e94bc682d48fb80279191076cd",
+      "image_sha256": "79a177dad75a93415d9e4fca3626e44c45b5d5d6d49f2fc14971e62589a735dd",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin/themes/catppuccin-mocha.json",
+      "name": "Catppuccin Mocha",
+      "image": "plugins/catppuccin/renders/catppuccin-mocha.png",
+      "theme_sha256": "aa04ceae2c462b82eb936b6f5936e70e0143cdca5261c67dbe31d5a6246e2f54",
+      "input_sha256": "5495fa55cd4084b1455c684ab33dc052051840110e07eb5ad19a9612bec872e7",
+      "image_sha256": "78fde89308f47275e5a9c5d422fdc655fd568107b5a6be90bbd72a0c6a7af7bb",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
       "theme": "plugins/dracula/themes/dracula-ansi.json",
       "name": "Dracula (ANSI)",
       "image": "plugins/dracula/renders/dracula-ansi.png",
