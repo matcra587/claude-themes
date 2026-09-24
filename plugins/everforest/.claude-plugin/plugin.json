@@ -4,5 +4,30 @@
   "description": "Everforest Dark and Light themes for Claude (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "sainnhe/everforest",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "path": "autoload/everforest.vim",
+        "sha256": "4ddab3c8d96e29310a21441a797e69a2c520ec074db9c20a7eaea866d8b5a8c4",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "6504b9e62794cb58b61c90ea5fe598274086119f2126b8d8245708b2bfcc0e36",
+        "notice": "LICENSES/everforest.txt"
+      },
+      {
+        "repository": "sainnhe/everforest",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "path": "colors/everforest.vim",
+        "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "6504b9e62794cb58b61c90ea5fe598274086119f2126b8d8245708b2bfcc0e36",
+        "notice": "LICENSES/everforest.txt"
+      }
+    ]
   }
 }
