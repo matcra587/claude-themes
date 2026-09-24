@@ -184,6 +184,82 @@
       }
     },
     {
+      "theme": "plugins/everforest/themes/everforest-dark-ansi.json",
+      "name": "Everforest Dark (ANSI)",
+      "image": "plugins/everforest/renders/everforest-dark-ansi.png",
+      "theme_sha256": "00ca610786095553827956b138555a41880d225e4d20fed762dad891f3e5610e",
+      "input_sha256": "af856dfe21953acec71a410903b0c5e5dae66180702bb7bbc8563b8e6dc0dc7b",
+      "image_sha256": "ca3313aa70effbf3c99e84a7e5b7885806d662edc6c787fd69dd158081b8a4db",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/colors/everforest.vim",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/everforest/themes/everforest-dark.json",
+      "name": "Everforest Dark",
+      "image": "plugins/everforest/renders/everforest-dark.png",
+      "theme_sha256": "c52761cdb197023843fcf872b40206e76bc2d267f7b86c595af838159606b4d9",
+      "input_sha256": "c8c46e45b731bdd482e180f952cbbbb83006895f5abb9b3c46623c904e783f60",
+      "image_sha256": "42563ae4e26179de2105c44536cec16519ee04eb3022dc0e9db2653389b62d0c",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/colors/everforest.vim",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/everforest/themes/everforest-light-ansi.json",
+      "name": "Everforest Light (ANSI)",
+      "image": "plugins/everforest/renders/everforest-light-ansi.png",
+      "theme_sha256": "2bd6414803da7e905aa70e0309d461fa9cf93a805631f0385e964a688ac72b7f",
+      "input_sha256": "9fc8383a50db042f646b693b6b93b78e0243fd9c9f1043019d67670aa59e101c",
+      "image_sha256": "44b0d53e141ca34f4d5adf662796973c0f60b81c334c589339adeb55a24f8ee2",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/colors/everforest.vim",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/everforest/themes/everforest-light.json",
+      "name": "Everforest Light",
+      "image": "plugins/everforest/renders/everforest-light.png",
+      "theme_sha256": "8b5451ecd78bb1f3db424d5527c242ead6ae45739ad047fd50d7261aa30c47dc",
+      "input_sha256": "7b5a5aeb0dc6a454f6ada0da84dd85809c883d7a7e191f0c2840bb82aafd9fea",
+      "image_sha256": "f71f36496dc725cc07e52bdf042da268369766cd71299756da10349ceba914d1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/colors/everforest.vim",
+        "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+        "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/LICENSE"
+        ]
+      }
+    },
+    {
       "theme": "plugins/nord/themes/nord-ansi.json",
       "name": "Nord (ANSI)",
       "image": "plugins/nord/renders/nord-ansi.png",
