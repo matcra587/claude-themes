@@ -28,6 +28,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/everforest"
     },
     {
+      "name": "github",
+      "description": "GitHub Dark Default, Light Default and Dark Dimmed themes for Claude (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/github",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/github"
+    },
+    {
       "name": "gruvbox",
       "description": "Gruvbox Dark and Light themes for Claude (with ANSI variants)",
       "category": "themes",

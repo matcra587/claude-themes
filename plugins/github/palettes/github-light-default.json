@@ -1,0 +1,27 @@
+{
+  "source": {
+    "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+    "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+    "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+  },
+  "vhs": {
+    "black": "#24292f",
+    "red": "#cf222e",
+    "green": "#116329",
+    "yellow": "#4d2d00",
+    "blue": "#0969da",
+    "magenta": "#8250df",
+    "cyan": "#1b7c83",
+    "white": "#6e7781",
+    "brightBlack": "#57606a",
+    "brightRed": "#a40e26",
+    "brightGreen": "#1a7f37",
+    "brightYellow": "#633c01",
+    "brightBlue": "#218bff",
+    "brightMagenta": "#a475f9",
+    "brightCyan": "#3192aa",
+    "brightWhite": "#8c959f",
+    "background": "#ffffff",
+    "foreground": "#1f2328"
+  }
+}
