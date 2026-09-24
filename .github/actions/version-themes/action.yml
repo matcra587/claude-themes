@@ -1,0 +1,66 @@
+---
+name: Version changed theme plugins
+description: Bump plugin versions for changed themes and terminal palettes.
+
+inputs:
+  base-sha:
+    description: Published comparison commit with the previous plugin versions.
+    required: true
+  source-sha:
+    description: Checked-out source commit containing the theme changes.
+    required: true
+  check-only:
+    description: Check versions and report required updates without changing files.
+    default: 'false'
+
+outputs:
+  changed:
+    description: Whether plugin versions changed, or would change in check-only mode.
+    value: ${{ steps.version.outputs.changed }}
+  manifests:
+    description: JSON array of plugin manifest paths updated by this action.
+    value: ${{ steps.version.outputs.manifests }}
+
+runs:
+  using: composite
+  steps:
+    - name: Update plugin versions
+      id: version
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        ACTION_PATH: ${{ github.action_path }}
+        BASE_SHA: ${{ inputs.base-sha }}
+        SOURCE_SHA: ${{ inputs.source-sha }}
+        CHECK_ONLY: ${{ inputs.check-only }}
+      with:
+        script: |
+          const { join } = require('node:path');
+          const { pathToFileURL } = require('node:url');
+          let summary;
+          try {
+            const { versionThemes } = await import(pathToFileURL(join(process.env.ACTION_PATH, 'version.mjs')));
+            if (!['true', 'false'].includes(process.env.CHECK_ONLY)) {
+              throw new Error('check-only must be true or false.');
+            }
+            const checkOnly = process.env.CHECK_ONLY === 'true';
+            const changes = versionThemes({
+              root: process.env.GITHUB_WORKSPACE,
+              baseSha: process.env.BASE_SHA,
+              sourceSha: process.env.SOURCE_SHA,
+              checkOnly,
+            });
+            core.setOutput('changed', changes.length > 0);
+            core.setOutput('manifests', JSON.stringify(changes.map(({ file }) => file)));
+            summary = changes.length
+              ? `${checkOnly ? 'Would update' : 'Updated'} ${changes.length} plugin ${changes.length === 1 ? 'version' : 'versions'}.`
+              : 'Plugin versions already cover these changes.';
+            if (changes.length) {
+              summary += '\n\n' + changes.map(({ file, from, to }) => `- ${file.split('/')[1]} ${from} -> ${to}`).join('\n');
+            }
+          } catch (error) {
+            core.setFailed(error);
+            summary = 'Plugin versioning failed. See the annotations and job log for details.';
+          }
+          core.info(summary);
+          await core.summary.addHeading('Plugin versions', 2).addRaw(`${summary}\n`).write();

@@ -157,6 +157,20 @@ Local equivalents:
 | `uv run scripts/schema-validation.py --all` | validate every theme in the repo |
 | `uvx rumdl check .` | markdown lint |
 
+## Plugin versions
+
+After a change reaches `main`, the preview workflow updates each affected plugin's version and commits it with the previews. It does not write back to the pull request.
+
+| Change | Version update |
+| --- | --- |
+| Correct colours or change a terminal palette, including its source revision | Patch, such as `0.1.0` to `0.1.1` |
+| Add a theme or variant to an existing plugin | Minor, such as `0.1.1` to `0.2.0` |
+| Remove or rename a theme, or change its display name | Increase the version yourself in `.claude-plugin/plugin.json`; CI fails if you leave it unchanged. |
+| Add a new plugin | Keep the initial version in its manifest. |
+| Change documentation, generated images or JSON formatting only | No automatic bump. |
+
+You can set the version yourself. CI keeps an explicit increase when it is large enough for the change and fails if it is too small. When removing a theme, renaming its file or changing its display name, choose the version during review because existing users may rely on the old name.
+
 ## Test a theme locally
 
 From the repository root, symlink the file you are editing into `~/.claude/themes` (or `$CLAUDE_CONFIG_DIR/themes`). For example:

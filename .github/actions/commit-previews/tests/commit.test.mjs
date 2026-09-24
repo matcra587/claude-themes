@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import test from "node:test";
@@ -14,10 +15,14 @@ const steps = Object.fromEntries(action.split(/^    - name: /m).slice(1).map((st
 }));
 const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
 const messageScript = new AsyncFunction("core", "exec", steps.message);
+const stageScript = new AsyncFunction("core", "exec", "require", "process", steps.stage);
+const require = createRequire(import.meta.url);
 const image = "plugins/sample/renders/sample.png";
 const gallery = "plugins/sample/PREVIEWS.md";
 const manifest = "previews/manifest.json";
 const checkpoint = "previews/source-commit.txt";
+const pluginManifest = "plugins/sample/.claude-plugin/plugin.json";
+const otherPluginManifest = "plugins/other/.claude-plugin/plugin.json";
 const bot = Object.fromEntries([...action.matchAll(/^        (GIT_(?:AUTHOR|COMMITTER)_(?:NAME|EMAIL)): (.+)$/gm)].map((match) => match.slice(1)));
 
 function fixture(t) {
@@ -47,8 +52,8 @@ function fixture(t) {
     GIT_COMMITTER_NAME: "Preview tests",
     GIT_COMMITTER_EMAIL: "tests@example.invalid",
   };
-  function command(binary, args, env = {}) {
-    const result = spawnSync(binary, args, { cwd: root, env: { ...environment, ...env }, encoding: "utf8" });
+  function command(binary, args, env = {}, options = {}) {
+    const result = spawnSync(binary, args, { cwd: root, env: { ...environment, ...env }, encoding: "utf8", input: options.input });
     assert.equal(result.error, undefined);
     assert.equal(result.signal, null);
     return result;
@@ -75,6 +80,8 @@ function fixture(t) {
   write(manifest, "{}\n");
   write(checkpoint, "Previous checkpoint\n");
   write("README.md", "Original README\n");
+  write(pluginManifest, '{"name":"sample","version":"0.1.0"}\n');
+  write(otherPluginManifest, '{"name":"other","version":"0.1.0"}\n');
   const source = commit("Initial fixture");
   git("remote", "add", "origin", remote);
   git("push", "--quiet", "origin", "main");
@@ -109,6 +116,34 @@ function fixture(t) {
         summary: existsSync(summary) ? readFileSync(summary, "utf8") : "",
       };
     },
+    async stage(versionFiles = "[]") {
+      const outputs = {};
+      let stdout = "";
+      let summary = "";
+      const core = {
+        setOutput(key, value) { outputs[key] = String(value); },
+        info(message) { stdout += `${message}\n`; },
+        summary: {
+          addHeading(message) { summary += `## ${message}\n\n`; return this; },
+          addRaw(message) { summary += message; return this; },
+          async write() {},
+        },
+      };
+      function invoke(binary, args, options = {}) {
+        const result = command(binary, args, {}, options);
+        if (result.status !== 0 && !options.ignoreReturnCode) throw new Error(result.stderr || result.stdout);
+        return { stdout: result.stdout, stderr: result.stderr, exitCode: result.status };
+      }
+      try {
+        await stageScript(core, {
+          async getExecOutput(...args) { return invoke(...args); },
+          async exec(...args) { return invoke(...args).exitCode; },
+        }, require, { env: { GITHUB_WORKSPACE: root, VERSION_FILES: versionFiles } });
+        return { status: 0, outputs, stdout, stderr: "", summary };
+      } catch (error) {
+        return { status: 1, outputs, stdout, stderr: error.message, summary };
+      }
+    },
     async message() {
       const outputs = {};
       await messageScript({ setOutput(key, value) { outputs[key] = value; } }, {
@@ -137,7 +172,7 @@ test("publication commits only generated outputs with the bot identity and a sou
     f.write(path, "Unrelated content\n");
   }
   assert.deepEqual(successful(f.run("source")), { current: "true" });
-  assert.deepEqual(successful(f.run("stage")), { changed: "true" });
+  assert.deepEqual(successful(await f.stage()), { changed: "true" });
   const message = await f.message();
   assert.equal(message, "chore: update sample theme previews");
   const result = f.run("push", { COMMIT_MESSAGE: message });
@@ -147,21 +182,173 @@ test("publication commits only generated outputs with the bot identity and a sou
   assert.equal(f.read(checkpoint), `${f.source}\n`);
   assert.deepEqual(f.git("show", "--format=", "--name-only", "HEAD").split("\n"), [gallery, image, manifest, checkpoint]);
   assert.equal(f.git("show", "-s", "--format=%an%n%ae%n%cn%n%ce%n%B"), `github-actions[bot]\n41898282+github-actions[bot]@users.noreply.github.com\ngithub-actions[bot]\n41898282+github-actions[bot]@users.noreply.github.com\n${message}\n\n[skip ci]`);
-  assert.match(result.summary, /## Updated plugin previews/);
+  assert.match(result.summary, /## Published theme updates/);
   assert.match(f.git("status", "--porcelain"), /README\.md/);
   assert.doesNotMatch(f.git("config", "--local", "--list"), /credential\.helper|local-test-placeholder/);
 });
 
-test("unchanged outputs do not stage a checkpoint-only change or create a commit", (t) => {
+test("unchanged outputs do not stage a checkpoint-only change or create a commit", async (t) => {
   const f = fixture(t);
   f.write(checkpoint, "Unrelated checkpoint edit\n");
   assert.deepEqual(successful(f.run("source")), { current: "true" });
-  const result = f.run("stage");
+  const result = await f.stage();
   assert.deepEqual(successful(result), {});
   assert.match(result.summary, /already up to date/);
   assert.equal(f.git("diff", "--cached", "--name-only"), "");
   assert.equal(f.git("rev-parse", "HEAD"), f.source);
   assert.equal(f.remoteHead(), f.source);
+});
+
+test("publication includes only explicitly listed version manifests", async (t) => {
+  const f = fixture(t);
+  f.write(image, "Generated image\n");
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  f.write(otherPluginManifest, '{"name":"other","version":"9.0.0"}\n');
+  successful(f.run("source"));
+  assert.deepEqual(successful(await f.stage(JSON.stringify([pluginManifest]))), { changed: "true" });
+  assert.deepEqual(f.git("diff", "--cached", "--name-only").split("\n"), [pluginManifest, image]);
+  const message = await f.message();
+  assert.equal(message, "chore: update sample theme previews and version");
+  assert.deepEqual(successful(f.run("push", { COMMIT_MESSAGE: message })), { status: "published" });
+  assert.deepEqual(f.git("show", "--format=", "--name-only", "HEAD").split("\n"), [pluginManifest, image, checkpoint]);
+  assert.equal(JSON.parse(f.git("--git-dir", f.remote, "show", `main:${otherPluginManifest}`)).version, "0.1.0");
+  assert.match(f.git("status", "--porcelain"), /plugins\/other\/\.claude-plugin\/plugin\.json/);
+});
+
+test("a version-only update is published with the source checkpoint", async (t) => {
+  const f = fixture(t);
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  successful(f.run("source"));
+  assert.deepEqual(successful(await f.stage(JSON.stringify([pluginManifest]))), { changed: "true" });
+  const message = await f.message();
+  assert.equal(message, "chore: update sample theme version");
+  assert.deepEqual(successful(f.run("push", { COMMIT_MESSAGE: message })), { status: "published" });
+  assert.deepEqual(f.git("show", "--format=", "--name-only", "HEAD").split("\n"), [pluginManifest, checkpoint]);
+  assert.equal(f.read(checkpoint), `${f.source}\n`);
+  assert.equal(f.git("rev-parse", "HEAD^"), f.source);
+  assert.equal(f.remoteHead(), f.git("rev-parse", "HEAD"));
+});
+
+test("listing an unchanged version manifest does not create a commit", async (t) => {
+  const f = fixture(t);
+  assert.deepEqual(successful(await f.stage(JSON.stringify([pluginManifest]))), {});
+  assert.equal(f.git("diff", "--cached", "--name-only"), "");
+  assert.equal(f.remoteHead(), f.source);
+});
+
+for (const [name, input] of [
+  ["invalid JSON", "{"],
+  ["null", "null"],
+  ["object", "{}"],
+  ["non-string path", "[42]"],
+  ["path escape", '["plugins/../README.md"]'],
+  ["wrong manifest", '["plugins/sample/.claude-plugin/other.json"]'],
+  ["trailing newline", JSON.stringify([`${pluginManifest}\n`])],
+  ["pathspec expression", '[":(glob)plugins/*/.claude-plugin/plugin.json"]'],
+]) {
+  test(`${name} in version-files fails before staging previews`, async (t) => {
+    const f = fixture(t);
+    f.write(image, "Generated image\n");
+    const result = await f.stage(input);
+    assert.notEqual(result.status, 0);
+    assert.equal(f.git("diff", "--cached", "--name-only"), "");
+    assert.equal(f.remoteHead(), f.source);
+  });
+}
+
+test("a tracked executable manifest can be staged", async (t) => {
+  const f = fixture(t);
+  chmodSync(join(f.root, pluginManifest), 0o755);
+  f.commit("Make manifest executable");
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  assert.deepEqual(successful(await f.stage(JSON.stringify([pluginManifest]))), { changed: "true" });
+  assert.equal(f.git("diff", "--cached", "--name-only"), pluginManifest);
+  assert.match(f.git("ls-files", "--stage", "--", pluginManifest), /^100755 /);
+});
+
+test("an indexed symlink replaced by a regular file is rejected before staging previews", async (t) => {
+  const f = fixture(t);
+  rmSync(join(f.root, pluginManifest));
+  symlinkSync(join(f.root, otherPluginManifest), join(f.root, pluginManifest));
+  f.commit("Track a symlinked manifest");
+  rmSync(join(f.root, pluginManifest));
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  f.write(image, "Generated image\n");
+  const result = await f.stage(JSON.stringify([pluginManifest]));
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Version manifest must be a tracked regular file/);
+  assert.equal(f.git("diff", "--cached", "--name-only"), "");
+});
+
+test("an unmerged manifest is rejected without changing the index", async (t) => {
+  const f = fixture(t);
+  f.write(pluginManifest, '{"name":"sample","version":"0.2.0"}\n');
+  const left = f.commit("First version change");
+  f.write(pluginManifest, '{"name":"sample","version":"0.3.0"}\n');
+  const right = f.commit("Second version change");
+  f.git("checkout", "--quiet", "--detach", left);
+  f.git("read-tree", "-m", f.source, left, right);
+  assert.equal(f.git("ls-files", "--unmerged", "--", pluginManifest).split("\n").length, 3);
+  const index = f.git("ls-files", "--stage");
+  f.write(image, "Generated image\n");
+  const result = await f.stage(JSON.stringify([pluginManifest]));
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Version manifest must be a tracked regular file/);
+  assert.equal(f.git("ls-files", "--stage"), index);
+});
+
+test("an untracked version manifest is rejected before staging any valid manifest", async (t) => {
+  const f = fixture(t);
+  const untracked = "plugins/untracked/.claude-plugin/plugin.json";
+  f.write(image, "Generated image\n");
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  f.write(untracked, '{"name":"untracked","version":"0.1.0"}\n');
+  const result = await f.stage(JSON.stringify([pluginManifest, untracked]));
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /must be a tracked regular file/);
+  assert.equal(f.git("diff", "--cached", "--name-only"), "");
+});
+
+for (const target of ["manifest", "manifest directory", "family directory"]) {
+  test(`a symlinked ${target} is rejected before staging previews`, async (t) => {
+    const f = fixture(t);
+    f.write(image, "Generated image\n");
+    if (target === "manifest") {
+      rmSync(join(f.root, pluginManifest));
+      symlinkSync(join(f.root, otherPluginManifest), join(f.root, pluginManifest));
+    } else {
+      const directory = target === "manifest directory" ? "plugins/sample/.claude-plugin" : "plugins/sample";
+      renameSync(join(f.root, directory), join(f.root, "elsewhere"));
+      symlinkSync(join(f.root, "elsewhere"), join(f.root, directory));
+    }
+    const result = await f.stage(JSON.stringify([pluginManifest]));
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Version paths cannot be symlinks/);
+    assert.equal(f.git("diff", "--cached", "--name-only"), "");
+    assert.equal(f.remoteHead(), f.source);
+  });
+}
+
+test("multiple version-only updates use the plural commit subject", async (t) => {
+  const f = fixture(t);
+  f.write(pluginManifest, '{"name":"sample","version":"0.1.1"}\n');
+  f.write(otherPluginManifest, '{"name":"other","version":"0.1.1"}\n');
+  successful(await f.stage(JSON.stringify([pluginManifest, otherPluginManifest])));
+  assert.equal(await f.message(), "chore: update other, sample theme versions");
+});
+
+test("long combined preview and version subjects use a bounded family count", async (t) => {
+  const f = fixture(t);
+  const families = ["a-very-long-family-name", "another-long-family-name", "third-long-family-name"];
+  const versions = families.map((name) => `plugins/${name}/.claude-plugin/plugin.json`);
+  for (const file of versions) f.write(file, '{"version":"0.1.0"}\n');
+  f.commit("Track plugin manifests");
+  for (const file of versions) f.write(file, '{"version":"0.1.1"}\n');
+  for (const name of families) f.write(`plugins/${name}/renders/${name}.png`, "New image\n");
+  successful(await f.stage(JSON.stringify(versions)));
+  const message = await f.message();
+  assert.equal(message, "chore: update previews and versions for 3 theme families");
+  assert.ok(message.length <= 72);
 });
 
 test("main advancing before staging skips publication with a notice", (t) => {
@@ -181,7 +368,7 @@ test("main advancing after the source check cannot be overwritten by the preview
   const f = fixture(t);
   f.write(image, "Generated image\n");
   successful(f.run("source"));
-  successful(f.run("stage"));
+  successful(await f.stage());
   const newer = f.advanceRemote();
   const result = f.run("push", { COMMIT_MESSAGE: await f.message() });
   assert.deepEqual(successful(result), { status: "stale" });
@@ -194,7 +381,7 @@ test("a push failure without a newer main remains an error", async (t) => {
   const f = fixture(t);
   f.write(image, "Generated image\n");
   successful(f.run("source"));
-  successful(f.run("stage"));
+  successful(await f.stage());
   f.git("remote", "set-url", "--push", "origin", join(f.root, "missing.git"));
   const result = f.run("push", { COMMIT_MESSAGE: await f.message() });
   assert.notEqual(result.status, 0);
@@ -225,7 +412,7 @@ test("a checkpoint symlink cannot overwrite another file", async (t) => {
   rmSync(join(f.root, checkpoint));
   symlinkSync("../README.md", join(f.root, checkpoint));
   successful(f.run("source"));
-  successful(f.run("stage"));
+  successful(await f.stage());
   const result = f.run("push", { COMMIT_MESSAGE: await f.message() });
   assert.notEqual(result.status, 0);
   assert.match(result.stdout, /checkpoint must not be a symlink/);
@@ -256,7 +443,7 @@ for (const [change, expected] of [
         f.write(`plugins/${name}/renders/${name}.png`, "New image\n");
       }
     }
-    assert.deepEqual(successful(f.run("stage")), { changed: "true" });
+    assert.deepEqual(successful(await f.stage()), { changed: "true" });
     assert.equal(await f.message(), expected);
     assert.ok(expected.length <= 72);
   });

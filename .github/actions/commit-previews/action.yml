@@ -1,6 +1,6 @@
 ---
-name: Commit theme previews
-description: Commit generated previews to main while their source commit is still current.
+name: Commit theme previews and versions
+description: Commit generated previews and plugin versions to main while their source commit is still current.
 
 inputs:
   source-sha:
@@ -9,10 +9,13 @@ inputs:
   token:
     description: App token with Contents write permission and access to bypass main protection.
     required: true
+  version-files:
+    description: JSON array of tracked plugin manifests updated by version-themes.
+    default: '[]'
 
 outputs:
   status:
-    description: Whether previews were published, unchanged, or stale because main advanced.
+    description: Whether theme updates were published, unchanged, or stale because main advanced.
     value: ${{ steps.push.outputs.status || steps.source.outputs.status || 'unchanged' }}
 
 runs:
@@ -42,21 +45,66 @@ runs:
         fi
         echo 'current=true' >> "$GITHUB_OUTPUT"
 
-    - name: Stage preview files
+    - name: Stage preview and version files
       id: stage
       if: steps.source.outputs.current == 'true'
-      shell: bash --noprofile --norc -euo pipefail {0}
-      run: |
-        git ls-files --modified --deleted --others --exclude-standard -z -- \
-          previews/manifest.json ':(glob)plugins/*/PREVIEWS.md' \
-          ':(glob)plugins/*/renders/*.png' \
-          | git add --pathspec-from-file=- --pathspec-file-nul
-        if git diff --cached --quiet; then
-          echo 'Plugin previews already match the selected inputs.'
-          printf '## Preview publication\n\nPlugin previews are already up to date.\n' >> "$GITHUB_STEP_SUMMARY"
-        else
-          echo 'changed=true' >> "$GITHUB_OUTPUT"
-        fi
+      # clover: provider=auto constraint=minor tags=github-script
+      uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+      env:
+        VERSION_FILES: ${{ inputs.version-files }}
+      with:
+        script: |
+          const { lstatSync } = require('node:fs');
+          const { join } = require('node:path');
+          const versions = JSON.parse(process.env.VERSION_FILES);
+          if (!Array.isArray(versions) || versions.some((file) => typeof file !== 'string'
+            || /[\r\n]/.test(file)
+            || !/^plugins\/[a-z0-9]+(?:-[a-z0-9]+)*\/\.claude-plugin\/plugin\.json$/.test(file))) {
+            throw new Error('version-files must be a JSON array of plugin manifest paths.');
+          }
+          // Validate every requested manifest before staging any generated files.
+          for (const file of versions) {
+            const manifestPath = join(process.env.GITHUB_WORKSPACE, file);
+            let path = process.env.GITHUB_WORKSPACE;
+            for (const part of ['', ...file.split('/')]) {
+              path = join(path, part);
+              const stat = lstatSync(path);
+              if (stat.isSymbolicLink()) throw new Error(`Version paths cannot be symlinks: ${file}`);
+              const validType = path === manifestPath ? stat.isFile() : stat.isDirectory();
+              if (!validType) {
+                throw new Error(`Version paths must contain regular files and directories: ${file}`);
+              }
+            }
+            const { stdout: entry } = await exec.getExecOutput('git', [
+              'ls-files', '--format=%(objectmode) %(stage)', '--', file,
+            ], { silent: true });
+            if (!['100644 0\n', '100755 0\n'].includes(entry)) {
+              throw new Error(`Version manifest must be a tracked regular file: ${file}`);
+            }
+          }
+          const { stdout } = await exec.getExecOutput('git', [
+            'ls-files', '--modified', '--deleted', '--others', '--exclude-standard', '-z', '--',
+            'previews/manifest.json', ':(glob)plugins/*/PREVIEWS.md', ':(glob)plugins/*/renders/*.png',
+          ], { silent: true });
+          const files = [...new Set([...stdout.split('\0').filter(Boolean), ...versions])];
+          if (files.length) {
+            await exec.exec('git', ['add', '--pathspec-from-file=-', '--pathspec-file-nul'], {
+              input: Buffer.from(`${files.join('\0')}\0`),
+            });
+          }
+          const { exitCode } = await exec.getExecOutput('git', ['diff', '--cached', '--quiet'], {
+            silent: true, ignoreReturnCode: true,
+          });
+          if (exitCode !== 0 && exitCode !== 1) {
+            throw new Error('Could not check the staged preview and version changes.');
+          }
+          if (exitCode === 1) {
+            core.setOutput('changed', true);
+            return;
+          }
+          core.info('Plugin previews and versions are already up to date.');
+          await core.summary.addHeading('Preview publication', 2)
+            .addRaw('Plugin previews and versions are already up to date.\n').write();
 
     - name: Prepare commit message
       id: message
@@ -71,27 +119,40 @@ runs:
           const fields = stdout.split('\0').slice(0, -1);
           const families = new Set();
           const statuses = new Set();
+          const versions = new Set();
+          let previews = false;
           for (let i = 0; i < fields.length; i += 2) {
+            if (fields[i + 1] === 'previews/manifest.json') previews = true;
             const match = fields[i + 1].match(
-              /^plugins\/([a-z0-9][a-z0-9-]*)\/(PREVIEWS\.md|renders\/[^/]+\.png)$/,
+              /^plugins\/([a-z0-9][a-z0-9-]*)\/(PREVIEWS\.md|renders\/[^/]+\.png|\.claude-plugin\/plugin\.json)$/,
             );
             if (!match) continue;
             families.add(match[1]);
-            if (match[2].startsWith('renders/')) statuses.add(fields[i]);
+            if (match[2] === '.claude-plugin/plugin.json') {
+              versions.add(match[1]);
+            } else {
+              previews = true;
+              if (match[2].startsWith('renders/')) statuses.add(fields[i]);
+            }
           }
           let action = 'update';
-          if (statuses.size === 1 && statuses.has('A')) action = 'generate';
-          if (statuses.size === 1 && statuses.has('D')) action = 'remove';
+          if (!versions.size && statuses.size === 1 && statuses.has('A')) action = 'generate';
+          if (!versions.size && statuses.size === 1 && statuses.has('D')) action = 'remove';
           let message = 'chore: update theme preview gallery';
           if (families.size) {
-            message = `chore: ${action} ${[...families].sort().join(', ')} theme previews`;
+            const versionLabel = versions.size === 1 ? 'version' : 'versions';
+            const subject = previews
+              ? `previews${versions.size ? ` and ${versionLabel}` : ''}`
+              : versionLabel;
+            message = `chore: ${action} ${[...families].sort().join(', ')} theme ${subject}`;
             if (message.length > 72) {
-              message = `chore: ${action} previews for ${families.size} theme families`;
+              const grouped = previews ? `previews${versions.size ? ' and versions' : ''}` : 'versions';
+              message = `chore: ${action} ${grouped} for ${families.size} theme families`;
             }
           }
           core.setOutput('message', message);
 
-    - name: Commit and push previews
+    - name: Commit and push theme updates
       id: push
       if: steps.stage.outputs.changed == 'true'
       shell: bash --noprofile --norc -euo pipefail {0}
@@ -128,7 +189,7 @@ runs:
         fi
         echo 'status=published' >> "$GITHUB_OUTPUT"
         {
-          printf '## Updated plugin previews\n\n```text\n'
+          printf '## Published theme updates\n\n```text\n'
           git show --format= --name-only HEAD
           printf '```\n'
         } >> "$GITHUB_STEP_SUMMARY"

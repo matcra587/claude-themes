@@ -13,3 +13,7 @@ run = "node --test .github/actions/plan-previews/tests/*.test.mjs .github/action
 ["test:update-previews"]
 description = "Test preview bundle validation and scoped gallery updates"
 run = "node --test .github/actions/update-previews/tests/*.test.mjs"
+
+["test:versions"]
+description = "Test automatic plugin version updates"
+run = "node --test .github/actions/version-themes/tests/*.test.mjs"

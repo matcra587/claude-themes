@@ -1,0 +1,42 @@
+---
+name: Theme version tests
+
+"on":
+  push:
+    branches: [main]
+    paths:
+      - .github/actions/version-themes/**
+      - .github/actions/commit-previews/**
+      - .github/workflows/theme-version-tests.yml
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  tests:
+    name: Plugin versioning and publication
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        # clover: provider=auto constraint=minor tags=checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Test plugin versioning and publication
+        # clover: provider=auto constraint=minor tags=github-script
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            await exec.exec(process.execPath, [
+              '--test',
+              '.github/actions/version-themes/tests/version.test.mjs',
+              '.github/actions/commit-previews/tests/commit.test.mjs',
+            ]);

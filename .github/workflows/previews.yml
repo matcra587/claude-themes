@@ -9,11 +9,13 @@ name: Theme previews
       - plugins/*/palettes/*.json
       - plugins/*/renders/*.png
       - plugins/*/PREVIEWS.md
+      - plugins/*/.claude-plugin/plugin.json
       - previews/*.json
       - schemas/theme.schema.json
       - assets/fonts/GeistMono-Regular.otf
       - .mise/tasks/previews/**
       - .github/actions/*-previews/**
+      - .github/actions/version-themes/**
       - .github/workflows/previews.yml
       - mise.*
   push:
@@ -23,11 +25,13 @@ name: Theme previews
       - plugins/*/palettes/*.json
       - plugins/*/renders/*.png
       - plugins/*/PREVIEWS.md
+      - plugins/*/.claude-plugin/plugin.json
       - previews/*.json
       - schemas/theme.schema.json
       - assets/fonts/GeistMono-Regular.otf
       - .mise/tasks/previews/**
       - .github/actions/*-previews/**
+      - .github/actions/version-themes/**
       - .github/workflows/previews.yml
       - mise.*
 
@@ -48,7 +52,9 @@ jobs:
       UV_PYTHON: '3.14'
     outputs:
       source-sha: ${{ steps.plan.outputs.source-sha }}
+      base-sha: ${{ steps.plan.outputs.base-sha }}
       changed: ${{ steps.changes.outputs.changed }}
+      versions-changed: ${{ steps.versions.outputs.changed }}
       artifact-id: ${{ steps.bundle.outputs.artifact-id }}
     steps:
       - name: Checkout source
@@ -71,6 +77,14 @@ jobs:
         with:
           base-sha: ${{ github.event.pull_request.base.sha || github.event.before }}
 
+      - name: Check plugin versions
+        id: versions
+        uses: ./.github/actions/version-themes
+        with:
+          base-sha: ${{ steps.plan.outputs.base-sha }}
+          source-sha: ${{ steps.plan.outputs.source-sha }}
+          check-only: 'true'
+
       - name: Set up preview capture
         if: github.event_name == 'push' && steps.plan.outputs.capture-needed == 'true'
         uses: ./.github/actions/setup-previews
@@ -91,7 +105,7 @@ jobs:
           check-only: 'true'
 
       - name: Upload preview bundle
-        if: steps.changes.outputs.changed == 'true'
+        if: github.event_name == 'push' && (steps.changes.outputs.changed == 'true' || steps.versions.outputs.changed == 'true')
         id: bundle
         # clover: provider=auto constraint=minor tags=upload-artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -103,9 +117,9 @@ jobs:
           compression-level: 0
 
   publish:
-    name: Publish preview updates
+    name: Publish previews and plugin versions
     needs: previews
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && needs.previews.outputs.changed == 'true'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && (needs.previews.outputs.changed == 'true' || needs.previews.outputs.versions-changed == 'true')
     environment: deploy
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -117,7 +131,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ needs.previews.outputs.source-sha }}
-          fetch-depth: 1
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Download preview bundle
@@ -133,8 +147,15 @@ jobs:
         with:
           directory: ${{ runner.temp }}/theme-previews
 
+      - name: Update plugin versions
+        id: versions
+        uses: ./.github/actions/version-themes
+        with:
+          base-sha: ${{ needs.previews.outputs.base-sha }}
+          source-sha: ${{ needs.previews.outputs.source-sha }}
+
       - name: Create preview publishing token
-        if: steps.update.outputs.changed == 'true'
+        if: steps.update.outputs.changed == 'true' || steps.versions.outputs.changed == 'true'
         id: app-token
         # clover: provider=auto constraint=minor tags=create-github-app-token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
@@ -144,9 +165,10 @@ jobs:
           repositories: ${{ github.event.repository.name }}
           permission-contents: write
 
-      - name: Commit plugin previews
-        if: steps.update.outputs.changed == 'true'
+      - name: Commit plugin updates
+        if: steps.update.outputs.changed == 'true' || steps.versions.outputs.changed == 'true'
         uses: ./.github/actions/commit-previews
         with:
           source-sha: ${{ needs.previews.outputs.source-sha }}
           token: ${{ steps.app-token.outputs.token }}
+          version-files: ${{ steps.versions.outputs.manifests }}
