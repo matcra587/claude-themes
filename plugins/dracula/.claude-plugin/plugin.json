@@ -1,8 +1,33 @@
 {
   "name": "dracula",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Dracula theme for Claude (with ANSI variant)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "dracula/alacritty",
+        "revision": "c8a3a13404b78d520d04354e133b5075d9b785e1",
+        "path": "dracula.toml",
+        "sha256": "e9de3a792548c8112168c1dd18b5651d1ebee2893975cda4ccd9c4c0430c87b8",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "cec9a8b95af931c9ae66cc8bf793899251db01a13f0d68d26b92c9f44b87a8d5",
+        "notice": "LICENSES/dracula.txt"
+      },
+      {
+        "repository": "dracula/opencode",
+        "revision": "e7b8ba5bff2eca780c974a241d233230e58c4e0c",
+        "path": "dracula.json",
+        "sha256": "9df207ddc9d75341a31572091c66204279cf1e2aac3c78be8d3191c668db20ef",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "2d58b85d277b33f4866b1c3d11e0f43c72e0767ac4bfd70effb24ceda98abe69",
+        "notice": "LICENSES/dracula-opencode.txt"
+      }
+    ]
   }
 }
