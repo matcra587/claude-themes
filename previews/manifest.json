@@ -182,6 +182,36 @@
         "revision": "c8a3a13404b78d520d04354e133b5075d9b785e1",
         "sha256": "e9de3a792548c8112168c1dd18b5651d1ebee2893975cda4ccd9c4c0430c87b8"
       }
+    },
+    {
+      "theme": "plugins/nord/themes/nord-ansi.json",
+      "name": "Nord (ANSI)",
+      "image": "plugins/nord/renders/nord-ansi.png",
+      "theme_sha256": "2cec28093efd4ff2b42d080e34d7a7b996c336e0de5aff1e37d85ed3442a7685",
+      "input_sha256": "431fb7f7b53e8e3e16aa5497e34efeb9c1e7a8d4dbb2ff49085de3d163bbe265",
+      "image_sha256": "ac75481df930d35af696ce807b37806d65c4cfaabeb032b4588f5c6eab924094",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/nordtheme/alacritty/blob/9949642f3903e8fcb62bfc03f09410e3d78440c2/src/nord.yaml",
+        "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
+        "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9"
+      }
+    },
+    {
+      "theme": "plugins/nord/themes/nord.json",
+      "name": "Nord",
+      "image": "plugins/nord/renders/nord.png",
+      "theme_sha256": "38e1818e6fbfe8038c622cd67f252724f0dbd88bbc753e9f5c10c80ced92b193",
+      "input_sha256": "7b6c234dc4a953901490151944ff96a8e0a9269dcd369048f3044dc6174d81f8",
+      "image_sha256": "91a3bfd499b1e106ee6e7fd9728d94858b01ef6ec423b62c0be638e20be62b0e",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/nordtheme/alacritty/blob/9949642f3903e8fcb62bfc03f09410e3d78440c2/src/nord.yaml",
+        "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
+        "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9"
+      }
     }
   ]
 }
