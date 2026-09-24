@@ -1,0 +1,32 @@
+{
+  "source": {
+    "url": "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/colors/everforest.vim",
+    "revision": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
+    "sha256": "77c27d92c190b9dcf875e7dc8e9d514fa12418ab3c88aebf90f05f31fba61e5d",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/sainnhe/everforest/blob/85a86eb62409e3ec88713bff3d1b9d7374e112e4/LICENSE"
+    ]
+  },
+  "vhs": {
+    "black": "#475258",
+    "red": "#e67e80",
+    "green": "#a7c080",
+    "yellow": "#dbbc7f",
+    "blue": "#7fbbb3",
+    "magenta": "#d699b6",
+    "cyan": "#83c092",
+    "white": "#d3c6aa",
+    "brightBlack": "#475258",
+    "brightRed": "#e67e80",
+    "brightGreen": "#a7c080",
+    "brightYellow": "#dbbc7f",
+    "brightBlue": "#7fbbb3",
+    "brightMagenta": "#d699b6",
+    "brightCyan": "#83c092",
+    "brightWhite": "#d3c6aa",
+    "background": "#2d353b",
+    "foreground": "#d3c6aa",
+    "cursor": "#d3c6aa"
+  }
+}
