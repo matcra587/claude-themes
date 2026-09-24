@@ -48,12 +48,15 @@ test("the real renderer and updater agree on palettes, fingerprints, metadata an
     const palette = entry.theme.includes("sample-light") ? "sample-light" : "sample-dark";
     assert.equal(entry.source.url, `https://example.com/${palette}`);
   }
-  assert.equal(updatePreviews({ root, directory, checkOnly: true }), true);
-  assert.equal(updatePreviews({ root, directory }), true);
+  const expected = { changed: true, png: { updated: 3, unchanged: 0, removed: 0 } };
+  assert.deepEqual(updatePreviews({ root, directory, checkOnly: true }), expected);
+  assert.deepEqual(updatePreviews({ root, directory }), expected);
   assert.deepEqual(readFileSync(join(root, "previews/manifest.json")), readFileSync(join(directory, "manifest.json")));
   assert.deepEqual(readFileSync(join(root, "plugins/sample/PREVIEWS.md")), readFileSync(join(directory, "plugins/sample/PREVIEWS.md")));
   for (const entry of manifest.themes) {
     assert.deepEqual(readFileSync(join(root, entry.image)), readFileSync(join(directory, entry.image)));
   }
-  assert.equal(updatePreviews({ root, directory }), false);
+  assert.deepEqual(updatePreviews({ root, directory }), {
+    changed: false, png: { updated: 0, unchanged: 3, removed: 0 },
+  });
 });

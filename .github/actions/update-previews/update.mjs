@@ -170,7 +170,9 @@ export function updatePreviews({ root, directory, checkOnly = false }) {
   if (files.length !== expectedFiles.size || files.some((file) => !expectedFiles.has(file))) {
     throw new Error("Preview bundle files do not match the manifest.");
   }
-  if (!current.size && !previous.size) return false;
+  if (!current.size && !previous.size) {
+    return { changed: false, png: { updated: 0, unchanged: 0, removed: 0 } };
+  }
   const obsolete = new Set([...previous.values()]
     .filter((item) => !current.has(item.theme)).map((item) => join(root, item.image)));
   const managedFamilies = Map.groupBy([...previous.values(), ...current.values()], (item) => item.theme.split("/")[1]);
@@ -208,8 +210,16 @@ export function updatePreviews({ root, directory, checkOnly = false }) {
   const changed = new Map([...desired].filter(([file, bytes]) =>
     !inspect(file, "file", true) || !read(file).equals(bytes)));
   const removed = [...obsolete].filter((file) => inspect(file, "file", true));
-  if (!changed.size && !removed.length) return false;
-  if (checkOnly) return true;
+  const updatedImages = [...changed.keys()].filter((file) => file.endsWith(".png")).length;
+  const result = {
+    changed: changed.size > 0 || removed.length > 0,
+    png: {
+      updated: updatedImages,
+      unchanged: current.size - updatedImages,
+      removed: removed.filter((file) => file.endsWith(".png")).length,
+    },
+  };
+  if (!result.changed || checkOnly) return result;
   for (const [file, bytes] of changed) {
     mkdirSync(dirname(file), { recursive: true });
     writeFileSync(file, bytes);
@@ -218,5 +228,5 @@ export function updatePreviews({ root, directory, checkOnly = false }) {
   for (const parent of new Set(removed.map(dirname))) {
     if (parse(parent).base === "renders" && !readdirSync(parent).length) rmdirSync(parent);
   }
-  return true;
+  return result;
 }

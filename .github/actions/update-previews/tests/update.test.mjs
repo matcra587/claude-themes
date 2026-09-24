@@ -2,14 +2,15 @@ import assert from "node:assert/strict";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, symlinkSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
-import { fixture, rejectedWithoutWrites, snapshot, write } from "./fixtures.mjs";
+import { digest, fixture, rejectedWithoutWrites, snapshot, write } from "./fixtures.mjs";
 
 test("an empty initial bundle leaves the repository untouched", (t) => {
   const f = fixture(t);
   f.manifest([]);
   const before = snapshot(f.root);
-  assert.equal(f.run({ checkOnly: true }), false);
-  assert.equal(f.run(), false);
+  const expected = { changed: false, png: { updated: 0, unchanged: 0, removed: 0 } };
+  assert.deepEqual(f.run({ checkOnly: true }), expected);
+  assert.deepEqual(f.run(), expected);
   assert.deepEqual(snapshot(f.root), before);
   assert.equal(existsSync(join(f.root, "previews/manifest.json")), false);
 });
@@ -28,7 +29,7 @@ test("onboarding a Regular/ANSI pair preserves manual previews and other familie
   const entries = [f.entry(), f.entry("sample-ansi")];
   f.bundleFor(entries);
 
-  assert.equal(f.run(), true);
+  assert.deepEqual(f.run(), { changed: true, png: { updated: 2, unchanged: 0, removed: 0 } });
   const document = readFileSync(join(f.root, "plugins/sample/PREVIEWS.md"), "utf8");
   assert.ok(document.startsWith(intro));
   assert.ok(document.includes(manual.trim()));
@@ -42,19 +43,42 @@ test("onboarding a Regular/ANSI pair preserves manual previews and other familie
   assert.equal(readFileSync(join(f.root, "previews/source-commit.txt"), "utf8"), "existing publication checkpoint\n");
   assert.deepEqual(readFileSync(join(f.root, "previews/manifest.json")), readFileSync(join(f.bundle, "manifest.json")));
   const before = snapshot(f.root);
-  assert.equal(f.run(), false);
-  assert.equal(f.run({ checkOnly: true }), false);
+  const unchanged = { changed: false, png: { updated: 0, unchanged: 2, removed: 0 } };
+  assert.deepEqual(f.run(), unchanged);
+  assert.deepEqual(f.run({ checkOnly: true }), unchanged);
   assert.deepEqual(snapshot(f.root), before);
 });
 
-test("old fingerprints do not prevent a legitimate preview update", (t) => {
+test("a regenerated fingerprint with identical PNG bytes counts as unchanged", (t) => {
   const f = fixture(t);
   f.bundleFor([f.entry()]);
-  assert.equal(f.run(), true);
+  assert.equal(f.run().changed, true);
   const updated = f.entry("sample", { base: "light" });
   f.bundleFor([updated]);
-  assert.equal(f.run(), true);
+  const before = snapshot(f.root);
+  const expected = { changed: true, png: { updated: 0, unchanged: 1, removed: 0 } };
+  assert.deepEqual(f.run({ checkOnly: true }), expected);
+  assert.deepEqual(snapshot(f.root), before);
+  assert.deepEqual(f.run(), expected);
   assert.equal(JSON.parse(readFileSync(join(f.root, "previews/manifest.json"))).themes[0].syntax_theme, "GitHub");
+});
+
+test("PNG counts distinguish changed bytes from unchanged bundle images", (t) => {
+  const f = fixture(t);
+  const entries = [f.entry("first"), f.entry("second"), f.entry("third")];
+  f.bundleFor(entries);
+  f.run();
+  const image = Buffer.from("new PNG bytes for second");
+  write(f.bundle, entries[1].image, image);
+  entries[1].image_sha256 = digest(image);
+  f.bundleFor(entries);
+  const before = snapshot(f.root);
+  const expected = { changed: true, png: { updated: 1, unchanged: 2, removed: 0 } };
+  assert.deepEqual(f.run({ checkOnly: true }), expected);
+  assert.deepEqual(snapshot(f.root), before);
+  assert.deepEqual(f.run(), expected);
+  assert.deepEqual(readFileSync(join(f.root, entries[1].image)), image);
+  assert.deepEqual(f.run(), { changed: false, png: { updated: 0, unchanged: 3, removed: 0 } });
 });
 
 test("one bundle can remove a family and update another with the same theme filename", (t) => {
@@ -69,16 +93,17 @@ test("one bundle can remove a family and update another with the same theme file
   const updated = f.entry("shared", { family: "second", base: "light" });
   f.bundleFor([updated]);
   const before = snapshot(f.root);
-  assert.equal(f.run({ checkOnly: true }), true);
+  const expected = { changed: true, png: { updated: 0, unchanged: 1, removed: 1 } };
+  assert.deepEqual(f.run({ checkOnly: true }), expected);
   assert.deepEqual(snapshot(f.root), before);
-  assert.equal(f.run(), true);
+  assert.deepEqual(f.run(), expected);
   assert.equal(existsSync(join(f.root, removed.image)), false);
   assert.equal(existsSync(join(f.root, "plugins/first/PREVIEWS.md")), false);
   assert.deepEqual(readFileSync(join(f.root, kept.image)), readFileSync(join(f.bundle, kept.image)));
   assert.equal(readFileSync(join(f.root, "plugins/second/PREVIEWS.md"), "utf8"),
     readFileSync(join(f.bundle, "plugins/second/PREVIEWS.md"), "utf8"));
   assert.deepEqual(JSON.parse(readFileSync(join(f.root, "previews/manifest.json"))).themes, [updated]);
-  assert.equal(f.run(), false);
+  assert.equal(f.run().changed, false);
 });
 
 test("an existing managed theme cannot be omitted from a later bundle", (t) => {
@@ -104,9 +129,10 @@ test("deleting a managed theme preserves manual images, introduction and prose",
   rmSync(join(f.bundle, "plugins"), { recursive: true });
   f.manifest([]);
   const before = snapshot(f.root);
-  assert.equal(f.run({ checkOnly: true }), true);
+  const expected = { changed: true, png: { updated: 0, unchanged: 0, removed: 1 } };
+  assert.deepEqual(f.run({ checkOnly: true }), expected);
   assert.deepEqual(snapshot(f.root), before);
-  assert.equal(f.run(), true);
+  assert.deepEqual(f.run(), expected);
   assert.equal(existsSync(join(f.root, entry.image)), false);
   const document = readFileSync(join(f.root, "plugins/sample/PREVIEWS.md"), "utf8");
   assert.ok(document.startsWith(intro));
@@ -124,11 +150,11 @@ test("deleting the last managed preview removes only its generated gallery and i
   rmSync(join(f.root, entry.theme));
   rmSync(join(f.bundle, "plugins"), { recursive: true });
   f.manifest([]);
-  assert.equal(f.run(), true);
+  assert.equal(f.run().changed, true);
   assert.equal(existsSync(join(f.root, "plugins/sample/PREVIEWS.md")), false);
   assert.equal(existsSync(join(f.root, "plugins/sample/renders")), false);
   assert.deepEqual(JSON.parse(readFileSync(join(f.root, "previews/manifest.json"))), { format: 1, themes: [] });
-  assert.equal(f.run(), false);
+  assert.equal(f.run().changed, false);
 });
 
 test("a custom introduction survives removal of its last managed section", (t) => {
@@ -140,7 +166,7 @@ test("a custom introduction survives removal of its last managed section", (t) =
   rmSync(join(f.root, entry.theme));
   rmSync(join(f.bundle, "plugins"), { recursive: true });
   f.manifest([]);
-  assert.equal(f.run(), true);
+  assert.equal(f.run().changed, true);
   assert.equal(readFileSync(join(f.root, "plugins/sample/PREVIEWS.md"), "utf8"), "# Custom previews\n\nKeep this explanation.\n");
 });
 
@@ -190,7 +216,10 @@ for (const problem of ["missing image", "outdated image", "outdated gallery"]) {
     else if (problem === "outdated image") write(f.root, entry.image, "outdated image");
     else write(f.root, "plugins/sample/PREVIEWS.md", "# sample theme previews\n\n## sample\n\n![Old](renders/sample.png)\n");
     const before = snapshot(f.root);
-    assert.equal(f.run({ checkOnly: true }), true);
+    const updated = problem === "outdated gallery" ? 0 : 1;
+    assert.deepEqual(f.run({ checkOnly: true }), {
+      changed: true, png: { updated, unchanged: 1 - updated, removed: 0 },
+    });
     assert.deepEqual(snapshot(f.root), before);
   });
 }
@@ -224,7 +253,7 @@ test("palette fingerprint uses the longest family-local prefix at a hyphen bound
   write(f.root, "plugins/sample/palettes/sample-dark-so.json", "not a prefix boundary");
   write(f.root, "plugins/other/palettes/sample-dark-soft.json", "other family palette");
   f.bundleFor([entry]);
-  assert.equal(f.run(), true);
+  assert.equal(f.run().changed, true);
 });
 
 for (const field of ["name", "source", "claude_code", "syntax_theme"]) {

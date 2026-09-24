@@ -37,7 +37,7 @@ runs:
               throw new Error('check-only must be true or false.');
             }
             const checkOnly = process.env.CHECK_ONLY === 'true';
-            const changed = updatePreviews({
+            const { changed, png } = updatePreviews({
               root: process.env.GITHUB_WORKSPACE,
               directory: process.env.PREVIEW_DIRECTORY,
               checkOnly,
@@ -50,6 +50,7 @@ runs:
             } else {
               summary = 'Updated plugin previews.';
             }
+            summary += `\n\nPNG files: ${png.updated} added or changed, ${png.unchanged} unchanged, ${png.removed} removed.`;
           } catch (error) {
             core.setFailed(error);
             summary = 'Preview update failed. See the annotations and job log for details.';

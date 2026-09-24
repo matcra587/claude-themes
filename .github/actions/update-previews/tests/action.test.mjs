@@ -46,16 +46,29 @@ test("the action reports check-only, applied and unchanged bundles in job summar
   const checked = await runAction(f, "true");
   assert.deepEqual(checked.failures, []);
   assert.deepEqual(checked.outputs, { changed: true });
-  assert.deepEqual(checked.messages, ["Preview bundle verified; plugin previews need updating."]);
+  assert.deepEqual(checked.messages, ["Preview bundle verified; plugin previews need updating.\n\nPNG files: 1 added or changed, 0 unchanged, 0 removed."]);
   assert.deepEqual(snapshot(f.root), before);
   const applied = await runAction(f);
   assert.deepEqual(applied.failures, []);
   assert.deepEqual(applied.outputs, { changed: true });
-  assert.deepEqual(applied.messages, ["Updated plugin previews."]);
+  assert.deepEqual(applied.messages, ["Updated plugin previews.\n\nPNG files: 1 added or changed, 0 unchanged, 0 removed."]);
   const unchanged = await runAction(f);
   assert.deepEqual(unchanged.failures, []);
   assert.deepEqual(unchanged.outputs, { changed: false });
-  assert.deepEqual(unchanged.messages, ["Preview bundle verified; plugin previews are up to date."]);
+  assert.deepEqual(unchanged.messages, ["Preview bundle verified; plugin previews are up to date.\n\nPNG files: 0 added or changed, 1 unchanged, 0 removed."]);
+});
+
+test("an empty bundle reports zero PNG counts without writing files", async (t) => {
+  const f = fixture(t);
+  f.manifest([]);
+  const before = snapshot(f.root);
+  for (const checkOnly of ["true", "false"]) {
+    const result = await runAction(f, checkOnly);
+    assert.deepEqual(result.failures, []);
+    assert.deepEqual(result.outputs, { changed: false });
+    assert.deepEqual(result.messages, ["Preview bundle verified; plugin previews are up to date.\n\nPNG files: 0 added or changed, 0 unchanged, 0 removed."]);
+    assert.deepEqual(snapshot(f.root), before);
+  }
 });
 
 for (const problem of ["invalid boolean", "invalid bundle"]) {
