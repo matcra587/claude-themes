@@ -1,0 +1,113 @@
+{
+  "name": "github",
+  "version": "0.1.0",
+  "description": "GitHub Dark Default, Light Default and Dark Dimmed themes for Claude (with ANSI variants)",
+  "author": {
+    "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "primer/github-vscode-theme",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "path": "src/colors.js",
+        "sha256": "d45100e84ee24fe488c56714f2ee59274f5332e73459d1b55bd0dc9c477ecfd9",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e2c871bb6effe9f6ec8d94d6596db33c4bfe4dd94969a6a9a2fb0473ebe6442e",
+        "notice": "LICENSES/github-vscode-theme.txt"
+      },
+      {
+        "repository": "primer/github-vscode-theme",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "path": "src/theme.js",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e2c871bb6effe9f6ec8d94d6596db33c4bfe4dd94969a6a9a2fb0473ebe6442e",
+        "notice": "LICENSES/github-vscode-theme.txt"
+      },
+      {
+        "repository": "primer/github-vscode-theme",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "path": "package.json",
+        "sha256": "60b15b3e62eba9d8e16ce2551d52277dfdd1fde47a4ac883caa0c0f0d5f2cd3d",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e2c871bb6effe9f6ec8d94d6596db33c4bfe4dd94969a6a9a2fb0473ebe6442e",
+        "notice": "LICENSES/github-vscode-theme.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/themes/dark.ts",
+        "sha256": "967c3f98b81b7dad1add35a2b46f48390c868971c14db28bd3e9c851d98f5eaa",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/themes/light.ts",
+        "sha256": "c3e87ae9c59d9b32264d54e1f1233ebc71b9e37f75e7f0572e00b162b3f9b52f",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/themes/dark_dimmed.ts",
+        "sha256": "cc5e3dc6fc7c64cb46289986d9bfc6fd31088a0b5f46bf1ee4a597b6ce5df38a",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/vars/global_dark.ts",
+        "sha256": "4dbb3bf7bc1ac4ae28d9eb4a0991dc412dc0a5d84f62074bd5bc00417bfbb20a",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/vars/global_light.ts",
+        "sha256": "e793de0988c2b98b70962a2aaa2edc98fb775363446c9f5c71b61baa16f339df",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/vars/component_dark.ts",
+        "sha256": "733c2153772b7afbead2b398bd2c96fe6e5a3841a4d96a3ea621538e42399cb0",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      },
+      {
+        "repository": "primer/primitives",
+        "revision": "f82864eb33c37f8624704bd996bc21b97d3c311b",
+        "path": "data/colors/vars/component_light.ts",
+        "sha256": "6e3a7dc13dcfedd2dd709b3f7efcfe8818717a78967840ced7f9ac19ac2efcb5",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "e63582a78dddebe610b6cb59f0e7f5f761c1bb6a1c9551443beddc64fe525c3a",
+        "notice": "LICENSES/primer-primitives.txt"
+      }
+    ]
+  }
+}
