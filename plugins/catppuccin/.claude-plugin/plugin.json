@@ -4,5 +4,30 @@
   "description": "Catppuccin themes for Claude: Latte, Frappé, Macchiato, and Mocha (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "catppuccin/palette",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "path": "palette.json",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+        "notice": "LICENSES/catppuccin.txt"
+      },
+      {
+        "repository": "catppuccin/catppuccin",
+        "revision": "d09787dd98ca6fba08af5ef2ae94a7e09f17daca",
+        "path": "docs/style-guide.md",
+        "sha256": "c497665ad7918a2fa9a40ea61d9e72d7deb0164f2b609a4436f998ddec18edd8",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "814096d2c34cc216c624738a49356f32b7237733b4f7edb0685f4e50ef5074ba",
+        "notice": "LICENSES/catppuccin.txt"
+      }
+    ]
   }
 }
