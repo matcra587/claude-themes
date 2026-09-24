@@ -1,0 +1,36 @@
+{
+  "source": {
+    "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+    "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+    "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+    ]
+  },
+  "vhs": {
+    "black": "#494d64",
+    "red": "#ed8796",
+    "green": "#a6da95",
+    "yellow": "#eed49f",
+    "blue": "#8aadf4",
+    "magenta": "#f5bde6",
+    "cyan": "#8bd5ca",
+    "white": "#a5adcb",
+    "brightBlack": "#5b6078",
+    "brightRed": "#ec7486",
+    "brightGreen": "#8ccf7f",
+    "brightYellow": "#e1c682",
+    "brightBlue": "#78a1f6",
+    "brightMagenta": "#f2a9dd",
+    "brightCyan": "#63cbc0",
+    "brightWhite": "#b8c0e0",
+    "background": "#24273a",
+    "foreground": "#cad3f5",
+    "cursor": "#f4dbd6"
+  },
+  "extended": {
+    "16": "#f5a97f",
+    "17": "#f4dbd6"
+  }
+}
