@@ -378,6 +378,36 @@
         "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
         "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9"
       }
+    },
+    {
+      "theme": "plugins/tokyo-night/themes/tokyo-night-ansi.json",
+      "name": "Tokyo Night (ANSI)",
+      "image": "plugins/tokyo-night/renders/tokyo-night-ansi.png",
+      "theme_sha256": "b3d7abd1c29bb68da4d790134ffaa282f524db1f3cfae7cdd91d2a82c564eb50",
+      "input_sha256": "1c8367bdc95d0d27927d30a0989f2a9ac325d51de821961fc2805267d33d4463",
+      "image_sha256": "bf1c5d7371693f7851016b4a7a3b62b8293da74678525996fd7b63d2a9b9c538",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/tokyo-night/tokyo-night-vscode-theme/blob/7c0f11eaef322f293621ca7befe462214b7ea468/themes/tokyo-night-color-theme.json",
+        "revision": "7c0f11eaef322f293621ca7befe462214b7ea468",
+        "sha256": "e08d77c898ead9ed129dc18ff4f841e2353477e69ccd6fa7d0610561c31da4d8"
+      }
+    },
+    {
+      "theme": "plugins/tokyo-night/themes/tokyo-night.json",
+      "name": "Tokyo Night",
+      "image": "plugins/tokyo-night/renders/tokyo-night.png",
+      "theme_sha256": "18c6deee7c87bc094c7d378e319a5f077fcdff6a4446de15c5ccabfc6db0ba4f",
+      "input_sha256": "559f2c5b36086434391de15f630fee74140fe8471eb6d40f70a1e53c0da665c9",
+      "image_sha256": "3e870f5791c3dfc4e9c4f9fbad8daedfb08bac5494ad0c86152c7682f6559369",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/tokyo-night/tokyo-night-vscode-theme/blob/7c0f11eaef322f293621ca7befe462214b7ea468/themes/tokyo-night-color-theme.json",
+        "revision": "7c0f11eaef322f293621ca7befe462214b7ea468",
+        "sha256": "e08d77c898ead9ed129dc18ff4f841e2353477e69ccd6fa7d0610561c31da4d8"
+      }
     }
   ]
 }
