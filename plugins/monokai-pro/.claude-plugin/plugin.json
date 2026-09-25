@@ -1,8 +1,33 @@
 {
   "name": "monokai-pro",
   "version": "0.1.0",
-  "description": "Monokai Pro theme for Claude (with ANSI variant)",
+  "description": "Monokai Pro Community Edition theme for Claude (with ANSI variant)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "monokai-pro/opencode",
+        "revision": "1a817a5e5f921354532f638383ff857e39965a43",
+        "path": "monokai-pro.json",
+        "sha256": "e4ecf51b136ae4073e4911649a9f7a19f7d79c5732d4f254c3664639e809b556",
+        "license": "MIT",
+        "licensePath": "LICENSE.md",
+        "licenseSha256": "42e4ac08484ba65308d3fd8867ec3163999cf88144546e5f58d91a3365404554",
+        "notice": "LICENSES/monokai-pro.txt"
+      },
+      {
+        "repository": "monokai-pro/konsole",
+        "revision": "df531914171a5b26db0ba11163d80c23e40c7355",
+        "path": "Monokai-Pro-CE.colorscheme",
+        "sha256": "5075f4f7ba51b1c3e25b64ca90f8a2ff40e555472de760fe67cf1dc1c266a23b",
+        "license": "MIT",
+        "licensePath": "LICENSE.md",
+        "licenseSha256": "42e4ac08484ba65308d3fd8867ec3163999cf88144546e5f58d91a3365404554",
+        "notice": "LICENSES/monokai-pro.txt"
+      }
+    ]
   }
 }
