@@ -4,5 +4,20 @@
   "description": "Tokyo Night theme for Claude (with ANSI variant)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "tokyo-night/tokyo-night-vscode-theme",
+        "revision": "7c0f11eaef322f293621ca7befe462214b7ea468",
+        "path": "themes/tokyo-night-color-theme.json",
+        "sha256": "e08d77c898ead9ed129dc18ff4f841e2353477e69ccd6fa7d0610561c31da4d8",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "e3f5d0d772cda0f4f67405696f15a0f335460a2b3944eff40f00675aadacb31b",
+        "notice": "LICENSES/tokyo-night-vscode.txt"
+      }
+    ]
   }
 }
