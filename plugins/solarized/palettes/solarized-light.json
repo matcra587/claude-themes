@@ -1,0 +1,28 @@
+{
+  "vhs": {
+    "background": "#fdf6e3",
+    "foreground": "#657b83",
+    "black": "#eee8d5",
+    "red": "#dc322f",
+    "green": "#859900",
+    "yellow": "#b58900",
+    "blue": "#268bd2",
+    "magenta": "#d33682",
+    "cyan": "#2aa198",
+    "white": "#073642",
+    "brightBlack": "#fdf6e3",
+    "brightRed": "#cb4b16",
+    "brightGreen": "#93a1a1",
+    "brightYellow": "#839496",
+    "brightBlue": "#657b83",
+    "brightMagenta": "#6c71c4",
+    "brightCyan": "#586e75",
+    "brightWhite": "#002b36",
+    "cursor": "#586e75"
+  },
+  "source": {
+    "url": "https://github.com/altercation/solarized/blob/62f656a02f93c5190a8753159e34b385588d5ff3/xresources/solarized",
+    "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+    "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987"
+  }
+}
