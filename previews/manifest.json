@@ -260,6 +260,96 @@
       }
     },
     {
+      "theme": "plugins/github/themes/github-dark-default-ansi.json",
+      "name": "GitHub Dark Default (ANSI)",
+      "image": "plugins/github/renders/github-dark-default-ansi.png",
+      "theme_sha256": "d2825391b9dbc5b318ab556c39cb2b438d993320cb4dc76fa57915f371c65a00",
+      "input_sha256": "702c1bc228c75b9ffaa2d4242885076d9883747cbf6eb36f8919aed2ddef6997",
+      "image_sha256": "231b297b027a3c568ed2521d7fa66382c7a105bda34310359c951561f41e76f6",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
+      "theme": "plugins/github/themes/github-dark-default.json",
+      "name": "GitHub Dark Default",
+      "image": "plugins/github/renders/github-dark-default.png",
+      "theme_sha256": "bb4fa8a15481ff4862b7771ac7e77929b7658659d5a7812499ae49cb856d0c41",
+      "input_sha256": "e94853da11fd548f75b9e1dcd5d26ec53925c507247208dffb4cd88b9373afa4",
+      "image_sha256": "9cdcfb86334c0ae84d2f8fc9845f0f10d07b5eaa2045da2dc627087fa630690e",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
+      "theme": "plugins/github/themes/github-dark-dimmed-ansi.json",
+      "name": "GitHub Dark Dimmed (ANSI)",
+      "image": "plugins/github/renders/github-dark-dimmed-ansi.png",
+      "theme_sha256": "e1a381241bf008755a9d37894bd8278593fe7b8a52a222a70e2f76f7d6e657df",
+      "input_sha256": "50d582604cb365d4fba48239673a41a6f56d75cade446950adf8a4f663446ab7",
+      "image_sha256": "e331f6910ee8025a2383397c32a96f2b97ec8790b4f08361c72b883f2298a948",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
+      "theme": "plugins/github/themes/github-dark-dimmed.json",
+      "name": "GitHub Dark Dimmed",
+      "image": "plugins/github/renders/github-dark-dimmed.png",
+      "theme_sha256": "b434bcd2b11dac097b7c27648fda2c863253d480f0b584cc04500d7054583a7e",
+      "input_sha256": "55810285a39be69b1c9dc68cef719b99ce41600f41858aaee8d65bafc55e819a",
+      "image_sha256": "7d1c18b45ca186809b179cfa9684e4ba861d097e5c11a45010d24d0f10ae5c5b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
+      "theme": "plugins/github/themes/github-light-default-ansi.json",
+      "name": "GitHub Light Default (ANSI)",
+      "image": "plugins/github/renders/github-light-default-ansi.png",
+      "theme_sha256": "26cb43da415d81bd058aa3769853f692541abaaceb7d4e39daa10d12e7fc8566",
+      "input_sha256": "b26fdf75076e1e482edd0e71826b29c4f1311d4dd94df091d3333d988a7b4669",
+      "image_sha256": "262397b640d3c33ec95d37e1d2bb112df796a4f542ecbbfd24ec18bea0cbc9ec",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
+      "theme": "plugins/github/themes/github-light-default.json",
+      "name": "GitHub Light Default",
+      "image": "plugins/github/renders/github-light-default.png",
+      "theme_sha256": "7c6b502c294a293689b05e7769c844c99ce6976e1734cff61a375332d867c007",
+      "input_sha256": "e772c2ca9e7a41d1fe063600ebf7a2c17a7ae189b6b40d24ab1e63c0bf6b0dae",
+      "image_sha256": "cbacafa20fb31dc700d2fee30d5b3f3c3523bc44858dddcd5a8051107abe3b1a",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/primer/github-vscode-theme/blob/cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf/src/theme.js",
+        "revision": "cd78e5e4e7bcf132a6f428ae0f32264bb1b729cf",
+        "sha256": "a1fa66e9bb4b8fcf5ca8d627e5462d91b7a0187ee0ce99243d358824dc7c7256"
+      }
+    },
+    {
       "theme": "plugins/nord/themes/nord-ansi.json",
       "name": "Nord (ANSI)",
       "image": "plugins/nord/renders/nord-ansi.png",
