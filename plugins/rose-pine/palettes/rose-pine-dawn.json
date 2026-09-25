@@ -1,0 +1,29 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-dawn.conf",
+    "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+    "sha256": "e6729a0992eaf22f63b19cbf9c2310469e797a0e2588293c530bbc9895e4b1b6"
+  },
+  "vhs": {
+    "black": "#f2e9e1",
+    "red": "#b4637a",
+    "green": "#286983",
+    "yellow": "#ea9d34",
+    "blue": "#56949f",
+    "magenta": "#907aa9",
+    "cyan": "#d7827e",
+    "white": "#575279",
+    "brightBlack": "#9893a5",
+    "brightRed": "#b4637a",
+    "brightGreen": "#286983",
+    "brightYellow": "#ea9d34",
+    "brightBlue": "#56949f",
+    "brightMagenta": "#907aa9",
+    "brightCyan": "#d7827e",
+    "brightWhite": "#575279",
+    "background": "#faf4ed",
+    "foreground": "#575279",
+    "cursor": "#cecacd",
+    "selection": "#dfdad9"
+  }
+}

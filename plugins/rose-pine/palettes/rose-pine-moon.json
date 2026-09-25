@@ -1,0 +1,29 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-moon.conf",
+    "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+    "sha256": "8af22f846dbf76e29f517789a9c61f1a794ace94796f1855d3e477153e8017ae"
+  },
+  "vhs": {
+    "black": "#393552",
+    "red": "#eb6f92",
+    "green": "#3e8fb0",
+    "yellow": "#f6c177",
+    "blue": "#9ccfd8",
+    "magenta": "#c4a7e7",
+    "cyan": "#ea9a97",
+    "white": "#e0def4",
+    "brightBlack": "#6e6a86",
+    "brightRed": "#eb6f92",
+    "brightGreen": "#3e8fb0",
+    "brightYellow": "#f6c177",
+    "brightBlue": "#9ccfd8",
+    "brightMagenta": "#c4a7e7",
+    "brightCyan": "#ea9a97",
+    "brightWhite": "#e0def4",
+    "background": "#232136",
+    "foreground": "#e0def4",
+    "cursor": "#56526e",
+    "selection": "#44415a"
+  }
+}
