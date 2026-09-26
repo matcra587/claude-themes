@@ -1,0 +1,33 @@
+{
+  "source": {
+    "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/eighties.yaml",
+    "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+    "sha256": "2b56a8743e89359de529db41fa38c0d7c99c26ee59fe0f4ad322ab139d3fca6e",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+    ]
+  },
+  "vhs": {
+    "background": "#2d2d2d",
+    "foreground": "#d3d0c8",
+    "black": "#2d2d2d",
+    "red": "#f2777a",
+    "green": "#99cc99",
+    "yellow": "#ffcc66",
+    "blue": "#6699cc",
+    "magenta": "#cc99cc",
+    "cyan": "#66cccc",
+    "white": "#d3d0c8",
+    "brightBlack": "#747369",
+    "brightRed": "#f2777a",
+    "brightGreen": "#99cc99",
+    "brightYellow": "#ffcc66",
+    "brightBlue": "#6699cc",
+    "brightMagenta": "#cc99cc",
+    "brightCyan": "#66cccc",
+    "brightWhite": "#f2f0ec",
+    "cursor": "#d3d0c8",
+    "selection": "#d3d0c8"
+  }
+}

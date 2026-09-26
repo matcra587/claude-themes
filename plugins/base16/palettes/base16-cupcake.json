@@ -1,0 +1,33 @@
+{
+  "source": {
+    "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/cupcake.yaml",
+    "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+    "sha256": "11641ad203d3f187b67bcbfae321c709a8348d4f890e5c1f8993084ced7f929c",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+    ]
+  },
+  "vhs": {
+    "background": "#fbf1f2",
+    "foreground": "#8b8198",
+    "black": "#fbf1f2",
+    "red": "#d57e85",
+    "green": "#a3b367",
+    "yellow": "#dcb16c",
+    "blue": "#7297b9",
+    "magenta": "#bb99b4",
+    "cyan": "#69a9a7",
+    "white": "#8b8198",
+    "brightBlack": "#bfb9c6",
+    "brightRed": "#d57e85",
+    "brightGreen": "#a3b367",
+    "brightYellow": "#dcb16c",
+    "brightBlue": "#7297b9",
+    "brightMagenta": "#bb99b4",
+    "brightCyan": "#69a9a7",
+    "brightWhite": "#585062",
+    "cursor": "#8b8198",
+    "selection": "#8b8198"
+  }
+}

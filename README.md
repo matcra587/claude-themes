@@ -20,6 +20,7 @@ Or install a family directly:
 
 | Plugin                                           | Themes                                         |
 | ------------------------------------------------ | ---------------------------------------------- |
+| [`base16`](./plugins/base16)                       | Ocean, Eighties, Cupcake (+ ANSI each)          |
 | [`catppuccin`](./plugins/catppuccin)             | Latte, Frappé, Macchiato, Mocha (+ ANSI each) |
 | [`dracula`](./plugins/dracula)                   | Dracula (+ ANSI)                               |
 | [`everforest`](./plugins/everforest)             | Everforest Dark, Everforest Light (+ ANSI each)|

@@ -1,0 +1,33 @@
+{
+  "source": {
+    "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/ocean.yaml",
+    "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+    "sha256": "7773db26503121c6dfc1308b5b05f14db74acfe2c7b8a7929794301e260ad612",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+    ]
+  },
+  "vhs": {
+    "background": "#2b303b",
+    "foreground": "#c0c5ce",
+    "black": "#2b303b",
+    "red": "#bf616a",
+    "green": "#a3be8c",
+    "yellow": "#ebcb8b",
+    "blue": "#8fa1b3",
+    "magenta": "#b48ead",
+    "cyan": "#96b5b4",
+    "white": "#c0c5ce",
+    "brightBlack": "#65737e",
+    "brightRed": "#bf616a",
+    "brightGreen": "#a3be8c",
+    "brightYellow": "#ebcb8b",
+    "brightBlue": "#8fa1b3",
+    "brightMagenta": "#b48ead",
+    "brightCyan": "#96b5b4",
+    "brightWhite": "#eff1f5",
+    "cursor": "#c0c5ce",
+    "selection": "#c0c5ce"
+  }
+}
