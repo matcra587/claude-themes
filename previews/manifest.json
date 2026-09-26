@@ -638,6 +638,96 @@
       }
     },
     {
+      "theme": "plugins/one-dark/themes/one-dark-ansi.json",
+      "name": "One Dark (ANSI)",
+      "image": "plugins/one-dark/renders/one-dark-ansi.png",
+      "theme_sha256": "727d0463ce8d38af021e8374c546a66156475a9e0542980e71eb4551b666fe8d",
+      "input_sha256": "669c2445f6b274e7f981b4f8c83d6f31b84822fe353fb48a6c3d95c5ff0d366a",
+      "image_sha256": "a597c1ef2ac7f41ea6a14e12ad319206f1a8237df5567eff9648c3e179395438",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/joshdick/onedark.vim/47bec7a6196a843dad195d2666c3ac84c6e80c78/term/One%20Dark.kitty",
+        "revision": "47bec7a6196a843dad195d2666c3ac84c6e80c78",
+        "sha256": "844a1844af6ce911824ab9c0ba14581805611446410dc5020ee852933df8f92b"
+      }
+    },
+    {
+      "theme": "plugins/one-dark/themes/one-dark.json",
+      "name": "One Dark",
+      "image": "plugins/one-dark/renders/one-dark.png",
+      "theme_sha256": "17c12f49f082a5872e2c264ad2b9ffabcd2f06810f452f7b37559cfa989075ec",
+      "input_sha256": "cf1b6f1d52e815a2b24eb6be57cf07bf0b81567c15372ee6d3a91fb523ec6272",
+      "image_sha256": "df9b2d4d69f9dd92bea3abd34885377933bec381914b9206a9a834a9e466aac0",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://raw.githubusercontent.com/joshdick/onedark.vim/47bec7a6196a843dad195d2666c3ac84c6e80c78/term/One%20Dark.kitty",
+        "revision": "47bec7a6196a843dad195d2666c3ac84c6e80c78",
+        "sha256": "844a1844af6ce911824ab9c0ba14581805611446410dc5020ee852933df8f92b"
+      }
+    },
+    {
+      "theme": "plugins/one-dark/themes/onehalf-dark-ansi.json",
+      "name": "OneHalf Dark (ANSI)",
+      "image": "plugins/one-dark/renders/onehalf-dark-ansi.png",
+      "theme_sha256": "3cc82decd94f17e8e4da15bf65ee628ede2813b1ab72e5c101e31b8945f1ff68",
+      "input_sha256": "e9f83ff0da82cc08d2b61547f0fbfb86074038e9877835656dc1ceb6d534f95b",
+      "image_sha256": "5ae91e914e7d9d790222dac5f2e4c293ddc3a9abbcdc7c5ae3df748df8a00ed3",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-dark.conf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "sha256": "54dfb10334e026761066168ecf9a714356e18f22cb8b54a8d8ef22f9ec216ac1"
+      }
+    },
+    {
+      "theme": "plugins/one-dark/themes/onehalf-dark.json",
+      "name": "OneHalf Dark",
+      "image": "plugins/one-dark/renders/onehalf-dark.png",
+      "theme_sha256": "3e825b0f14e8062a2f5d945cbdc974f80422a495959d39532ab0271b8cd44862",
+      "input_sha256": "e8e3d8afd56f79176d039b7f19437e29e348589efa4639c4ccfaf222dc9652f6",
+      "image_sha256": "163ee377eda6c8d3bfe559e4bedceed270baf7ef6aa9126f7c6d42a8157fdbfd",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-dark.conf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "sha256": "54dfb10334e026761066168ecf9a714356e18f22cb8b54a8d8ef22f9ec216ac1"
+      }
+    },
+    {
+      "theme": "plugins/one-dark/themes/onehalf-light-ansi.json",
+      "name": "OneHalf Light (ANSI)",
+      "image": "plugins/one-dark/renders/onehalf-light-ansi.png",
+      "theme_sha256": "a04f57c859f9f9ac4eb30ad564e921298400c9f208b7357301664d75baa5b655",
+      "input_sha256": "a34cf8b2ded357671e1c1a7cba291a3a00635ed6caa80264913880eebbadcb2a",
+      "image_sha256": "564f6d5e7dcbfd350242de93bf73266ec7066dd2c2697d49b76f597c14329096",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-light.conf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "sha256": "d651149612f4948d65a26a130e6f89404d2d6f6966891c5eba095b21b60b8088"
+      }
+    },
+    {
+      "theme": "plugins/one-dark/themes/onehalf-light.json",
+      "name": "OneHalf Light",
+      "image": "plugins/one-dark/renders/onehalf-light.png",
+      "theme_sha256": "2094cb111cd5cb29cab2ba3bc26295f328d1be41e1241b86cd0a69e2a4a818e1",
+      "input_sha256": "89a84c7a9ed042e41e516217198bfbb22d921511917d4dab9e287b7a4a9c1738",
+      "image_sha256": "ce676167bac839caa6c9aa607f0d84eaa55f4b5ae566403a92b84c51c2862d44",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-light.conf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "sha256": "d651149612f4948d65a26a130e6f89404d2d6f6966891c5eba095b21b60b8088"
+      }
+    },
+    {
       "theme": "plugins/rose-pine/themes/rose-pine-ansi.json",
       "name": "Ros\u00e9 Pine (ANSI)",
       "image": "plugins/rose-pine/renders/rose-pine-ansi.png",
