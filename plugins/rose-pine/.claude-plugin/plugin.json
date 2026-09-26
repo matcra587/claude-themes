@@ -4,5 +4,50 @@
   "description": "Rosé Pine themes for Claude — Main, Moon, and Dawn (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "rose-pine/rose-pine-palette",
+        "revision": "92af52b465ab6e47437aca223c9b8d3009a2023b",
+        "path": "palette.json",
+        "sha256": "8b71546357c65ee23715e77f144d914e5f415f44f3ef3b0179bbe1f17d69211d",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "0e691132d5d92a848a1688b90fd4c662f62f78f3bd550ba46826ec31ec98fc70",
+        "notice": "LICENSES/rose-pine-palette.txt"
+      },
+      {
+        "repository": "rose-pine/kitty",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "path": "dist/rose-pine.conf",
+        "sha256": "0fe7866f628d9a067a6f95d245e229c80f9b9f39f9c723ab873eadae66e634ed",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "b2ec9e48689252be5807d35d80689bbc40481c54d1f228c94dde8ffad1bdc824",
+        "notice": "LICENSES/rose-pine-kitty.txt"
+      },
+      {
+        "repository": "rose-pine/kitty",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "path": "dist/rose-pine-moon.conf",
+        "sha256": "8af22f846dbf76e29f517789a9c61f1a794ace94796f1855d3e477153e8017ae",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "b2ec9e48689252be5807d35d80689bbc40481c54d1f228c94dde8ffad1bdc824",
+        "notice": "LICENSES/rose-pine-kitty.txt"
+      },
+      {
+        "repository": "rose-pine/kitty",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "path": "dist/rose-pine-dawn.conf",
+        "sha256": "e6729a0992eaf22f63b19cbf9c2310469e797a0e2588293c530bbc9895e4b1b6",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "b2ec9e48689252be5807d35d80689bbc40481c54d1f228c94dde8ffad1bdc824",
+        "notice": "LICENSES/rose-pine-kitty.txt"
+      }
+    ]
   }
 }

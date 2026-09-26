@@ -1,0 +1,27 @@
+{
+  "source": {
+    "url": "https://github.com/monokai-pro/konsole/blob/df531914171a5b26db0ba11163d80c23e40c7355/Monokai-Pro-CE.colorscheme",
+    "revision": "df531914171a5b26db0ba11163d80c23e40c7355",
+    "sha256": "5075f4f7ba51b1c3e25b64ca90f8a2ff40e555472de760fe67cf1dc1c266a23b"
+  },
+  "vhs": {
+    "black": "#2d2a2e",
+    "brightBlack": "#373338",
+    "red": "#ff6188",
+    "brightRed": "#ff708f",
+    "green": "#a9dc76",
+    "brightGreen": "#c0fa86",
+    "yellow": "#ffd866",
+    "brightYellow": "#ffe279",
+    "blue": "#78dce8",
+    "brightBlue": "#84f5ff",
+    "magenta": "#ab9df2",
+    "brightMagenta": "#b1a5ff",
+    "cyan": "#fc9867",
+    "brightCyan": "#ffa274",
+    "white": "#c1c0c0",
+    "brightWhite": "#d5d4d4",
+    "background": "#2d2a2e",
+    "foreground": "#fcfcfa"
+  }
+}

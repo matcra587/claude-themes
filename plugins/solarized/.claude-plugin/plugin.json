@@ -4,5 +4,30 @@
   "description": "Solarized Dark and Light themes for Claude (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "altercation/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "path": "README.md",
+        "sha256": "f10571c994648365faab9c4f83bdd7699aa2cd056f111af5e29099c2673c5bc1",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "494aefdabf86acce06bd63001ad8aedad4ee38da23509d3f917d95aa3368b9a6",
+        "notice": "LICENSES/solarized.txt"
+      },
+      {
+        "repository": "altercation/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "path": "xresources/solarized",
+        "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "494aefdabf86acce06bd63001ad8aedad4ee38da23509d3f917d95aa3368b9a6",
+        "notice": "LICENSES/solarized.txt"
+      }
+    ]
   }
 }

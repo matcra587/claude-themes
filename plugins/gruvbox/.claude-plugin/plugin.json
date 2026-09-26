@@ -4,5 +4,20 @@
   "description": "Gruvbox Dark and Light themes for Claude (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "gruvbox-community/gruvbox",
+        "revision": "180ad85971343df68be3422a5630fa84e45a9ab2",
+        "path": "colors/gruvbox.vim",
+        "sha256": "14f9b9e82cc67fe7c4bf155472f27b71bf99440cf9fd7a2a822615c22c91da19",
+        "license": "MIT",
+        "licensePath": "LICENSE.md",
+        "licenseSha256": "6d3c2ebc79cb645dc1d2068f413d2d1dfcdbd869e4708773afcf2c388bef1f36",
+        "notice": "LICENSES/gruvbox.txt"
+      }
+    ]
   }
 }
