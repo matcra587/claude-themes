@@ -350,6 +350,112 @@
       }
     },
     {
+      "theme": "plugins/gruvbox/themes/gruvbox-dark-ansi.json",
+      "name": "Gruvbox Dark (ANSI)",
+      "image": "plugins/gruvbox/renders/gruvbox-dark-ansi.png",
+      "theme_sha256": "01b95d449d98964eb9ea1e791cd4f0ad61dcead74b17616614b84709bc44514d",
+      "input_sha256": "3c0dc977bfe5847773c3e8a2281c386ad2ac006090a0cc2fdc0b4dfc49d0eb59",
+      "image_sha256": "33704eac935e680cd783a109998c5950f760bc11bdc14988314c357f5c9f50c1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/colors/gruvbox.vim",
+        "revision": "180ad85971343df68be3422a5630fa84e45a9ab2",
+        "sha256": "14f9b9e82cc67fe7c4bf155472f27b71bf99440cf9fd7a2a822615c22c91da19",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/LICENSE.md"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/gruvbox/themes/gruvbox-dark.json",
+      "name": "Gruvbox Dark",
+      "image": "plugins/gruvbox/renders/gruvbox-dark.png",
+      "theme_sha256": "1766df5a2f8ca74bd1815fb4a2e6d73f607670a68d48c5e291d3b45871152f7f",
+      "input_sha256": "80fb046ee2e15ae71263f4005768c54b047231e65e46d70e41ae92bf42ab9b30",
+      "image_sha256": "8fa3140586f198a8840f1d760656620196554ad90247acd807eaa38adbea013a",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/colors/gruvbox.vim",
+        "revision": "180ad85971343df68be3422a5630fa84e45a9ab2",
+        "sha256": "14f9b9e82cc67fe7c4bf155472f27b71bf99440cf9fd7a2a822615c22c91da19",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/LICENSE.md"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/gruvbox/themes/gruvbox-light-ansi.json",
+      "name": "Gruvbox Light (ANSI)",
+      "image": "plugins/gruvbox/renders/gruvbox-light-ansi.png",
+      "theme_sha256": "ca77d73c9e7fac5f748c6ea4c62dfb755c5f2b1a8d3d98897cb9a9afad0629e6",
+      "input_sha256": "276b2455d8c798822e7c1f217c7a2ba5ec59b1b6c3640bac414b4fd3f12f47b2",
+      "image_sha256": "8fa803982e7d54da8dab07678f0e579f58788b4c98e9d413b56e6416682005fc",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/colors/gruvbox.vim",
+        "revision": "180ad85971343df68be3422a5630fa84e45a9ab2",
+        "sha256": "14f9b9e82cc67fe7c4bf155472f27b71bf99440cf9fd7a2a822615c22c91da19",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/LICENSE.md"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/gruvbox/themes/gruvbox-light.json",
+      "name": "Gruvbox Light",
+      "image": "plugins/gruvbox/renders/gruvbox-light.png",
+      "theme_sha256": "fc47c24a879bae9fad37912af025fd9a23316643bf8ececefafa9cec72aab639",
+      "input_sha256": "49e1b0090ffe175654dc92f3b57da602d21e199702461727eab68b79979371cb",
+      "image_sha256": "80fc854960c3dec55d76f50b13ddd96b235d82f2e189af91fddf91d7d2233d0b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/colors/gruvbox.vim",
+        "revision": "180ad85971343df68be3422a5630fa84e45a9ab2",
+        "sha256": "14f9b9e82cc67fe7c4bf155472f27b71bf99440cf9fd7a2a822615c22c91da19",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/gruvbox-community/gruvbox/blob/180ad85971343df68be3422a5630fa84e45a9ab2/LICENSE.md"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/monokai-pro/themes/monokai-pro-ansi.json",
+      "name": "Monokai Pro (ANSI)",
+      "image": "plugins/monokai-pro/renders/monokai-pro-ansi.png",
+      "theme_sha256": "e60c8de5977710213da03f3418700e80dce8aaf551b3f9e65755ed63794efc3b",
+      "input_sha256": "fdfc604670a0451e3ec3b6fb554c61e68f733cb83f749a4e0a95552659b0e630",
+      "image_sha256": "c1bd2e4d7de0be9a0e6a563d8a97ab2d12fd0a0d90feba11bc9a3417ffe3891d",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/monokai-pro/konsole/blob/df531914171a5b26db0ba11163d80c23e40c7355/Monokai-Pro-CE.colorscheme",
+        "revision": "df531914171a5b26db0ba11163d80c23e40c7355",
+        "sha256": "5075f4f7ba51b1c3e25b64ca90f8a2ff40e555472de760fe67cf1dc1c266a23b"
+      }
+    },
+    {
+      "theme": "plugins/monokai-pro/themes/monokai-pro.json",
+      "name": "Monokai Pro",
+      "image": "plugins/monokai-pro/renders/monokai-pro.png",
+      "theme_sha256": "c376f979d333768384b924e2ffb955ac3cc1f8812957bde5b45613ed97332677",
+      "input_sha256": "aefc13e521674a29fc75fa1ddd4f1602eb1c79cdd850d02ce60426ed9354178c",
+      "image_sha256": "ec2b9d2651c4c5e15c766bef2a8a5ef1ad209737eb5bd28cce714853afdb2f96",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/monokai-pro/konsole/blob/df531914171a5b26db0ba11163d80c23e40c7355/Monokai-Pro-CE.colorscheme",
+        "revision": "df531914171a5b26db0ba11163d80c23e40c7355",
+        "sha256": "5075f4f7ba51b1c3e25b64ca90f8a2ff40e555472de760fe67cf1dc1c266a23b"
+      }
+    },
+    {
       "theme": "plugins/nord/themes/nord-ansi.json",
       "name": "Nord (ANSI)",
       "image": "plugins/nord/renders/nord-ansi.png",
@@ -377,6 +483,156 @@
         "url": "https://github.com/nordtheme/alacritty/blob/9949642f3903e8fcb62bfc03f09410e3d78440c2/src/nord.yaml",
         "revision": "9949642f3903e8fcb62bfc03f09410e3d78440c2",
         "sha256": "7a26913d28f4c9b038cce7f92eb4dbbd45f1df708bd684f80d929fc44f0bf8e9"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine-ansi.json",
+      "name": "Ros\u00e9 Pine (ANSI)",
+      "image": "plugins/rose-pine/renders/rose-pine-ansi.png",
+      "theme_sha256": "d1f00727e2e7f8559eefdef739902111f940ab40697645f361545876c448507a",
+      "input_sha256": "ee984a9105fc859ae014694cbbe94df3dd8d59110f5824348bc95a3284eb04eb",
+      "image_sha256": "8584ac12ed3219402b89d4845544fa91587a01c2e542e7ef3135692aad12acc1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "0fe7866f628d9a067a6f95d245e229c80f9b9f39f9c723ab873eadae66e634ed"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine-dawn-ansi.json",
+      "name": "Ros\u00e9 Pine Dawn (ANSI)",
+      "image": "plugins/rose-pine/renders/rose-pine-dawn-ansi.png",
+      "theme_sha256": "8c868261ece92a1f0506fae63fab4c9e884b6dc76a9bce62772cbf8a98813963",
+      "input_sha256": "70437e3faf9a2d7e1e516ba9707160415afb65dde2f6fef288d5df3e9231e3b3",
+      "image_sha256": "a4acdab6bcf6fe3f6a5e91d4e9776868ded285f9c373576a0eccdb530e2dbd70",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-dawn.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "e6729a0992eaf22f63b19cbf9c2310469e797a0e2588293c530bbc9895e4b1b6"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine-dawn.json",
+      "name": "Ros\u00e9 Pine Dawn",
+      "image": "plugins/rose-pine/renders/rose-pine-dawn.png",
+      "theme_sha256": "374165e1cc732b43d5f4bb5b56e4052ce79da0d677bd56babf7be488d8d7d8f7",
+      "input_sha256": "635c7d3f1bba611b351de167af69076500916f0ea1543b55f46cf59179c24a31",
+      "image_sha256": "b4ac225523435f396266c27b1ee9f66f23b49c805c5103c757264df02ee0aa74",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-dawn.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "e6729a0992eaf22f63b19cbf9c2310469e797a0e2588293c530bbc9895e4b1b6"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine-moon-ansi.json",
+      "name": "Ros\u00e9 Pine Moon (ANSI)",
+      "image": "plugins/rose-pine/renders/rose-pine-moon-ansi.png",
+      "theme_sha256": "811eb32f406fdbeb78ccaed373ae3e2b89e5610f712c351bf7c29934cf9d2c0a",
+      "input_sha256": "357b3d43ee28a6b8a217983e15facde78385f095936dd8816985d21c22c82d29",
+      "image_sha256": "e8671d2b2f6d6208ab5ceb57413279e3869e961a6c17d1b6ef6b306ca236112f",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-moon.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "8af22f846dbf76e29f517789a9c61f1a794ace94796f1855d3e477153e8017ae"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine-moon.json",
+      "name": "Ros\u00e9 Pine Moon",
+      "image": "plugins/rose-pine/renders/rose-pine-moon.png",
+      "theme_sha256": "e678ce478d4f64cd62229af0be19261d24591dc563fac47e9424e37f47027305",
+      "input_sha256": "469d9b1633a1ceedf1c1bfb62fe5c4e5018bb7ed231ca46447beb8ab8a53201d",
+      "image_sha256": "14cd6fa7a1fdd39e1c0130faf92040ae5f4f3f52f27883ce284c49b906069127",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine-moon.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "8af22f846dbf76e29f517789a9c61f1a794ace94796f1855d3e477153e8017ae"
+      }
+    },
+    {
+      "theme": "plugins/rose-pine/themes/rose-pine.json",
+      "name": "Ros\u00e9 Pine",
+      "image": "plugins/rose-pine/renders/rose-pine.png",
+      "theme_sha256": "c9e9a9f07671ac9b4f7021335e5606ea42b3e201a96fe5a1cb63e2f4606c807e",
+      "input_sha256": "50dd934b06d25f1b85096c11078f0bbd4e797bd4bb637446dddbca669bd55bc9",
+      "image_sha256": "7c7b7d00d1e0d2fec3d6898e4adc2662a88d55388c4f0b3333252da8b478508c",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://raw.githubusercontent.com/rose-pine/kitty/efd4f01cb9887feaa7114ff21a887464295d0205/dist/rose-pine.conf",
+        "revision": "efd4f01cb9887feaa7114ff21a887464295d0205",
+        "sha256": "0fe7866f628d9a067a6f95d245e229c80f9b9f39f9c723ab873eadae66e634ed"
+      }
+    },
+    {
+      "theme": "plugins/solarized/themes/solarized-ansi.json",
+      "name": "Solarized Dark (ANSI)",
+      "image": "plugins/solarized/renders/solarized-ansi.png",
+      "theme_sha256": "03fdf5025b1562e0985d7360f565a052f608908949a21f0d13aa01d0820bc7b0",
+      "input_sha256": "2115bca584c94be9fcf11c841d9514c22e312a657c5b665a93d481a64b41a6b3",
+      "image_sha256": "3841b3119498d12b7135db176b561dd278afe86a64691d207061de631bbc2ce0",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/altercation/solarized/blob/62f656a02f93c5190a8753159e34b385588d5ff3/xresources/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987"
+      }
+    },
+    {
+      "theme": "plugins/solarized/themes/solarized-light-ansi.json",
+      "name": "Solarized Light (ANSI)",
+      "image": "plugins/solarized/renders/solarized-light-ansi.png",
+      "theme_sha256": "39c73b2ac5b8a77b538b9a4b9419352c4aabc5617eb0f18576f99eefbbec07f2",
+      "input_sha256": "accde2bd0591c184ff2930ae6c895a191ae2ce4a850af30c110a733751b89a01",
+      "image_sha256": "b49eb68222803763191a493163aa9a923699d5c9f30e35ae8870d88ffb819f3e",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/altercation/solarized/blob/62f656a02f93c5190a8753159e34b385588d5ff3/xresources/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987"
+      }
+    },
+    {
+      "theme": "plugins/solarized/themes/solarized-light.json",
+      "name": "Solarized Light",
+      "image": "plugins/solarized/renders/solarized-light.png",
+      "theme_sha256": "45adbbd708db8bf8ea8d2eb6a2a476c5bec4d6d756b7916d06494fecec4f4072",
+      "input_sha256": "db1f12116da1a194b6dc2d3398ed90f7d213434a00db8cf5f7873f0ed498c959",
+      "image_sha256": "0483d33b106b803b1817442485906549d9db976f41a1f75c8ed7c705f30ded9d",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/altercation/solarized/blob/62f656a02f93c5190a8753159e34b385588d5ff3/xresources/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987"
+      }
+    },
+    {
+      "theme": "plugins/solarized/themes/solarized.json",
+      "name": "Solarized Dark",
+      "image": "plugins/solarized/renders/solarized.png",
+      "theme_sha256": "1c17adce4b8b2eb219fc7322ec7e5c953e4d11cefecb7a153e64390f1ddd8a57",
+      "input_sha256": "c1960c69fd787d416ea5f3e6a5bfcb9612bed93932c29b3d9807756a2530f7e8",
+      "image_sha256": "fad2641b99012ee05393c94f54d36172e8d534a4ddf3868ccf2e5ba0686cdcb9",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/altercation/solarized/blob/62f656a02f93c5190a8753159e34b385588d5ff3/xresources/solarized",
+        "revision": "62f656a02f93c5190a8753159e34b385588d5ff3",
+        "sha256": "e08a83d94acc1380d497f6770c22752c9e419b2ac9de81ebf7fb9d0a006b7987"
       }
     },
     {
