@@ -4,5 +4,40 @@
   "description": "Classic Monokai theme for Claude (with ANSI variant)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "microsoft/vscode",
+        "revision": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+        "path": "extensions/theme-monokai/themes/monokai-color-theme.json",
+        "sha256": "5869805561c08f2df3cd1a1d6cddb771baaf2f54e96f247106c42683a1c6397a",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9",
+        "notice": "LICENSES/vscode-monokai.txt"
+      },
+      {
+        "repository": "microsoft/vscode",
+        "revision": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+        "path": "extensions/theme-monokai/package.json",
+        "sha256": "b3c1d6c13d67b62657fea0d2350fe02fdc249cc0bf79e7adfb0274ce28894a55",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "9480271317925265e806a9a196aaa33410a962fa9d4d1e248a4a5187bc8c9df9",
+        "notice": "LICENSES/vscode-monokai.txt"
+      },
+      {
+        "repository": "Colorsublime/Colorsublime-Themes",
+        "revision": "35bb2455a2167d5c55afdd537caf71f39ae15723",
+        "path": "themes/Monokai.tmTheme",
+        "sha256": "e38cc8de2002802b04cd844beaee290c69f589bdb3f0ca77aa1fe3c5c3dfd0f4",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "3e5ef6e8cc5274b5c394738bc6a09b47ddf5b9ad1e2b625cf53677c5014c1e65",
+        "notice": "LICENSES/colorsublime.txt"
+      }
+    ]
   }
 }
