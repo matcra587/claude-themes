@@ -1,0 +1,32 @@
+{
+  "source": {
+    "url": "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/extensions/theme-monokai/themes/monokai-color-theme.json",
+    "revision": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+    "sha256": "5869805561c08f2df3cd1a1d6cddb771baaf2f54e96f247106c42683a1c6397a",
+    "kind": "upstream",
+    "license_urls": [
+      "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/LICENSE.txt"
+    ]
+  },
+  "vhs": {
+    "background": "#272822",
+    "foreground": "#f8f8f2",
+    "black": "#333333",
+    "red": "#c4265e",
+    "green": "#86b42b",
+    "yellow": "#b3b42b",
+    "blue": "#6a7ec8",
+    "magenta": "#8c6bc8",
+    "cyan": "#56adbc",
+    "white": "#e3e3dd",
+    "brightBlack": "#666666",
+    "brightRed": "#f92672",
+    "brightGreen": "#a6e22e",
+    "brightYellow": "#e2e22e",
+    "brightBlue": "#819aff",
+    "brightMagenta": "#ae81ff",
+    "brightCyan": "#66d9ef",
+    "brightWhite": "#f8f8f2",
+    "cursor": "#f8f8f0"
+  }
+}

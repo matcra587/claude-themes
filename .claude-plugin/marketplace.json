@@ -7,6 +7,13 @@
   },
   "plugins": [
     {
+      "name": "base16",
+      "description": "Base16 Ocean, Eighties and Cupcake themes for Claude (with ANSI variants)",
+      "category": "themes",
+      "source": "./plugins/base16",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/base16"
+    },
+    {
       "name": "catppuccin",
       "description": "Catppuccin themes for Claude: Latte, Frappé, Macchiato, and Mocha (with ANSI variants)",
       "category": "themes",

@@ -16,7 +16,7 @@ Questions are welcome too. Not sure whether a palette qualifies, or whether a co
 
 New families, ANSI variants for existing ones, and fixes to semantic mappings. Light themes especially: I run Catppuccin Mocha day-to-day and dark themes generally, so light variants get the least real-world testing here. A contributor who actually lives in a light terminal will catch contrast and hierarchy problems I won't.
 
-**What gets declined:** palettes without a clear canonical upstream (a GitHub repo, official spec, or original colorscheme file), ad-hoc personal palettes, and meta-frameworks like Base16.
+**What gets declined:** palettes without a clear canonical upstream (a GitHub repo, official spec, or original colorscheme file), ad-hoc personal palettes, and unreviewed bulk imports of theme collections. Named schemes such as Base16 Ocean need their own source, licence and colour review.
 
 > [!IMPORTANT]
 > Use palettes with a valid licence that permits redistribution, and check that it covers the source files you use. Follow its terms, preserve required notices and credit, and document your changes. Include the [source and licence records](#source-and-licence-records) with your contribution.

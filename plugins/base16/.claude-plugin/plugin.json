@@ -1,0 +1,53 @@
+{
+  "name": "base16",
+  "version": "0.1.0",
+  "description": "Base16 Ocean, Eighties and Cupcake themes for Claude (with ANSI variants)",
+  "author": {
+    "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "tinted-theming/schemes",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "path": "base16/ocean.yaml",
+        "sha256": "7773db26503121c6dfc1308b5b05f14db74acfe2c7b8a7929794301e260ad612",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "7edf0999a3912df0383b383f1464e9e97c282051a4de95f651fdaa63dd224231",
+        "notice": "LICENSES/schemes.txt"
+      },
+      {
+        "repository": "tinted-theming/schemes",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "path": "base16/eighties.yaml",
+        "sha256": "2b56a8743e89359de529db41fa38c0d7c99c26ee59fe0f4ad322ab139d3fca6e",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "7edf0999a3912df0383b383f1464e9e97c282051a4de95f651fdaa63dd224231",
+        "notice": "LICENSES/schemes.txt"
+      },
+      {
+        "repository": "tinted-theming/schemes",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "path": "base16/cupcake.yaml",
+        "sha256": "11641ad203d3f187b67bcbfae321c709a8348d4f890e5c1f8993084ced7f929c",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "7edf0999a3912df0383b383f1464e9e97c282051a4de95f651fdaa63dd224231",
+        "notice": "LICENSES/schemes.txt"
+      },
+      {
+        "repository": "tinted-theming/tinted-terminal",
+        "revision": "7da7cf8362299c64cf228654453affbcd1e67706",
+        "path": "templates/iterm2-base16.mustache",
+        "sha256": "5d0c28cf79c1dfdac92653815136f25ead1241752b788fcfac027875ac7c304c",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "fb4143ab43193969b46faf962e647f21e3c9c1d69ab181206b6baafc48836247",
+        "notice": "LICENSES/tinted-terminal.txt"
+      }
+    ]
+  }
+}
