@@ -1,0 +1,28 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-light.conf",
+    "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+    "sha256": "d651149612f4948d65a26a130e6f89404d2d6f6966891c5eba095b21b60b8088"
+  },
+  "vhs": {
+    "black": "#383a42",
+    "red": "#e45649",
+    "green": "#40a14f",
+    "yellow": "#c18401",
+    "blue": "#0184bc",
+    "magenta": "#a626a4",
+    "cyan": "#0997b3",
+    "white": "#fafafa",
+    "brightBlack": "#383a42",
+    "brightRed": "#e45649",
+    "brightGreen": "#40a14f",
+    "brightYellow": "#c18401",
+    "brightBlue": "#0184bc",
+    "brightMagenta": "#a626a4",
+    "brightCyan": "#0997b3",
+    "brightWhite": "#fafafa",
+    "background": "#fafafa",
+    "foreground": "#383a42",
+    "selection": "#bfceff"
+  }
+}

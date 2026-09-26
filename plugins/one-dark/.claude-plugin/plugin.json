@@ -4,5 +4,70 @@
   "description": "One Dark and OneHalf themes for Claude — One Dark, OneHalf Dark, OneHalf Light (with ANSI variants)",
   "author": {
     "name": "matcra587"
+  },
+  "license": "MIT",
+  "metadata": {
+    "upstream": [
+      {
+        "repository": "joshdick/onedark.vim",
+        "revision": "47bec7a6196a843dad195d2666c3ac84c6e80c78",
+        "path": "autoload/onedark.vim",
+        "sha256": "32d9f9daecccb45e108393efb68c11bb0055e5e1ae3955db0d5dab5646f2dd68",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "ae99c6b8673c66c951b5a90d0b18e92714c18681c534fcd7cd635784c46c59a5",
+        "notice": "LICENSES/onedark.txt"
+      },
+      {
+        "repository": "joshdick/onedark.vim",
+        "revision": "47bec7a6196a843dad195d2666c3ac84c6e80c78",
+        "path": "term/One Dark.kitty",
+        "sha256": "844a1844af6ce911824ab9c0ba14581805611446410dc5020ee852933df8f92b",
+        "license": "MIT",
+        "licensePath": "LICENSE",
+        "licenseSha256": "ae99c6b8673c66c951b5a90d0b18e92714c18681c534fcd7cd635784c46c59a5",
+        "notice": "LICENSES/onedark.txt"
+      },
+      {
+        "repository": "sonph/onehalf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "path": "vim/colors/onehalfdark.vim",
+        "sha256": "24fdf7d14cf154608fc4b5bc5b094a40590a1d2fde3248a6bebd356ccbbaac14",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "bb4a23db094e79ed8ffd9a38fbc6ff45cbdf9a1f4182fc7ff2667793a012c9a1",
+        "notice": "LICENSES/onehalf.txt"
+      },
+      {
+        "repository": "sonph/onehalf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "path": "vim/colors/onehalflight.vim",
+        "sha256": "6eaf62f701c24087d640e4345a0a715f777d8f8afcb36c3ceb72993458e86b96",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "bb4a23db094e79ed8ffd9a38fbc6ff45cbdf9a1f4182fc7ff2667793a012c9a1",
+        "notice": "LICENSES/onehalf.txt"
+      },
+      {
+        "repository": "sonph/onehalf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "path": "kitty/onehalf-dark.conf",
+        "sha256": "54dfb10334e026761066168ecf9a714356e18f22cb8b54a8d8ef22f9ec216ac1",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "bb4a23db094e79ed8ffd9a38fbc6ff45cbdf9a1f4182fc7ff2667793a012c9a1",
+        "notice": "LICENSES/onehalf.txt"
+      },
+      {
+        "repository": "sonph/onehalf",
+        "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+        "path": "kitty/onehalf-light.conf",
+        "sha256": "d651149612f4948d65a26a130e6f89404d2d6f6966891c5eba095b21b60b8088",
+        "license": "MIT",
+        "licensePath": "LICENSE.txt",
+        "licenseSha256": "bb4a23db094e79ed8ffd9a38fbc6ff45cbdf9a1f4182fc7ff2667793a012c9a1",
+        "notice": "LICENSES/onehalf.txt"
+      }
+    ]
   }
 }

@@ -1,0 +1,29 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/joshdick/onedark.vim/47bec7a6196a843dad195d2666c3ac84c6e80c78/term/One%20Dark.kitty",
+    "revision": "47bec7a6196a843dad195d2666c3ac84c6e80c78",
+    "sha256": "844a1844af6ce911824ab9c0ba14581805611446410dc5020ee852933df8f92b"
+  },
+  "vhs": {
+    "black": "#2c323c",
+    "red": "#e06c75",
+    "green": "#98c379",
+    "yellow": "#e5c07b",
+    "blue": "#61afef",
+    "magenta": "#c678dd",
+    "cyan": "#56b6c2",
+    "white": "#5c6370",
+    "brightBlack": "#3e4452",
+    "brightRed": "#e06c75",
+    "brightGreen": "#98c379",
+    "brightYellow": "#e5c07b",
+    "brightBlue": "#61afef",
+    "brightMagenta": "#c678dd",
+    "brightCyan": "#56b6c2",
+    "brightWhite": "#abb2bf",
+    "background": "#282c34",
+    "foreground": "#abb2bf",
+    "cursor": "#5c6370",
+    "selection": "#5c6370"
+  }
+}
