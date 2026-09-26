@@ -1,0 +1,28 @@
+{
+  "source": {
+    "url": "https://raw.githubusercontent.com/sonph/onehalf/75eb2e97acd74660779fed8380989ee7891eec56/kitty/onehalf-dark.conf",
+    "revision": "75eb2e97acd74660779fed8380989ee7891eec56",
+    "sha256": "54dfb10334e026761066168ecf9a714356e18f22cb8b54a8d8ef22f9ec216ac1"
+  },
+  "vhs": {
+    "black": "#282c34",
+    "red": "#e06c75",
+    "green": "#98c379",
+    "yellow": "#e5c07b",
+    "blue": "#61afef",
+    "magenta": "#c678dd",
+    "cyan": "#56b6c2",
+    "white": "#dcdfe4",
+    "brightBlack": "#5d677a",
+    "brightRed": "#e06c75",
+    "brightGreen": "#98c379",
+    "brightYellow": "#e5c07b",
+    "brightBlue": "#61afef",
+    "brightMagenta": "#c678dd",
+    "brightCyan": "#56b6c2",
+    "brightWhite": "#dcdfe4",
+    "background": "#282c34",
+    "foreground": "#dcdfe4",
+    "selection": "#fffacd"
+  }
+}
