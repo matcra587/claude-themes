@@ -2,6 +2,120 @@
   "format": 1,
   "themes": [
     {
+      "theme": "plugins/base16/themes/base16-cupcake-ansi.json",
+      "name": "Base16 Cupcake (ANSI)",
+      "image": "plugins/base16/renders/base16-cupcake-ansi.png",
+      "theme_sha256": "e8a3831d063803816db1989ba4475711774af6ce1ce9541c3ae45f726dfa529d",
+      "input_sha256": "236e8513f97de4899868709e28b63ef6f1ef2720dba6b0bed09855852d9a6dcb",
+      "image_sha256": "12a4d59fd1e2808c3fed2ccfae285135dad17bd3ab40197483e812cca663ea6b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/cupcake.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "11641ad203d3f187b67bcbfae321c709a8348d4f890e5c1f8993084ced7f929c",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/base16/themes/base16-cupcake.json",
+      "name": "Base16 Cupcake",
+      "image": "plugins/base16/renders/base16-cupcake.png",
+      "theme_sha256": "911b8ea67fec0cbdb17e33684318c9ea133cc2a4f85c07a7321186b3b17de8b6",
+      "input_sha256": "395194f4b52b4e8cc364f22198edce773117940af23832e48aaad4784923b861",
+      "image_sha256": "570bb2f7f7659391426c82e57bc4fa7ba9f0669a4c666ccfe89eb6b1ee602a42",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/cupcake.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "11641ad203d3f187b67bcbfae321c709a8348d4f890e5c1f8993084ced7f929c",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/base16/themes/base16-eighties-ansi.json",
+      "name": "Base16 Eighties (ANSI)",
+      "image": "plugins/base16/renders/base16-eighties-ansi.png",
+      "theme_sha256": "088b139cba3bfdfa78add845adc019505a298f2613ac07273a463ec9a380243b",
+      "input_sha256": "5db9d26a071df114cd61440e900210599e2f36c981e057fa4b02f183a10b8f6f",
+      "image_sha256": "15fa12cc1e6562fa0baaad749cfd9a84b4acdc2fdc87679b9128329a9032eedc",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/eighties.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "2b56a8743e89359de529db41fa38c0d7c99c26ee59fe0f4ad322ab139d3fca6e",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/base16/themes/base16-eighties.json",
+      "name": "Base16 Eighties",
+      "image": "plugins/base16/renders/base16-eighties.png",
+      "theme_sha256": "7a607cb7a0ed450dfda01076f880130fa4e621d27ac6cd8a2b49e5d978782ade",
+      "input_sha256": "0334f73fa870b62494798a7d1b6d66d4ac0444a6aea8019f41dba23d1516a0b3",
+      "image_sha256": "2a1ed900557c8adc1be4bf98278c74c4b8f03258c71f7f996b87995e50e2e04c",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/eighties.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "2b56a8743e89359de529db41fa38c0d7c99c26ee59fe0f4ad322ab139d3fca6e",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/base16/themes/base16-ocean-ansi.json",
+      "name": "Base16 Ocean (ANSI)",
+      "image": "plugins/base16/renders/base16-ocean-ansi.png",
+      "theme_sha256": "5c02266c4e9a400bfeec0915df3e33959915b9c890291b91309b09f5c516b311",
+      "input_sha256": "1b8b3efb555da8fc3c42550ce100c9ef8f8be2cf2690beeda7a7560e2f236e41",
+      "image_sha256": "9a4dfb3b789b1c7000b2866dbcf1ecf078eda31cd1d295309583ea30aa2ca041",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/ocean.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "7773db26503121c6dfc1308b5b05f14db74acfe2c7b8a7929794301e260ad612",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/base16/themes/base16-ocean.json",
+      "name": "Base16 Ocean",
+      "image": "plugins/base16/renders/base16-ocean.png",
+      "theme_sha256": "1573b49a65a6e2cfbe650a11d8ba95ec91a70eac69cdcaa50ab8d524fc713c19",
+      "input_sha256": "ac97caf63ef132386cb46c5bb365dc4263070248d59a1f337cf43594871ccffb",
+      "image_sha256": "b6563d7035422709c6f76e528bd79aa76fd6c04a0a50c55e525e4460f71c04d9",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/base16/ocean.yaml",
+        "revision": "50f6e3b93a8f62db9d839f8b79a709c1bbdaac53",
+        "sha256": "7773db26503121c6dfc1308b5b05f14db74acfe2c7b8a7929794301e260ad612",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/tinted-theming/schemes/blob/50f6e3b93a8f62db9d839f8b79a709c1bbdaac53/LICENSE"
+        ]
+      }
+    },
+    {
       "theme": "plugins/catppuccin/themes/catppuccin-frappe-ansi.json",
       "name": "Catppuccin Frapp\u00e9 (ANSI)",
       "image": "plugins/catppuccin/renders/catppuccin-frappe-ansi.png",
@@ -453,6 +567,44 @@
         "url": "https://github.com/monokai-pro/konsole/blob/df531914171a5b26db0ba11163d80c23e40c7355/Monokai-Pro-CE.colorscheme",
         "revision": "df531914171a5b26db0ba11163d80c23e40c7355",
         "sha256": "5075f4f7ba51b1c3e25b64ca90f8a2ff40e555472de760fe67cf1dc1c266a23b"
+      }
+    },
+    {
+      "theme": "plugins/monokai/themes/monokai-ansi.json",
+      "name": "Monokai (ANSI)",
+      "image": "plugins/monokai/renders/monokai-ansi.png",
+      "theme_sha256": "e1ad298930dead95ae8009792818d34304d56777dfdbdddc3c6e07a3f5ccd390",
+      "input_sha256": "5ec32c49cf0fc355268f651e1935c1a7d42d70c23b7b818d0d406e8f10febab3",
+      "image_sha256": "5d1db587b7d18ff8fb6c33ee1bdcccaac3571a1e34af9431c13358dd668331e7",
+      "claude_code": "2.1.278",
+      "syntax_theme": "ansi",
+      "source": {
+        "url": "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/extensions/theme-monokai/themes/monokai-color-theme.json",
+        "revision": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+        "sha256": "5869805561c08f2df3cd1a1d6cddb771baaf2f54e96f247106c42683a1c6397a",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/LICENSE.txt"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/monokai/themes/monokai.json",
+      "name": "Monokai",
+      "image": "plugins/monokai/renders/monokai.png",
+      "theme_sha256": "3fedccd79ba5de2b2c2b9f0766c1e65784b72e1fd15c2a2ac58aafa9d8952f73",
+      "input_sha256": "3e14498033baa46aadd3aba2c5923e214fc116dd06230e46eb02dfddaa1bceb8",
+      "image_sha256": "39d41388ec0e3382337899be0b08aef65c7cb01dbbb5aee6889d3eee74189b34",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/extensions/theme-monokai/themes/monokai-color-theme.json",
+        "revision": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+        "sha256": "5869805561c08f2df3cd1a1d6cddb771baaf2f54e96f247106c42683a1c6397a",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/microsoft/vscode/blob/e886f3e07de31233c89ecdba812b05bfd07616d7/LICENSE.txt"
+        ]
       }
     },
     {
