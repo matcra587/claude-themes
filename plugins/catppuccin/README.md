@@ -4,11 +4,29 @@ The four official Catppuccin flavours, adapted for Claude Code using Catppuccin'
 
 ## Installation
 
-```text
-/plugin install catppuccin@matcra587/claude-themes
-```
+Run these commands inside Claude Code.
 
-Then run `/theme` and choose the Catppuccin flavour you use.
+1. **Add the marketplace.** You only need to do this once.
+
+   ```text
+   /plugin marketplace add matcra587/claude-themes
+   ```
+
+2. **Install the theme family.**
+
+   ```text
+   /plugin install catppuccin@claude-themes
+   ```
+
+   Choose **Install for you** to use the themes across your projects.
+
+3. **Choose a theme.**
+
+   ```text
+   /theme
+   ```
+
+   Select a variant from the family you installed. If it does not appear, run `/reload-plugins`, then open `/theme` again.
 
 ## Themes
 
