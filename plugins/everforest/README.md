@@ -4,9 +4,29 @@ Sainnhe's Everforest palette, with warm accents and green-tinted surfaces, porte
 
 ## Installation
 
-```text
-/plugin install everforest@matcra587/claude-themes
-```
+Run these commands inside Claude Code.
+
+1. **Add the marketplace.** You only need to do this once.
+
+   ```text
+   /plugin marketplace add matcra587/claude-themes
+   ```
+
+2. **Install the theme family.**
+
+   ```text
+   /plugin install everforest@claude-themes
+   ```
+
+   Choose **Install for you** to use the themes across your projects.
+
+3. **Choose a theme.**
+
+   ```text
+   /theme
+   ```
+
+   Select a variant from the family you installed. If it does not appear, run `/reload-plugins`, then open `/theme` again.
 
 ## Themes
 

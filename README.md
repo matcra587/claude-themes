@@ -4,17 +4,31 @@ A marketplace of UI themes for Claude Code, built from established palettes rath
 
 ## Installation
 
-Browse and install from the marketplace UI:
+Run these commands inside Claude Code.
 
-```text
-/plugin
-```
+1. **Add the marketplace.** You only need to do this once.
 
-Or install a family directly:
+   ```text
+   /plugin marketplace add matcra587/claude-themes
+   ```
 
-```text
-/plugin install <family>@matcra587/claude-themes
-```
+2. **Install a theme family.** For example, to install Dracula:
+
+   ```text
+   /plugin install dracula@claude-themes
+   ```
+
+   Choose **Install for you** to use the themes across your projects.
+
+   Replace `dracula` with any family listed below. To browse available families, run `/plugin` and search the Discover tab.
+
+3. **Choose a theme.**
+
+   ```text
+   /theme
+   ```
+
+   Select a variant from the family you installed. If it does not appear, run `/reload-plugins`, then open `/theme` again.
 
 ## Plugins
 
