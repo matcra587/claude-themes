@@ -5,7 +5,6 @@
   "overrides": {
     "text": "ansi:whiteBright",
     "inverseText": "ansi256(234)",
-    "background": "ansi256(234)",
     "subtle": "ansi256(241)",
     "inactive": "ansi:blackBright",
     "inactiveShimmer": "ansi256(239)",

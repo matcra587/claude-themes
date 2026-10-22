@@ -42,7 +42,6 @@
     "yellow_FOR_SUBAGENTS_ONLY": "ansi:yellow",
     "rainbow_yellow": "ansi:yellow",
     "text": "ansi:whiteBright",
-    "background": "ansi:black",
     "inverseText": "ansi:black",
     "clawd_background": "ansi:black",
     "userMessageBackgroundHover": "ansi:black",

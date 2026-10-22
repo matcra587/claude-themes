@@ -14,7 +14,6 @@
     "ide": "ansi:blue",
     "text": "ansi:white",
     "inverseText": "ansi:black",
-    "background": "ansi:black",
     "subtle": "ansi256(247)",
     "inactive": "ansi:blackBright",
     "inactiveShimmer": "ansi256(244)",

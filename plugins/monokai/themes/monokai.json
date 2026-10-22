@@ -5,7 +5,7 @@
   "overrides": {
     "text": "rgb(248,248,242)",
     "inverseText": "rgb(39,40,34)",
-    "background": "rgb(39,40,34)",
+    "background": "rgb(102,217,239)",
     "subtle": "rgb(144,144,138)",
     "inactive": "rgb(117,113,94)",
     "inactiveShimmer": "rgb(136,132,111)",
