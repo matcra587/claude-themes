@@ -365,7 +365,7 @@
           ]
         },
         "background": {
-          "description": "General background accent.",
+          "description": "Foreground accent for background tasks: the footer shell indicator and the shell details dialog. Not a fill colour; use the palette's cyan or leave unset.",
           "allOf": [
             {
               "$ref": "#/$defs/color"
