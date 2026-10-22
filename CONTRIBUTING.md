@@ -135,7 +135,7 @@ Start from the family's published terminal port — its upstream style guide and
 
 For each token, choose the slot whose *resolved* color sits closest to the RGB value. Normal slots take priority for exact accent matches; bright slots serve as the saturated variants. Base the file on `dark-ansi`/`light-ansi` and override only tokens that differ from the preset.
 
-Greys with no slot (base/mantle/crust analogues) come from the fixed greyscale ramp `ansi256(232)`–`(255)`; `ansi256(234)` ≈ `#1e1e2e`, for example. Extended slots the port defines (catppuccin `color16` = peach, `color17` = rosewater) are used via `ansi256(16)`/`(17)`. Terminals that can't remap those render xterm defaults; treat that as the terminal's limitation and keep the mapping faithful.
+Greys with no slot (base/mantle/crust analogues) come from the fixed greyscale ramp `ansi256(232)`–`(255)`; `ansi256(234)` = `#1c1c1c`, for example. Extended slots the port defines (catppuccin `color16` = peach, `color17` = rosewater) are used via `ansi256(16)`/`(17)`. Terminals that can't remap those render xterm defaults; treat that as the terminal's limitation and keep the mapping faithful.
 
 Never pair two grey slots as foreground and background. `black`-slot text on a `blackBright`-slot background resolves to adjacent surface tones in themed palettes and becomes unreadable. Keep surface backgrounds on nominally-dark slots so the renderer picks a light foreground.
 

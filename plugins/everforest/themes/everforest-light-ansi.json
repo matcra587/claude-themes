@@ -55,7 +55,6 @@
     "warningShimmer": "ansi256(214)",
     "rainbow_yellow_shimmer": "ansi256(214)",
     "text": "ansi:black",
-    "background": "ansi256(255)",
     "inverseText": "ansi256(255)",
     "clawd_background": "ansi256(255)",
     "subtle": "ansi256(245)",

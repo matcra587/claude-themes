@@ -42,7 +42,7 @@
     "yellow_FOR_SUBAGENTS_ONLY": "rgb(255,204,102)",
     "rainbow_yellow": "rgb(255,204,102)",
     "text": "rgb(211,208,200)",
-    "background": "rgb(45,45,45)",
+    "background": "rgb(102,204,204)",
     "inverseText": "rgb(45,45,45)",
     "clawd_background": "rgb(45,45,45)",
     "userMessageBackgroundHover": "rgb(45,45,45)",

@@ -42,7 +42,7 @@
     "planMode": "rgb(27,124,131)",
     "cyan_FOR_SUBAGENTS_ONLY": "rgb(27,124,131)",
     "text": "rgb(31,35,40)",
-    "background": "rgb(255,255,255)",
+    "background": "rgb(27,124,131)",
     "inverseText": "rgb(255,255,255)",
     "clawd_background": "rgb(255,255,255)",
     "userMessageBackground": "rgb(246,248,250)",

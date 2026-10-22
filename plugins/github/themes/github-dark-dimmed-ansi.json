@@ -42,7 +42,6 @@
     "planMode": "ansi:cyan",
     "cyan_FOR_SUBAGENTS_ONLY": "ansi:cyan",
     "text": "ansi256(250)",
-    "background": "ansi256(235)",
     "inverseText": "ansi256(235)",
     "clawd_background": "ansi256(235)",
     "userMessageBackground": "ansi256(236)",
