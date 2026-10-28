@@ -21,6 +21,13 @@
       "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/catppuccin"
     },
     {
+      "name": "catppuccin-accents",
+      "description": "Catppuccin themes for Claude with alternative accent colours — all four flavours × 13 accents",
+      "category": "themes",
+      "source": "./plugins/catppuccin-accents",
+      "homepage": "https://github.com/matcra587/claude-themes/tree/main/plugins/catppuccin-accents"
+    },
+    {
       "name": "dracula",
       "description": "Dracula theme for Claude (with ANSI variant)",
       "category": "themes",
