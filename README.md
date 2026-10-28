@@ -36,6 +36,7 @@ Run these commands inside Claude Code.
 | ------------------------------------------------ | ---------------------------------------------- |
 | [`base16`](./plugins/base16)                       | Ocean, Eighties, Cupcake (+ ANSI each)          |
 | [`catppuccin`](./plugins/catppuccin)             | Latte, Frappé, Macchiato, Mocha (+ ANSI each) |
+| [`catppuccin-accents`](./plugins/catppuccin-accents) | Latte, Frappé, Macchiato, Mocha each with 13 alternative accents (lavender, rosewater, …) |
 | [`dracula`](./plugins/dracula)                   | Dracula (+ ANSI)                               |
 | [`everforest`](./plugins/everforest)             | Everforest Dark, Everforest Light (+ ANSI each)|
 | [`github`](./plugins/github)                   | Dark Default, Light Default, Dark Dimmed (+ ANSI each) |
