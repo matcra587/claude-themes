@@ -116,6 +116,994 @@
       }
     },
     {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-flamingo.json",
+      "name": "Catppuccin Frapp\u00e9 Flamingo",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-flamingo.png",
+      "theme_sha256": "17ba4d5dcef8b06d78eb6e7df892d34ee277e54668170cbdae4a420f477b6db0",
+      "input_sha256": "5d7f41b81a55d25f747a361a64e80c1706a05dc3219ca4698784c7fe4b6272b9",
+      "image_sha256": "4508f740e0b3176a9cd9fc7d6a13f394057502577be4e94df58b41f65fdb7ac2",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-green.json",
+      "name": "Catppuccin Frapp\u00e9 Green",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-green.png",
+      "theme_sha256": "01e96cd70243e2ffe670f261961f136e4808923ade0ace62b81647d4753942f6",
+      "input_sha256": "b80e7c677b80e88d9555783ca25e18343d82ea27e6e7575fb4cff6f20a0f3bdd",
+      "image_sha256": "e0ab2743bcc4b0a1d9240e14c9287ab4707780ae2d0ecfcdde4a8baf59caea9b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-lavender.json",
+      "name": "Catppuccin Frapp\u00e9 Lavender",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-lavender.png",
+      "theme_sha256": "b4b3fc93cd6f1ef5139b8acb4dc358fab1ac30f2c09aebaafef8bb6a8ac8b12b",
+      "input_sha256": "cfee432d65bedae18e2b513aee6284d0fdf26b7f5ae8467f39a751ac84b0ef36",
+      "image_sha256": "d384a33cde9d0f20ce87843f13e893589b4f4b3a82656316bc2a67fba20536bb",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-maroon.json",
+      "name": "Catppuccin Frapp\u00e9 Maroon",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-maroon.png",
+      "theme_sha256": "9d5c6c49f924ed1f8d72dd3850298a07519228f0dd5620d8a499e7f100804f89",
+      "input_sha256": "c8c4dc4c5edad380948c14846d99bbbab09394b8c980b353f64feb480ed36088",
+      "image_sha256": "8fdbe32225e8e4694269d47bdf4945184bbe8960dc735a520c6e8871c7a49514",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-mauve.json",
+      "name": "Catppuccin Frapp\u00e9 Mauve",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-mauve.png",
+      "theme_sha256": "9a571fe6cd7dcfea751256971abd8ee8acfe95312e9111a7198ce7edd478f624",
+      "input_sha256": "ff03fd591012375ce034b946143cc1d2dc308f0cd3d76ecb645c3714dbe19ce1",
+      "image_sha256": "4f54a5acaa5315a96954490323b445c4eeffe51a1f6f158b7d5c88de43bba075",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-peach.json",
+      "name": "Catppuccin Frapp\u00e9 Peach",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-peach.png",
+      "theme_sha256": "b5c262fde65459a0aca84970ce69db05096f19c35e8e795866d3dcfa18fc41a3",
+      "input_sha256": "0b606e7f3329e71447a7c54b9aa76e2057f9f33de80a42dff87a0cc9d6b0e9f0",
+      "image_sha256": "563754e28344b68ec96db7c593528022e74bed048cd0d36116b4de74aa4960f4",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-pink.json",
+      "name": "Catppuccin Frapp\u00e9 Pink",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-pink.png",
+      "theme_sha256": "be32ecc60f67d9760a6be9a4e685a09ef376dbc3afd3a1590f416b00a30cebd9",
+      "input_sha256": "82ba2a500dce9a2976e8379692e8c84b2d1d5b9823287425c087d23538a403bd",
+      "image_sha256": "02f5e7e19f6b3cf02bea0e66158f26602eeef281a63a9ea0426f599d994b91fb",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-red.json",
+      "name": "Catppuccin Frapp\u00e9 Red",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-red.png",
+      "theme_sha256": "ddbffe9f60a8717ca441a13501495ff96f115a90c810265e13e960b941da46e8",
+      "input_sha256": "9fbc1dba68ce0c5b322443635a2675b0bf9ecd483a511f1143a24f5591a34eb5",
+      "image_sha256": "c7ffc598a3f184c2fac5eb7fcecec7666d2eb6a7b2d7d24b34dc11c166630acc",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-rosewater.json",
+      "name": "Catppuccin Frapp\u00e9 Rosewater",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-rosewater.png",
+      "theme_sha256": "4aefd6e032460093e0f7b0879309d1a095035fdae73b534797106703581bd989",
+      "input_sha256": "9dcfde24823e64252c5eb3fefd8f0faea752be2b3cdca1975013f6aace4868cc",
+      "image_sha256": "b8e3d9b25caf89247018fb875c62a770c3b72f4a2479fe9e4e0ef58bcff5fa40",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-sapphire.json",
+      "name": "Catppuccin Frapp\u00e9 Sapphire",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-sapphire.png",
+      "theme_sha256": "815440a72063ce535366d2cc71dbd53ef0b46fcc861b3b9edaa7a5ded8c7c7d9",
+      "input_sha256": "36c14a2944046a35d5bacb4a76f8ae40becb64eb225e33b944019f0d2a898f56",
+      "image_sha256": "16c38bb086b089648533fef6691d93cc81cdea28fe321104731f2fd6ea1ae80a",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-sky.json",
+      "name": "Catppuccin Frapp\u00e9 Sky",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-sky.png",
+      "theme_sha256": "a29167987ae651e21892cf4dd3dcaedb9d514302a97d0b7fcb986e26e46ae4aa",
+      "input_sha256": "41ff54906087b1bd483df7b25227366d27774f27338738fde4297cadb1dc5518",
+      "image_sha256": "4780bb0293d7a5f43b924600c31139c19927837d8cc5991ac214b22db73283ff",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-teal.json",
+      "name": "Catppuccin Frapp\u00e9 Teal",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-teal.png",
+      "theme_sha256": "2868487111366a92e65ead0c7a0872058fcb33b6a0ad3c399445a49c82281dc5",
+      "input_sha256": "ac892299788cea19c4a2279aa4d343df6748ed700b7b9a5ce520fdc1627cdd48",
+      "image_sha256": "85c879cc110735a87203f033c06db3c9d11af5f5702637b3158fcb5021f17763",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-frappe-yellow.json",
+      "name": "Catppuccin Frapp\u00e9 Yellow",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-frappe-yellow.png",
+      "theme_sha256": "d49ad9b7d6a656e9604c064dd8f76d0d1c119f5fedbd4a2e8fb18709b0067efd",
+      "input_sha256": "5ef03467d6780bd5a13fac9eb77dbf2558c87b2b58e59c380885f2806cfbe44e",
+      "image_sha256": "2e87cf7f93c9bf4d3b3a000411973e31bff15b92a3872d69756097d209fc7704",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-flamingo.json",
+      "name": "Catppuccin Latte Flamingo",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-flamingo.png",
+      "theme_sha256": "f3e68e60c95ced419dacc5cd37975da3a09aa1272cc12426b55d48f74a944974",
+      "input_sha256": "870da3609d028a8051618b1ed8bdcd8d3b19b7f7ec3a12679d10311251289ea0",
+      "image_sha256": "e1f92228cc1d18d58be3615c0a9de142ffc732ef2096fb98e518c282e81b80b7",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-green.json",
+      "name": "Catppuccin Latte Green",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-green.png",
+      "theme_sha256": "858e58182f2bee5371798fb30ca005075a786220b119b1a86b10a5becc5605da",
+      "input_sha256": "fb3026bbf38a20ad717ddb75722b4f0641fd81e4cbd3d2b991189dc9e14c3cff",
+      "image_sha256": "9d00777ee2264c779362786546efd03331ba8b11f9d6238dff91a60879e74fdf",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-lavender.json",
+      "name": "Catppuccin Latte Lavender",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-lavender.png",
+      "theme_sha256": "180bab83d506912c6bb3c7045b0c822c278188908b98462739b7fd5bd39afa0f",
+      "input_sha256": "6842d3a17c5092d271e4148138dfd54955fd421702c2d29629f2f60011e3545e",
+      "image_sha256": "ac487e341acad83242bf538345db460732f282c59c42cd485e11c89dd30949b7",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-maroon.json",
+      "name": "Catppuccin Latte Maroon",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-maroon.png",
+      "theme_sha256": "bda060c6e3df95a18205179adc7a4dd6a01b82fb88d52ede4a59b012dea65076",
+      "input_sha256": "faf4184ed1f4aaeaf9207ee7c6e419320553053968bfab4e8eac0e0c512db988",
+      "image_sha256": "0257c10925a8a94ada2a77339dbfd6006c7bb32874246466ba6b6d8aa6b5a226",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-mauve.json",
+      "name": "Catppuccin Latte Mauve",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-mauve.png",
+      "theme_sha256": "e8903cd02b5d9023094c45f89528d787836edcc9bc6cd954f99ba58e2b162ea4",
+      "input_sha256": "7dd2c164310a3e02f80b554aa6f185f441dcbe9de2a4fa2336344b87e4a64e05",
+      "image_sha256": "819671db7060ba4eb1be23454b13d366a018852cebf060200ba1360e6d03f8f1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-peach.json",
+      "name": "Catppuccin Latte Peach",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-peach.png",
+      "theme_sha256": "546e0e33fecceb2d4e34d99b70cfea1d1c1a10940bcac722b617487f98a14ba8",
+      "input_sha256": "f0bd59d1877f61227a520ba457411b6d4aa1a965a4347b355c60b7d0c8070ba4",
+      "image_sha256": "9b0e94491b17332ad81275f6cc5158e3ddcac5ad7dc9fef0f01ab54b8e9fe5db",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-pink.json",
+      "name": "Catppuccin Latte Pink",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-pink.png",
+      "theme_sha256": "05340387c78754ce71b78fa7407c99a0c9a53098068e6c6b81a38dab66ed54d9",
+      "input_sha256": "b8914c26f10a0c2addb4330abd888e4ab30b095cbc838d1e8efefcbff4919c0a",
+      "image_sha256": "6069f0e2026abb41180a09c9cd855461fbf197141dbb77e87eee3e54b2708214",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-red.json",
+      "name": "Catppuccin Latte Red",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-red.png",
+      "theme_sha256": "fd0fa21566a8524c52dd9444c538d6102661077182f9d4bb8b2b9dc3181dbbee",
+      "input_sha256": "ed256024e9b937ff0f762716a063e77e2cdcb05581843fb59ef1daa016195003",
+      "image_sha256": "1652eadeb52aef0e4ca0c098bdb01e08ae7cebc8808615725246001d4717e43b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-rosewater.json",
+      "name": "Catppuccin Latte Rosewater",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-rosewater.png",
+      "theme_sha256": "b1853622f63c40ed51504ec4e358eda72e3617086aba0e12347fb178b199ce6c",
+      "input_sha256": "e137ed556ce6ec96701c8e54d787ddd954cfacfa15746e9887adbadb38e6f9f5",
+      "image_sha256": "445f9a26384dce20bbce822be0befb244ee97fcd76cab9271c84f669d4a721c3",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-sapphire.json",
+      "name": "Catppuccin Latte Sapphire",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-sapphire.png",
+      "theme_sha256": "d28c640348eb9e972e61faa2b3a2da90ae39c7c0476c03f3756a16936a354f22",
+      "input_sha256": "19450dd4ee3e0e645c4210d10ebd48ee2ec80b8b9f505351c572572923f7aabf",
+      "image_sha256": "8f5ad093599db0c64a1369280e019c7a4ab9cade3641479c262bba2b14a3bac1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-sky.json",
+      "name": "Catppuccin Latte Sky",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-sky.png",
+      "theme_sha256": "437211b13a9137b4513a34f4c99fa084bfee9492402b2fc72f06281262944cc5",
+      "input_sha256": "c433ce6df20d6376b0d994da519f641778afae960bbac47e42d62a5edd041391",
+      "image_sha256": "1d3eba610c1ed4dab813e62c08cca8e8f7780d014385e9763c93556a26fe3622",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-teal.json",
+      "name": "Catppuccin Latte Teal",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-teal.png",
+      "theme_sha256": "9e380bfdb00d3f190acaf910c9727179d038e4533790e505b989d331ad2cc207",
+      "input_sha256": "bcabb8a55adc90ada3e8a882ce8e703992d6d428efa227b876a5be54e16230bb",
+      "image_sha256": "8bda07d155a96bde5e3bc6e1515a11708c5abec507e77857853f8fcf0172cc08",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-latte-yellow.json",
+      "name": "Catppuccin Latte Yellow",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-latte-yellow.png",
+      "theme_sha256": "234e68d94113a759c5297dc3fa9d1b42e8936f308445d3f3cd2213d4b06cde39",
+      "input_sha256": "6450fa72bfa818c0a0411b48cb296477e6e6628f26dcf5e27618bc892a1f9e89",
+      "image_sha256": "9facdef7a2f33f37fcef0bbabc4c3061fab9694c4fd4fd156d07852ec5217bc1",
+      "claude_code": "2.1.278",
+      "syntax_theme": "GitHub",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-flamingo.json",
+      "name": "Catppuccin Macchiato Flamingo",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-flamingo.png",
+      "theme_sha256": "4acc594dc7dc1ea632751dba6d47d8e72c986a991866f71491b80a6689d28699",
+      "input_sha256": "9c29d88f3796f42e79407b37c0c0899c0f8f60acb51358075c30115dc6bf3ee6",
+      "image_sha256": "6488e662b29dd7dad0f7c1ec57515822aac89f1320c79db982ed770398b40a03",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-green.json",
+      "name": "Catppuccin Macchiato Green",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-green.png",
+      "theme_sha256": "968d6686430c6d8303b4f31ac3f3972b03735d80167f4635ac3e10b4f0320d51",
+      "input_sha256": "2acdf5c85a1b941f0e4ef4f09754ae3bc737899a5d5d405c777b70a36ae727b6",
+      "image_sha256": "5e0cb1248f2175121f61bd68e4e0050cdca81293d4d8aa4c7c1179fc50f5d41e",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-lavender.json",
+      "name": "Catppuccin Macchiato Lavender",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-lavender.png",
+      "theme_sha256": "417c4d0744ad1b87cba95e86a6abb0047e8b0c8884560d3f4018fdee3d18ae77",
+      "input_sha256": "1b3d901fa19794b2c9946ebf9d5d66943f91f33402d35a9153cb2c90ddc14455",
+      "image_sha256": "8e78b1fcc189314c9805f9cc7e1d721598534e9fa2e6c77ce06bdf2c9529baa7",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-maroon.json",
+      "name": "Catppuccin Macchiato Maroon",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-maroon.png",
+      "theme_sha256": "f88698e66c3f34ae366aba17c8a5431a5d6f4fbe48664dc2407983a1b56d3990",
+      "input_sha256": "ec04585217b2ef7c80925b08fe6970269966db856d014e6f2a1c70d9f746f77c",
+      "image_sha256": "81c0bf5c237f3978fbaf8e95a44e03d47a38c7ccb8b37d26b75371bd17bab894",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-mauve.json",
+      "name": "Catppuccin Macchiato Mauve",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-mauve.png",
+      "theme_sha256": "0710059cce877cba0ef35a16b7da24e8b623f86333bb0a840a9e217fb7fcfb91",
+      "input_sha256": "533b3d8f5df1dcfcbd7f4ba7e21b904363149a26931d8a95a236f1577ffa0c36",
+      "image_sha256": "30344ffb7c95d8618c71d29f1000e6a47360f2fdc881bb703847ece290166931",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-peach.json",
+      "name": "Catppuccin Macchiato Peach",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-peach.png",
+      "theme_sha256": "c8af6009b7f75f3c3f25e700a5aab8cfb4c1d941f443c47269148c919104291c",
+      "input_sha256": "54f786d9afbdc63966e6854924acb7f75453386f5f9f7869c30ae6a7f9d7e776",
+      "image_sha256": "6a951adca333806a876aba4807b9cf2db3e89e08200a34a61e152ca03f88b2c7",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-pink.json",
+      "name": "Catppuccin Macchiato Pink",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-pink.png",
+      "theme_sha256": "e5d8a0e181e079bb2a8781681520441b3b21bce69489c77f3a5895adbe5c7791",
+      "input_sha256": "8ef36c3d25cdbb14c6ab692ea6155e827643c9c7e6e1795d812b4d80002be967",
+      "image_sha256": "43f4eaac3959b76cbf257be34a7abdb3d87d32ffbb4233eec0fc955f5fea9009",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-red.json",
+      "name": "Catppuccin Macchiato Red",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-red.png",
+      "theme_sha256": "d8a93b73c15dfbce20b95b13fcd77b2217b12e1522d85c1351e5ba8c92402c30",
+      "input_sha256": "f8b3f1378b8dae22e79ac348ee8ea2c31d734b390526512f58afdabb74726ab1",
+      "image_sha256": "711294b758f5f835ceb19324fb24dae2180c07ada5191af8ddd694552f151bc5",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-rosewater.json",
+      "name": "Catppuccin Macchiato Rosewater",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-rosewater.png",
+      "theme_sha256": "813e3002b6b5b5176558bb07deb738ac6871477f3f78474a855de9d2b75a5177",
+      "input_sha256": "e6da833794c1871cb7724ba89c1420d4eccab4358a657022f896824d89fc649c",
+      "image_sha256": "32c50f927937c5689897c52dc448b096ac19102dac986cff2be78c67f3ba000f",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-sapphire.json",
+      "name": "Catppuccin Macchiato Sapphire",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-sapphire.png",
+      "theme_sha256": "f73c0824bf7152a489691c834a261d4ee6c92b6bd5cd1dadc93bbaebb748c1dc",
+      "input_sha256": "9393896eb4f155ca2a0146d4b9dc8592d96d9a010cd860b46e2fd70f65d34435",
+      "image_sha256": "33699db8beddfe3b7ae1c76a9b087c604fdeaaeb1b285305b76c3e2e564ffa4c",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-sky.json",
+      "name": "Catppuccin Macchiato Sky",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-sky.png",
+      "theme_sha256": "c424989cc2cd6f00dd0d1bd46cfa5d9815ba9bca3230cb1b0849ed8a73af1468",
+      "input_sha256": "ce1d84e29fd4b55d1792791dc3b5476a6601edfa8a00330ddd0979bb011ffb6c",
+      "image_sha256": "81b3d4f40738cd21713e5d02732c15b51d48a38fa4a3d11dbe2a40a77bb8c900",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-teal.json",
+      "name": "Catppuccin Macchiato Teal",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-teal.png",
+      "theme_sha256": "23ede1d376a7b51f1195b0bf377f6c1a2ad9e03b517be4fc252ada511ff0d1d7",
+      "input_sha256": "e20f70914cc3d35edbbbbeedc46babe09a2bea84543bf113dfc7478ac220d3de",
+      "image_sha256": "0c2fde4bf81367333dcd13affcb6bd05d2ae9d0ba3c2af4f1af42cfe45cea612",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-macchiato-yellow.json",
+      "name": "Catppuccin Macchiato Yellow",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-macchiato-yellow.png",
+      "theme_sha256": "55bb70a74cb6f4c956d5475ab6ae14ba66fef569a66f1a6ee5b055a761ec6bbf",
+      "input_sha256": "1ebe91888fcdf2aaee13de84a2387f03d270679d82d9e0ac463dbfbb913ef65c",
+      "image_sha256": "aaa829381b3101a10952c289de52a212eb88ead5504761e61979df7607e43f20",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-flamingo.json",
+      "name": "Catppuccin Mocha Flamingo",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-flamingo.png",
+      "theme_sha256": "427bebaec224d42b336534854e04ee4f9b5a50f862c163c64b67c607011acc53",
+      "input_sha256": "0ebd6cbd1d8e17a14d1708e4082d01d38e9570c778909fd20c4b4fcdd0794751",
+      "image_sha256": "524431db011935c50eefe2c2a6b57fefb33496a750cc83625f155634b228bafa",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-green.json",
+      "name": "Catppuccin Mocha Green",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-green.png",
+      "theme_sha256": "13448f7c266bf5713216f9a7da4208b99b56fc5fe2702790099e854421e71a49",
+      "input_sha256": "e18e3db3b91d38c5ae0f72843aca58f53352192cdf68fc30e197fe54be95c8e5",
+      "image_sha256": "2a7dc7992ebee8ab2c407ff6de96008bcd32272d32962753343d10e1751fe861",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-lavender.json",
+      "name": "Catppuccin Mocha Lavender",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-lavender.png",
+      "theme_sha256": "c9abef099d463171ab5577c0a4e8d09f9ce47d07a80e9b96bace4c9b65320973",
+      "input_sha256": "cca10dd61dae659ec821f70ab7f08bfd45b44d3170c07e9c0fcbd2bad9abc99f",
+      "image_sha256": "38fe4c55e78aaca35c135f6787a29d979380bcfd08a894f8a4ea7b82f71f3766",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-maroon.json",
+      "name": "Catppuccin Mocha Maroon",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-maroon.png",
+      "theme_sha256": "1028000fa499f8247abb087c25062a3344024bd7d76c22b0cda3d164f4f9811b",
+      "input_sha256": "b8d1207fbd43d7a03870a744f51ddac1facc42014dd4f4c351839eda519cd98f",
+      "image_sha256": "ccd8a208f432489414de567874fc9cbb18d40d4c0bcaf6d410e66a6dbd533c14",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-mauve.json",
+      "name": "Catppuccin Mocha Mauve",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-mauve.png",
+      "theme_sha256": "b37c995740da6439bd87ebf28895c93e3654ab1da32edb455fb57d821bb25a75",
+      "input_sha256": "df0150552e7c6ba614ade064ec3b9d5ca69f4812ab897b9d5d2241b708a41f11",
+      "image_sha256": "30de93f4017f9efb5a85fc48eea70890fc563fa364fd924eb05941d7aca67851",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-peach.json",
+      "name": "Catppuccin Mocha Peach",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-peach.png",
+      "theme_sha256": "0d729cf29856bc2c6a537c42818eeb67a9e98932f7351cf278e7caa15e227f03",
+      "input_sha256": "f75f9f1c8b1029c8df95f0b305b2f6ad4f2a662910c2aa42c3f5bed5e8e14fd6",
+      "image_sha256": "4fc874466d32de8a9c2f5f208efbcaf379e1585d57c41a9d96a1d8ec303f7fea",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-pink.json",
+      "name": "Catppuccin Mocha Pink",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-pink.png",
+      "theme_sha256": "c44248fba4c7a763010fd631fa75a600b827df88ba57ed349561e654e07f49ce",
+      "input_sha256": "353c101101808b0488a54f4afc96c753ebfbb43a0be18b6e87c4b230d89debe3",
+      "image_sha256": "2d2c529925e495e9910b290a3ea8c99996f432f7a4766b32cb32ccaacb38a6c4",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-red.json",
+      "name": "Catppuccin Mocha Red",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-red.png",
+      "theme_sha256": "524bf1610b1f8e1a502223eaf4b8a2a49e35735614f487fa8939687bc9ec6968",
+      "input_sha256": "b84b6f27db10b1822dac460df270986c35f14153ecbd7638d14bae5a53895c1c",
+      "image_sha256": "2399d3ac12d0cc622a9c6ddf019f739d3a36ceee0a65a719e1e7a90ad6b05466",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-rosewater.json",
+      "name": "Catppuccin Mocha Rosewater",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-rosewater.png",
+      "theme_sha256": "5491eda7982182cb6ced439e4ded7eaad60f3d811c5ce5f54ecb29c1f6961ad2",
+      "input_sha256": "3d200a5a8898c5dd667bf4e4495c57b9595b1274682756005d0efa9c50da04b6",
+      "image_sha256": "57567adca06af10e82c705002ba14315d8a72b1599d697490561c0467f218778",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-sapphire.json",
+      "name": "Catppuccin Mocha Sapphire",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-sapphire.png",
+      "theme_sha256": "d627993a642083b457af533da91862d1f781ce87120387bb6b9fde30ba10c727",
+      "input_sha256": "67d9f3b3cef9cd44beb9c54ce3919e5ae341e959c9849fdb4b825e15bf89162d",
+      "image_sha256": "93bdc5445512d86d88c445a3b2808ce3e55994532477b6c9c8b32a82ae68c206",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-sky.json",
+      "name": "Catppuccin Mocha Sky",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-sky.png",
+      "theme_sha256": "d87941d72d116b44d7c0fd81fe230271b5467d875e61a7fccb886778d34e5a60",
+      "input_sha256": "4fe78b29462901b1c88a716468103699d5d5d25f7151e01f5eb44a57eb465792",
+      "image_sha256": "1ac5e690fcdf05ce13826ffaa07d808011ac720b87e13f674d543f09ceb08bca",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-teal.json",
+      "name": "Catppuccin Mocha Teal",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-teal.png",
+      "theme_sha256": "01b07fb400b148f42ef29992376cd4b0236f56546db5d9939dcd34a3120df9f6",
+      "input_sha256": "c5d71079c516717215a075a00ca012b0b1354d9b090ba5094ebf01d92e152a85",
+      "image_sha256": "2d1f02ab8bf27d762193457ac4e8cdfde495dde395f4e19b55b4b73b20b3863b",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
+      "theme": "plugins/catppuccin-accents/themes/catppuccin-mocha-yellow.json",
+      "name": "Catppuccin Mocha Yellow",
+      "image": "plugins/catppuccin-accents/renders/catppuccin-mocha-yellow.png",
+      "theme_sha256": "2c2ee12d724cc630022fbe336114f84a6162036dc01b3185b7ee4a0a3793a46d",
+      "input_sha256": "510c2667adca280671904fd3cb7cb47d4b895e0f0900864f0991b1723770696f",
+      "image_sha256": "f9d7bde23e84d2aad077d902da61ce2707a56b7ead5288d642390e93c7ae90c5",
+      "claude_code": "2.1.278",
+      "syntax_theme": "Monokai Extended",
+      "source": {
+        "url": "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/palette.json",
+        "revision": "07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd",
+        "sha256": "4bc114bb6b3c9a9c9e156564aa84625aef32c5da514d9dd431cf1fcad433a05f",
+        "kind": "upstream",
+        "license_urls": [
+          "https://github.com/catppuccin/palette/blob/07d02aa110ef9eb7e7427afca5c73ba9cf7f8ebd/LICENSE"
+        ]
+      }
+    },
+    {
       "theme": "plugins/catppuccin/themes/catppuccin-frappe-ansi.json",
       "name": "Catppuccin Frapp\u00e9 (ANSI)",
       "image": "plugins/catppuccin/renders/catppuccin-frappe-ansi.png",
